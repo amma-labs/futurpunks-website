@@ -23,8 +23,8 @@
         <!-- Menú de Navegación -->
         <nav class="hidden md:flex space-x-6 text-sm md:text-base">
             <a href="#manifiesto" class="hover:text-pink-500 transition-colors duration-300">Manifiesto</a>
-            <a href="#" class="hover:text-pink-500 transition-colors duration-300">El Futuro</a>
-            <a href="#" class="hover:text-pink-500 transition-colors duration-300">El Mañana</a>
+            <a href="#el-futuro" class="hover:text-pink-500 transition-colors duration-300">El Futuro</a>
+            <a href="#el-manana" class="hover:text-pink-500 transition-colors duration-300">El Mañana</a>
         </nav>
 
         <!-- Botón de menú para dispositivos móviles (oculto en escritorio) -->
@@ -64,6 +64,47 @@
                 Queremos tus manos, tu voz y tu energía. El futuro será nuestro.
             </p>
         </section>
+
+        <!-- Nueva sección para "El Futuro" (Blog de Proyectos) -->
+        <section id="el-futuro" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
+            <h3 class="text-2xl md:text-4xl font-bold mb-8">El Futuro</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8">
+                Un vistazo a los proyectos y colaboraciones que están en marcha.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tarjeta de Proyecto 1 -->
+                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                    <h4 class="text-xl font-bold mb-2">Proyecto Alfa</h4>
+                    <p class="text-gray-400 text-sm">Investigación sobre futuros urbanos en América Latina.</p>
+                </a>
+                <!-- Tarjeta de Proyecto 2 -->
+                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                    <h4 class="text-xl font-bold mb-2">Manifiesto 2040</h4>
+                    <p class="text-gray-400 text-sm">Visualización de un futuro distópico a través del arte digital.</p>
+                </a>
+                <!-- Tarjeta de Proyecto 3 -->
+                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                    <h4 class="text-xl font-bold mb-2">Voces del Mañana</h4>
+                    <p class="text-gray-400 text-sm">Un podcast que explora la relación entre tecnología y sociedad.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Nueva sección para "El Mañana" (Formulario de Contacto) -->
+        <section id="el-manana" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4">Únete a la Alianza</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8">
+                El futuro se construye con colaboración. Deja tu correo para mantenernos conectados.
+            </p>
+            <form id="contact-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4">
+                <input type="text" name="name" placeholder="Tu nombre" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
+                <button type="submit" class="p-3 md:w-auto w-full bg-pink-600 text-white font-bold rounded-md hover:bg-pink-700 transition-colors duration-300">
+                    Únete Ahora
+                </button>
+            </form>
+            <p id="form-message" class="mt-4 text-green-500 hidden">¡Gracias por unirte a la Alianza!</p>
+        </section>
     </main>
 
     <!-- Pie de página (Footer) -->
@@ -71,5 +112,25 @@
         <p>Copyright © 2024 Futur Punks Collaborative.</p>
     </footer>
 
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previene el envío del formulario
+
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const messageEl = document.getElementById('form-message');
+
+            // En un entorno real, aquí enviarías los datos a un servidor.
+            // Por ahora, solo los mostramos en la consola.
+            console.log('Formulario enviado:', { name, email });
+
+            // Muestra un mensaje de éxito al usuario
+            messageEl.textContent = '¡Gracias por unirte a la Alianza!';
+            messageEl.classList.remove('hidden');
+
+            // Limpia los campos del formulario
+            this.reset();
+        });
+    </script>
 </body>
 </html>
