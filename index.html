@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futur Punks Collaborative</title>
+    <title>Futurpunks Collaborative</title>
     <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Se ha cambiado la tipografía a Space Grotesk */
+        /* Se ha cambiado la tipografía a Space Groktek */
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap');
         body {
             font-family: 'Space Grotesk', sans-serif;
         }
+        /* Estilos base del botón del tema */
+        #theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+        }
     </style>
 </head>
-<body class="bg-gray-950 text-white min-h-screen flex flex-col">
+<body class="bg-black text-white min-h-screen flex flex-col">
 
     <!-- Sección del Encabezado (Header) -->
-    <header class="w-full p-6 md:p-10 flex justify-between items-center z-10 sticky top-0 bg-gray-950">
+    <header class="w-full p-6 md:p-10 flex justify-between items-center z-10 sticky top-0 bg-black" data-theme-element="header">
         <!-- Logo en lugar del título de texto -->
-        <img src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png" alt="Futur Punks Collaborative Logo" class="h-10 md:h-12">
+        <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12">
         
         <!-- Contenedor del menú y el selector de idioma -->
         <div class="flex items-center space-x-6">
             <!-- Menú de Navegación -->
             <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-                <a href="#manifiesto" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-manifesto">Manifiesto</a>
-                <a href="#el-futuro" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-future">El Futuro</a>
-                <a href="#el-manana" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-tomorrow">El Mañana</a>
+                <a href="#manifiesto" class="hover:text-gray-400 transition-colors duration-300" data-translate="nav-manifesto" data-theme-element="nav-link">Manifiesto</a>
+                <a href="#el-futuro" class="hover:text-gray-400 transition-colors duration-300" data-translate="nav-future" data-theme-element="nav-link">El Futuro</a>
+                <a href="#el-manana" class="hover:text-gray-400 transition-colors duration-300" data-theme-element="nav-link">El Mañana</a>
             </nav>
             
-            <!-- Selector de Idioma -->
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="#" class="language-link font-bold text-white hover:text-pink-500 transition-colors duration-300" data-lang="es">SPA</a>
-                <span class="text-gray-500">|</span>
-                <a href="#" class="language-link text-gray-400 hover:text-pink-500 transition-colors duration-300" data-lang="en">EN</a>
-                <span class="text-gray-500">|</span>
-                <a href="#" class="language-link text-gray-400 hover:text-pink-500 transition-colors duration-300" data-lang="fr">FRA</a>
+            <!-- Selector de Idioma (Menú desplegable) -->
+            <div class="relative inline-block text-left" id="language-dropdown">
+                <div>
+                    <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-gray-900 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-500" id="language-menu-button" aria-expanded="true" aria-haspopup="true" data-theme-element="dropdown-button">
+                        <span id="selected-lang-text">SPA</span>
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            
+                <div class="hidden origin-top-right absolute right-0 mt-2 w-28 rounded-md shadow-lg bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1" id="language-menu-items" data-theme-element="dropdown-menu">
+                    <div class="py-1" role="none">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" data-lang="es" data-theme-element="dropdown-link">Español</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" data-lang="en" data-theme-element="dropdown-link">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white" role="menuitem" tabindex="-1" data-lang="fr" data-theme-element="dropdown-link">Français</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Botón de menú para dispositivos móviles (oculto en escritorio) -->
@@ -52,28 +70,28 @@
             <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight" data-translate="main-title">
                 LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
             </h2>
-            <p class="text-gray-400 text-sm sm:text-base md:text-lg" data-translate="main-subtitle">
+            <p class="text-gray-400 text-sm sm:text-base md:text-lg" data-translate="main-subtitle" data-theme-element="main-subtitle">
                 Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.
             </p>
         </div>
 
         <!-- Nueva sección del Manifiesto -->
         <section id="manifiesto" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-left">
-            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-intro">
+            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-intro" data-theme-element="manifesto-text">
                 Somos una red multicultural de profesionales, estudiantes, artistas y activistas unidos para investigar, diseñar y exigir futuros plurales y justos.
             </p>
             <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="manifesto-verb-intro"><em>TOMORROWING</em> es nuestro verbo:</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-verb-desc">
+            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-verb-desc" data-theme-element="manifesto-text">
                 construir el mañana desde hoy.
             </p>
             <h4 class="text-xl md:text-2xl font-bold mb-4" data-translate="manifesto-call">Súmate a la alianza:</h4>
             <ul class="text-gray-300 text-base md:text-lg list-disc list-inside space-y-2">
-                <li data-translate="manifesto-li-1">Co-lidera proyectos como investigador/a colaborador/a</li>
-                <li data-translate="manifesto-li-2">Visualiza futuros como artista o creador/a</li>
-                <li data-translate="manifesto-li-3">Expande territorios como traductor/a o embajador/a</li>
-                <li data-translate="manifesto-li-4">Propón tu proyecto y encuentra aliados</li>
+                <li data-translate="manifesto-li-1" data-theme-element="manifesto-text">Co-lidera proyectos como investigador/a colaborador/a</li>
+                <li data-translate="manifesto-li-2" data-theme-element="manifesto-text">Visualiza futuros como artista o creador/a</li>
+                <li data-translate="manifesto-li-3" data-theme-element="manifesto-text">Expande territorios como traductor/a o embajador/a</li>
+                <li data-translate="manifesto-li-4" data-theme-element="manifesto-text">Propón tu proyecto y encuentra aliados</li>
             </ul>
-            <p class="text-gray-300 text-base md:text-lg mt-4" data-translate="manifesto-outro">
+            <p class="text-gray-300 text-base md:text-lg mt-4" data-translate="manifesto-outro" data-theme-element="manifesto-text">
                 Queremos tus manos, tu voz y tu energía. El futuro será nuestro.
             </p>
         </section>
@@ -81,24 +99,24 @@
         <!-- Nueva sección para "El Futuro" (Blog de Proyectos) -->
         <section id="el-futuro" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
             <h3 class="text-2xl md:text-4xl font-bold mb-8" data-translate="future-title">El Futuro</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="future-subtitle">
+            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="future-subtitle" data-theme-element="manifesto-text">
                 Un vistazo a los proyectos y colaboraciones que están en marcha.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Tarjeta de Proyecto 1 -->
-                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                <a href="#" class="block bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition-colors duration-300" data-theme-element="card">
                     <h4 class="text-xl font-bold mb-2" data-translate="card1-title">Proyecto Alfa</h4>
-                    <p class="text-gray-400 text-sm" data-translate="card1-desc">Investigación sobre futuros urbanos en América Latina.</p>
+                    <p class="text-gray-400 text-sm" data-translate="card1-desc" data-theme-element="card-text">Investigación sobre futuros urbanos en América Latina.</p>
                 </a>
                 <!-- Tarjeta de Proyecto 2 -->
-                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                <a href="#" class="block bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition-colors duration-300" data-theme-element="card">
                     <h4 class="text-xl font-bold mb-2" data-translate="card2-title">Manifiesto 2040</h4>
-                    <p class="text-gray-400 text-sm" data-translate="card2-desc">Visualización de un futuro distópico a través del arte digital.</p>
+                    <p class="text-gray-400 text-sm" data-translate="card2-desc" data-theme-element="card-text">Visualización de un futuro distópico a través del arte digital.</p>
                 </a>
                 <!-- Tarjeta de Proyecto 3 -->
-                <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
+                <a href="#" class="block bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition-colors duration-300" data-theme-element="card">
                     <h4 class="text-xl font-bold mb-2" data-translate="card3-title">Voces del Mañana</h4>
-                    <p class="text-gray-400 text-sm" data-translate="card3-desc">Un podcast que explora la relación entre tecnología y sociedad.</p>
+                    <p class="text-gray-400 text-sm" data-translate="card3-desc" data-theme-element="card-text">Un podcast que explora la relación entre tecnología y sociedad.</p>
                 </a>
             </div>
         </section>
@@ -106,24 +124,29 @@
         <!-- Nueva sección para "El Mañana" (Formulario de Contacto) -->
         <section id="el-manana" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
             <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="join-title">Únete</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="join-subtitle">
+            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="join-subtitle" data-theme-element="manifesto-text">
                 El futuro se construye con colaboración. Deja tu correo para mantenernos conectados.
             </p>
             <form id="contact-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4">
-                <input type="text" name="name" placeholder="Tu nombre" data-translate-placeholder="input-name-placeholder" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
-                <input type="email" name="email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
-                <button type="submit" class="p-3 md:w-auto w-full bg-pink-600 text-white font-bold rounded-md hover:bg-pink-700 transition-colors duration-300" data-translate="join-button">
+                <input type="text" name="name" placeholder="Tu nombre" data-translate-placeholder="input-name-placeholder" class="flex-grow p-3 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 text-white" data-theme-element="input" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 bg-gray-900 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 text-white" data-theme-element="input" required>
+                <button type="submit" class="p-3 md:w-auto w-full bg-white text-black font-bold rounded-md hover:bg-gray-200 transition-colors duration-300" data-translate="join-button" data-theme-element="button">
                     Únete Ahora
                 </button>
             </form>
-            <p id="form-message" class="mt-4 text-green-500 hidden" data-translate="join-success">¡Gracias por unirte!</p>
+            <p id="form-message" class="mt-4 text-white hidden" data-translate="join-success" data-theme-element="form-message">¡Gracias por unirte!</p>
         </section>
     </main>
 
     <!-- Pie de página (Footer) -->
-    <footer class="text-center p-6 md:p-10 text-gray-400 text-sm">
-        <p>Copyright © 2024 Futur Punks Collaborative.</p>
+    <footer class="text-center p-6 md:p-10 text-gray-400 text-sm" data-theme-element="footer-text">
+        <p>Copyright © 2024 Futurpunks Collaborative.</p>
     </footer>
+
+    <!-- Botón de cambio de tema -->
+    <button id="theme-toggle" class="p-3 rounded-full shadow-lg transition-colors duration-300">
+        <span id="theme-icon" role="img" aria-label="Cambiar tema" class="text-2xl">🌙</span>
+    </button>
 
     <script>
         // Objeto de traducción
@@ -161,7 +184,7 @@
             'en': {
                 'nav-manifesto': 'Manifesto',
                 'nav-future': 'The Future',
-                'nav-tomorrow': 'The Tomorrow',
+                'nav-tomorrow': 'El Mañana',
                 'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
                 'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
                 'manifesto-intro': 'We are a multicultural network of professionals, students, artists, and activists united to research, design, and demand plural and just futures.',
@@ -177,9 +200,9 @@
                 'future-subtitle': 'A glimpse into the projects and collaborations that are underway.',
                 'card1-title': 'Project Alpha',
                 'card1-desc': 'Research on urban futures in Latin America.',
-                'card2-title': 'Manifesto 2040',
+                'card2-title': 'Manifiesto 2040',
                 'card2-desc': 'Visualization of a dystopian future through digital art.',
-                'card3-title': 'Voices of Tomorrow',
+                'card3-title': 'Voces del Mañana',
                 'card3-desc': 'A podcast that explores the relationship between technology and society.',
                 'join-title': 'Join Us',
                 'join-subtitle': 'The future is built with collaboration. Leave your email to stay connected.',
@@ -191,28 +214,28 @@
             'fr': {
                 'nav-manifesto': 'Manifeste',
                 'nav-future': 'Le Futur',
-                'nav-tomorrow': 'Le Demain',
+                'nav-tomorrow': 'El Mañana',
                 'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
                 'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
-                'manifesto-intro': 'Nous sommes un réseau multiculturel de professionnels, étudiants, artistes et activistes unis pour rechercher, concevoir et exiger des futurs pluriels et justes.',
-                'manifesto-verb-intro': '<em>TOMORROWING</em> est notre verbe:',
-                'manifesto-verb-desc': 'construire demain à partir d\'aujourd\'hui.',
+                'manifesto-intro': 'Nous sommes un réseau multiculturel de professionnels, étudiants, artistes et activistes unis pour rechercher, concevoir et exiger des futurs pluriels et justos.',
+                'manifesto-verb-intro': '<em>TOMORROWING</em> es nuestro verbo:',
+                'manifesto-verb-desc': 'construir el mañana desde hoy.',
                 'manifesto-call': 'Rejoignez l\'alliance :',
                 'manifesto-li-1': 'Co-dirigez des projets comme chercheur/chercheuse collaborateur/trice',
                 'manifesto-li-2': 'Visualisez les futurs comme artiste ou créateur/trice',
                 'manifesto-li-3': 'Étendez les territoires comme traducteur/trice ou ambassadeur/ambassadrice',
                 'manifesto-li-4': 'Proposez votre projet et trouvez des alliés',
-                'manifesto-outro': 'Nous voulons vos mains, votre voix et votre énergie. Le futur sera nôtre.',
+                'manifesto-outro': 'Nous voulons vos mains, votre voix et votre énergie. El futuro será nuestro.',
                 'future-title': 'Le Futur',
                 'future-subtitle': 'Un aperçu des projets et des collaborations en cours.',
-                'card1-title': 'Projet Alpha',
+                'card1-title': 'Projet Alfa',
                 'card1-desc': 'Recherche sur les futurs urbains en Amérique Latine.',
-                'card2-title': 'Manifeste 2040',
-                'card2-desc': 'Visualisation d\'un futur dystopique à travers l\'art numérique.',
-                'card3-title': 'Voix du Demain',
-                'card3-desc': 'Un podcast qui explore la relation entre la technologie et la société.',
+                'card2-title': 'Manifieste 2040',
+                'card2-desc': 'Visualización d\'un futur dystopique à travers l\'art numérique.',
+                'card3-title': 'Voces del Mañana',
+                'card3-desc': 'Un podcast que explore la relación entre tecnología y sociedad.',
                 'join-title': 'Rejoindre',
-                'join-subtitle': 'L\'avenir se construit avec la collaboration. Laissez votre e-mail pour rester en contact.',
+                'join-subtitle': 'L\'avenir se construit con la collaboration. Laissez votre e-mail pour rester en contact.',
                 'input-name-placeholder': 'Votre nom',
                 'input-email-placeholder': 'Votre e-mail',
                 'join-button': 'Rejoindre Maintenant',
@@ -222,18 +245,13 @@
 
         const elements = document.querySelectorAll('[data-translate]');
         const inputPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+        const languageMenuButton = document.getElementById('language-menu-button');
+        const languageMenuItems = document.getElementById('language-menu-items');
+        const selectedLangText = document.getElementById('selected-lang-text');
 
         function setLanguage(lang) {
-            // Actualizar la clase en los enlaces de idioma
-            document.querySelectorAll('.language-link').forEach(link => {
-                if (link.getAttribute('data-lang') === lang) {
-                    link.classList.add('font-bold', 'text-white');
-                    link.classList.remove('text-gray-400');
-                } else {
-                    link.classList.remove('font-bold', 'text-white');
-                    link.classList.add('text-gray-400');
-                }
-            });
+            // Actualiza el texto del botón del menú desplegable
+            selectedLangText.textContent = lang.toUpperCase();
 
             // Actualizar el texto del body
             elements.forEach(element => {
@@ -252,24 +270,169 @@
                 }
             });
 
+            // Oculta el menú desplegable después de seleccionar un idioma
+            languageMenuItems.classList.add('hidden');
+
             // Guardar la preferencia en localStorage
             localStorage.setItem('lang', lang);
         }
 
-        // Cargar el idioma guardado, o español por defecto
-        document.addEventListener('DOMContentLoaded', () => {
-            const storedLang = localStorage.getItem('lang') || 'es';
-            setLanguage(storedLang);
+        // Lógica de cambio de tema
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const logoImg = document.getElementById('logo-img');
+
+        const themes = {
+            dark: {
+                body: ['bg-black', 'text-white'],
+                header: ['bg-black'],
+                navLink: ['hover:text-gray-400'],
+                dropdownButton: ['bg-gray-900', 'text-white', 'hover:bg-gray-800'],
+                dropdownMenu: ['bg-gray-900', 'ring-black'],
+                dropdownLink: ['text-gray-300', 'hover:bg-gray-800', 'hover:text-white'],
+                mainSubtitle: ['text-gray-400'],
+                manifestoText: ['text-gray-300'],
+                card: ['bg-gray-900', 'hover:bg-gray-800'],
+                cardText: ['text-gray-400'],
+                input: ['bg-gray-900', 'border-gray-600', 'focus:ring-gray-300', 'text-white'],
+                button: ['bg-white', 'text-black', 'hover:bg-gray-200'],
+                formMessage: ['text-white'],
+                footerText: ['text-gray-400'],
+                buttonIcon: '🌙',
+                buttonColors: ['bg-gray-800', 'text-white', 'hover:bg-gray-700'],
+                logoSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png'
+            },
+            light: {
+                body: ['bg-white', 'text-black'],
+                header: ['bg-white'],
+                navLink: ['hover:text-pink-500'],
+                dropdownButton: ['bg-gray-100', 'text-black', 'hover:bg-gray-200'],
+                dropdownMenu: ['bg-white', 'ring-gray-300'],
+                dropdownLink: ['text-gray-600', 'hover:bg-gray-200', 'hover:text-black'],
+                mainSubtitle: ['text-gray-600'],
+                manifestoText: ['text-gray-700'],
+                card: ['bg-gray-100', 'hover:bg-gray-200'],
+                cardText: ['text-gray-500'],
+                input: ['bg-gray-100', 'border-gray-300', 'focus:ring-pink-500', 'text-black'],
+                button: ['bg-pink-600', 'text-white', 'hover:bg-pink-700'],
+                formMessage: ['text-green-600'],
+                footerText: ['text-gray-600'],
+                buttonIcon: '☀️',
+                buttonColors: ['bg-pink-100', 'text-pink-600', 'hover:bg-pink-200'],
+                logoSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FWhite%20Blue%20Quotes%20Instagram%20Post.png'
+            }
+        };
+
+        function applyTheme(themeName) {
+            const currentTheme = themes[themeName];
+            const body = document.body;
+
+            // Limpiar clases de tema anterior
+            Object.values(themes).forEach(theme => {
+                body.classList.remove(...theme.body);
+                document.querySelectorAll('[data-theme-element="header"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.header)));
+                document.querySelectorAll('[data-theme-element="nav-link"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.navLink)));
+                document.querySelectorAll('[data-theme-element="dropdown-button"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.dropdownButton)));
+                document.querySelectorAll('[data-theme-element="dropdown-menu"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.dropdownMenu)));
+                document.querySelectorAll('[data-theme-element="dropdown-link"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.dropdownLink)));
+                document.querySelectorAll('[data-theme-element="main-subtitle"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.mainSubtitle)));
+                document.querySelectorAll('[data-theme-element="manifesto-text"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.manifestoText)));
+                document.querySelectorAll('[data-theme-element="card"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.card)));
+                document.querySelectorAll('[data-theme-element="card-text"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.cardText)));
+                document.querySelectorAll('[data-theme-element="input"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.input)));
+                document.querySelectorAll('[data-theme-element="button"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.button)));
+                document.querySelectorAll('[data-theme-element="form-message"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.formMessage)));
+                document.querySelectorAll('[data-theme-element="footer-text"]').forEach(el => el.classList.remove(...Object.values(themes).flatMap(t => t.footerText)));
+                themeToggleButton.classList.remove(...Object.values(themes).flatMap(t => t.buttonColors));
+            });
+
+            // Aplicar nuevas clases
+            body.classList.add(...currentTheme.body);
+            document.querySelectorAll('[data-theme-element="header"]').forEach(el => el.classList.add(...currentTheme.header));
+            document.querySelectorAll('[data-theme-element="nav-link"]').forEach(el => el.classList.add(...currentTheme.navLink));
+            document.querySelectorAll('[data-theme-element="dropdown-button"]').forEach(el => el.classList.add(...currentTheme.dropdownButton));
+            document.querySelectorAll('[data-theme-element="dropdown-menu"]').forEach(el => el.classList.add(...currentTheme.dropdownMenu));
+            document.querySelectorAll('[data-theme-element="dropdown-link"]').forEach(el => el.classList.add(...currentTheme.dropdownLink));
+            document.querySelectorAll('[data-theme-element="main-subtitle"]').forEach(el => el.classList.add(...currentTheme.mainSubtitle));
+            document.querySelectorAll('[data-theme-element="manifesto-text"]').forEach(el => el.classList.add(...currentTheme.manifestoText));
+            document.querySelectorAll('[data-theme-element="card"]').forEach(el => el.classList.add(...currentTheme.card));
+            document.querySelectorAll('[data-theme-element="card-text"]').forEach(el => el.classList.add(...currentTheme.cardText));
+            document.querySelectorAll('[data-theme-element="input"]').forEach(el => el.classList.add(...currentTheme.input));
+            document.querySelectorAll('[data-theme-element="button"]').forEach(el => el.classList.add(...currentTheme.button));
+            document.querySelectorAll('[data-theme-element="form-message"]').forEach(el => el.classList.add(...currentTheme.formMessage));
+            document.querySelectorAll('[data-theme-element="footer-text"]').forEach(el => el.classList.add(...currentTheme.footerText));
+            themeToggleButton.classList.add(...currentTheme.buttonColors);
+            themeIcon.textContent = currentTheme.buttonIcon;
+            if (logoImg) {
+                logoImg.src = currentTheme.logoSrc;
+            }
+
+            // Guardar en localStorage
+            localStorage.setItem('theme', themeName);
+        }
+
+        // Manejar el cambio de tema
+        themeToggleButton.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+            // Al hacer clic, sobrescribe la preferencia automática del sistema
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Toggle del menú desplegable de idiomas
+        languageMenuButton.addEventListener('click', () => {
+            languageMenuItems.classList.toggle('hidden');
         });
 
         // Manejar los clics en los enlaces de idioma
-        document.querySelectorAll('.language-link').forEach(link => {
+        languageMenuItems.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
                 setLanguage(link.getAttribute('data-lang'));
             });
         });
 
+        // Ocultar el menú si se hace clic fuera de él
+        window.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('language-dropdown');
+            if (!dropdown.contains(event.target)) {
+                languageMenuItems.classList.add('hidden');
+            }
+        });
+
+        // Lógica para detectar el tema del sistema y aplicarlo inicialmente
+        function getSystemTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark';
+            }
+            return 'light';
+        }
+
+        // Cargar el idioma y el tema guardados, o por defecto
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedLang = localStorage.getItem('lang') || 'es';
+            setLanguage(storedLang);
+
+            const storedTheme = localStorage.getItem('theme');
+            let initialTheme = storedTheme;
+
+            // Si no hay un tema guardado, usar la preferencia del sistema
+            if (!storedTheme) {
+                initialTheme = getSystemTheme();
+            }
+            applyTheme(initialTheme);
+
+            // Escuchar cambios en la preferencia de tema del sistema
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                // Solo cambiar automáticamente si el usuario no ha seleccionado un tema manualmente
+                if (!localStorage.getItem('theme')) {
+                    const newTheme = e.matches ? 'dark' : 'light';
+                    applyTheme(newTheme);
+                }
+            });
+        });
+        
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Previene el envío del formulario
 
