@@ -7,9 +7,10 @@
     <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        /* Se ha cambiado la tipografía a Space Grotesk */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
     </style>
 </head>
@@ -20,90 +21,102 @@
         <!-- Logo en lugar del título de texto -->
         <img src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png" alt="Futur Punks Collaborative Logo" class="h-10 md:h-12">
         
-        <!-- Menú de Navegación -->
-        <nav class="hidden md:flex space-x-6 text-sm md:text-base">
-            <a href="#manifiesto" class="hover:text-pink-500 transition-colors duration-300">Manifiesto</a>
-            <a href="#el-futuro" class="hover:text-pink-500 transition-colors duration-300">El Futuro</a>
-            <a href="#el-manana" class="hover:text-pink-500 transition-colors duration-300">El Mañana</a>
-        </nav>
+        <!-- Contenedor del menú y el selector de idioma -->
+        <div class="flex items-center space-x-6">
+            <!-- Menú de Navegación -->
+            <nav class="hidden md:flex space-x-6 text-sm md:text-base">
+                <a href="#manifiesto" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-manifesto">Manifiesto</a>
+                <a href="#el-futuro" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-future">El Futuro</a>
+                <a href="#el-manana" class="hover:text-pink-500 transition-colors duration-300" data-translate="nav-tomorrow">El Mañana</a>
+            </nav>
+            
+            <!-- Selector de Idioma -->
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="#" class="language-link font-bold text-white hover:text-pink-500 transition-colors duration-300" data-lang="es">SPA</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="language-link text-gray-400 hover:text-pink-500 transition-colors duration-300" data-lang="en">EN</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="language-link text-gray-400 hover:text-pink-500 transition-colors duration-300" data-lang="fr">FRA</a>
+            </div>
 
-        <!-- Botón de menú para dispositivos móviles (oculto en escritorio) -->
-        <button class="md:hidden text-lg focus:outline-none">
-            &#9776; <!-- Icono de hamburguesa -->
-        </button>
+            <!-- Botón de menú para dispositivos móviles (oculto en escritorio) -->
+            <button class="md:hidden text-lg focus:outline-none">
+                &#9776; <!-- Icono de hamburguesa -->
+            </button>
+        </div>
     </header>
 
     <!-- Sección Principal con el Título -->
     <main class="flex-grow flex flex-col items-center justify-center p-6 text-center">
         <div class="max-w-4xl">
-            <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight">
+            <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight" data-translate="main-title">
                 LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
             </h2>
-            <p class="text-gray-400 text-sm sm:text-base md:text-lg">
+            <p class="text-gray-400 text-sm sm:text-base md:text-lg" data-translate="main-subtitle">
                 Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.
             </p>
         </div>
 
         <!-- Nueva sección del Manifiesto -->
         <section id="manifiesto" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-left">
-            <p class="text-gray-300 text-base md:text-lg mb-4">
+            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-intro">
                 Somos una red multicultural de profesionales, estudiantes, artistas y activistas unidos para investigar, diseñar y exigir futuros plurales y justos.
             </p>
-            <h3 class="text-2xl md:text-4xl font-bold mb-4">TOMORROWING es nuestro verbo:</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-4">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="manifesto-verb-intro"><em>TOMORROWING</em> es nuestro verbo:</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-verb-desc">
                 construir el mañana desde hoy.
             </p>
-            <h4 class="text-xl md:text-2xl font-bold mb-4">Súmate a la alianza:</h4>
+            <h4 class="text-xl md:text-2xl font-bold mb-4" data-translate="manifesto-call">Súmate a la alianza:</h4>
             <ul class="text-gray-300 text-base md:text-lg list-disc list-inside space-y-2">
-                <li>Co-lidera proyectos como investigador/a colaborador/a</li>
-                <li>Visualiza futuros como artista o creador/a</li>
-                <li>Expande territorios como traductor/a o embajador/a</li>
-                <li>Propón tu proyecto y encuentra aliados</li>
+                <li data-translate="manifesto-li-1">Co-lidera proyectos como investigador/a colaborador/a</li>
+                <li data-translate="manifesto-li-2">Visualiza futuros como artista o creador/a</li>
+                <li data-translate="manifesto-li-3">Expande territorios como traductor/a o embajador/a</li>
+                <li data-translate="manifesto-li-4">Propón tu proyecto y encuentra aliados</li>
             </ul>
-            <p class="text-gray-300 text-base md:text-lg mt-4">
+            <p class="text-gray-300 text-base md:text-lg mt-4" data-translate="manifesto-outro">
                 Queremos tus manos, tu voz y tu energía. El futuro será nuestro.
             </p>
         </section>
 
         <!-- Nueva sección para "El Futuro" (Blog de Proyectos) -->
         <section id="el-futuro" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
-            <h3 class="text-2xl md:text-4xl font-bold mb-8">El Futuro</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-8">
+            <h3 class="text-2xl md:text-4xl font-bold mb-8" data-translate="future-title">El Futuro</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="future-subtitle">
                 Un vistazo a los proyectos y colaboraciones que están en marcha.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Tarjeta de Proyecto 1 -->
                 <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
-                    <h4 class="text-xl font-bold mb-2">Proyecto Alfa</h4>
-                    <p class="text-gray-400 text-sm">Investigación sobre futuros urbanos en América Latina.</p>
+                    <h4 class="text-xl font-bold mb-2" data-translate="card1-title">Proyecto Alfa</h4>
+                    <p class="text-gray-400 text-sm" data-translate="card1-desc">Investigación sobre futuros urbanos en América Latina.</p>
                 </a>
                 <!-- Tarjeta de Proyecto 2 -->
                 <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
-                    <h4 class="text-xl font-bold mb-2">Manifiesto 2040</h4>
-                    <p class="text-gray-400 text-sm">Visualización de un futuro distópico a través del arte digital.</p>
+                    <h4 class="text-xl font-bold mb-2" data-translate="card2-title">Manifiesto 2040</h4>
+                    <p class="text-gray-400 text-sm" data-translate="card2-desc">Visualización de un futuro distópico a través del arte digital.</p>
                 </a>
                 <!-- Tarjeta de Proyecto 3 -->
                 <a href="#" class="block bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors duration-300">
-                    <h4 class="text-xl font-bold mb-2">Voces del Mañana</h4>
-                    <p class="text-gray-400 text-sm">Un podcast que explora la relación entre tecnología y sociedad.</p>
+                    <h4 class="text-xl font-bold mb-2" data-translate="card3-title">Voces del Mañana</h4>
+                    <p class="text-gray-400 text-sm" data-translate="card3-desc">Un podcast que explora la relación entre tecnología y sociedad.</p>
                 </a>
             </div>
         </section>
 
         <!-- Nueva sección para "El Mañana" (Formulario de Contacto) -->
         <section id="el-manana" class="mt-20 md:mt-40 p-6 max-w-4xl w-full text-center">
-            <h3 class="text-2xl md:text-4xl font-bold mb-4">Únete a la Alianza</h3>
-            <p class="text-gray-300 text-base md:text-lg mb-8">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="join-title">Únete</h3>
+            <p class="text-gray-300 text-base md:text-lg mb-8" data-translate="join-subtitle">
                 El futuro se construye con colaboración. Deja tu correo para mantenernos conectados.
             </p>
             <form id="contact-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4">
-                <input type="text" name="name" placeholder="Tu nombre" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
-                <input type="email" name="email" placeholder="Tu correo electrónico" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
-                <button type="submit" class="p-3 md:w-auto w-full bg-pink-600 text-white font-bold rounded-md hover:bg-pink-700 transition-colors duration-300">
+                <input type="text" name="name" placeholder="Tu nombre" data-translate-placeholder="input-name-placeholder" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-white" required>
+                <button type="submit" class="p-3 md:w-auto w-full bg-pink-600 text-white font-bold rounded-md hover:bg-pink-700 transition-colors duration-300" data-translate="join-button">
                     Únete Ahora
                 </button>
             </form>
-            <p id="form-message" class="mt-4 text-green-500 hidden">¡Gracias por unirte a la Alianza!</p>
+            <p id="form-message" class="mt-4 text-green-500 hidden" data-translate="join-success">¡Gracias por unirte!</p>
         </section>
     </main>
 
@@ -113,19 +126,160 @@
     </footer>
 
     <script>
+        // Objeto de traducción
+        const translations = {
+            'es': {
+                'nav-manifesto': 'Manifiesto',
+                'nav-future': 'El Futuro',
+                'nav-tomorrow': 'El Mañana',
+                'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
+                'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
+                'manifesto-intro': 'Somos una red multicultural de profesionales, estudiantes, artistas y activistas unidos para investigar, diseñar y exigir futuros plurales y justos.',
+                'manifesto-verb-intro': '<em>TOMORROWING</em> es nuestro verbo:',
+                'manifesto-verb-desc': 'construir el mañana desde hoy.',
+                'manifesto-call': 'Súmate a la alianza:',
+                'manifesto-li-1': 'Co-lidera proyectos como investigador/a colaborador/a',
+                'manifesto-li-2': 'Visualiza futuros como artista o creador/a',
+                'manifesto-li-3': 'Expande territorios como traductor/a o embajador/a',
+                'manifesto-li-4': 'Propón tu proyecto y encuentra aliados',
+                'manifesto-outro': 'Queremos tus manos, tu voz y tu energía. El futuro será nuestro.',
+                'future-title': 'El Futuro',
+                'future-subtitle': 'Un vistazo a los proyectos y colaboraciones que están en marcha.',
+                'card1-title': 'Proyecto Alfa',
+                'card1-desc': 'Investigación sobre futuros urbanos en América Latina.',
+                'card2-title': 'Manifiesto 2040',
+                'card2-desc': 'Visualización de un futuro distópico a través del arte digital.',
+                'card3-title': 'Voces del Mañana',
+                'card3-desc': 'Un podcast que explora la relación entre tecnología y sociedad.',
+                'join-title': 'Únete',
+                'join-subtitle': 'El futuro se construye con colaboración. Deja tu correo para mantenernos conectados.',
+                'input-name-placeholder': 'Tu nombre',
+                'input-email-placeholder': 'Tu correo electrónico',
+                'join-button': 'Únete Ahora',
+                'join-success': '¡Gracias por unirte!',
+            },
+            'en': {
+                'nav-manifesto': 'Manifesto',
+                'nav-future': 'The Future',
+                'nav-tomorrow': 'The Tomorrow',
+                'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
+                'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
+                'manifesto-intro': 'We are a multicultural network of professionals, students, artists, and activists united to research, design, and demand plural and just futures.',
+                'manifesto-verb-intro': '<em>TOMORROWING</em> is our verb:',
+                'manifesto-verb-desc': 'building tomorrow from today.',
+                'manifesto-call': 'Join the alliance:',
+                'manifesto-li-1': 'Co-lead projects as a collaborating researcher',
+                'manifesto-li-2': 'Visualize futures as an artist or creator',
+                'manifesto-li-3': 'Expand territories as a translator or ambassador',
+                'manifesto-li-4': 'Propose your project and find allies',
+                'manifesto-outro': 'We want your hands, your voice, and your energy. The future will be ours.',
+                'future-title': 'The Future',
+                'future-subtitle': 'A glimpse into the projects and collaborations that are underway.',
+                'card1-title': 'Project Alpha',
+                'card1-desc': 'Research on urban futures in Latin America.',
+                'card2-title': 'Manifesto 2040',
+                'card2-desc': 'Visualization of a dystopian future through digital art.',
+                'card3-title': 'Voices of Tomorrow',
+                'card3-desc': 'A podcast that explores the relationship between technology and society.',
+                'join-title': 'Join Us',
+                'join-subtitle': 'The future is built with collaboration. Leave your email to stay connected.',
+                'input-name-placeholder': 'Your name',
+                'input-email-placeholder': 'Your email',
+                'join-button': 'Join Now',
+                'join-success': 'Thank you for joining!',
+            },
+            'fr': {
+                'nav-manifesto': 'Manifeste',
+                'nav-future': 'Le Futur',
+                'nav-tomorrow': 'Le Demain',
+                'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
+                'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
+                'manifesto-intro': 'Nous sommes un réseau multiculturel de professionnels, étudiants, artistes et activistes unis pour rechercher, concevoir et exiger des futurs pluriels et justes.',
+                'manifesto-verb-intro': '<em>TOMORROWING</em> est notre verbe:',
+                'manifesto-verb-desc': 'construire demain à partir d\'aujourd\'hui.',
+                'manifesto-call': 'Rejoignez l\'alliance :',
+                'manifesto-li-1': 'Co-dirigez des projets comme chercheur/chercheuse collaborateur/trice',
+                'manifesto-li-2': 'Visualisez les futurs comme artiste ou créateur/trice',
+                'manifesto-li-3': 'Étendez les territoires comme traducteur/trice ou ambassadeur/ambassadrice',
+                'manifesto-li-4': 'Proposez votre projet et trouvez des alliés',
+                'manifesto-outro': 'Nous voulons vos mains, votre voix et votre énergie. Le futur sera nôtre.',
+                'future-title': 'Le Futur',
+                'future-subtitle': 'Un aperçu des projets et des collaborations en cours.',
+                'card1-title': 'Projet Alpha',
+                'card1-desc': 'Recherche sur les futurs urbains en Amérique Latine.',
+                'card2-title': 'Manifeste 2040',
+                'card2-desc': 'Visualisation d\'un futur dystopique à travers l\'art numérique.',
+                'card3-title': 'Voix du Demain',
+                'card3-desc': 'Un podcast qui explore la relation entre la technologie et la société.',
+                'join-title': 'Rejoindre',
+                'join-subtitle': 'L\'avenir se construit avec la collaboration. Laissez votre e-mail pour rester en contact.',
+                'input-name-placeholder': 'Votre nom',
+                'input-email-placeholder': 'Votre e-mail',
+                'join-button': 'Rejoindre Maintenant',
+                'join-success': 'Merci de vous être joint!',
+            }
+        };
+
+        const elements = document.querySelectorAll('[data-translate]');
+        const inputPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+
+        function setLanguage(lang) {
+            // Actualizar la clase en los enlaces de idioma
+            document.querySelectorAll('.language-link').forEach(link => {
+                if (link.getAttribute('data-lang') === lang) {
+                    link.classList.add('font-bold', 'text-white');
+                    link.classList.remove('text-gray-400');
+                } else {
+                    link.classList.remove('font-bold', 'text-white');
+                    link.classList.add('text-gray-400');
+                }
+            });
+
+            // Actualizar el texto del body
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    // Usar innerHTML para mantener el tag <em> y <br>
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Actualizar los placeholders de los inputs
+            inputPlaceholders.forEach(input => {
+                const key = input.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    input.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+
+            // Guardar la preferencia en localStorage
+            localStorage.setItem('lang', lang);
+        }
+
+        // Cargar el idioma guardado, o español por defecto
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedLang = localStorage.getItem('lang') || 'es';
+            setLanguage(storedLang);
+        });
+
+        // Manejar los clics en los enlaces de idioma
+        document.querySelectorAll('.language-link').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                setLanguage(link.getAttribute('data-lang'));
+            });
+        });
+
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Previene el envío del formulario
 
             const name = this.querySelector('input[name="name"]').value;
             const email = this.querySelector('input[name="email"]').value;
             const messageEl = document.getElementById('form-message');
-
-            // En un entorno real, aquí enviarías los datos a un servidor.
-            // Por ahora, solo los mostramos en la consola.
-            console.log('Formulario enviado:', { name, email });
+            const currentLang = localStorage.getItem('lang') || 'es';
 
             // Muestra un mensaje de éxito al usuario
-            messageEl.textContent = '¡Gracias por unirte a la Alianza!';
+            messageEl.textContent = translations[currentLang]['join-success'];
             messageEl.classList.remove('hidden');
 
             // Limpia los campos del formulario
