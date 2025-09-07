@@ -103,7 +103,7 @@
     <header class="w-full p-6 md:p-10 flex justify-between items-center z-20 sticky top-0 backdrop-blur-sm header-dark-theme" data-theme-element="header">
         <!-- Logo en lugar del título de texto -->
         <a href="#main-section">
-            <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer">
+            <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer">
         </a>
         
         <!-- Contenedor del menú y el selector de idioma -->
@@ -247,8 +247,8 @@
     </footer>
 
     <!-- Botón de cambio de tema -->
-    <button id="theme-toggle" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-colors duration-300">
-        <img id="theme-icon" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png" alt="Cambiar tema" class="w-6 h-6">
+    <button id="theme-toggle" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-800 text-white hover:bg-gray-700">
+        <div id="theme-icon-container" class="w-6 h-6"></div>
     </button>
 
     <script>
@@ -345,7 +345,17 @@
                 'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
             }
         };
-        
+
+        const darkLogoUrl = 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png';
+        const lightLogoUrl = 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/1.png';
+
+        const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
+                            <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
+                         </svg>`;
+        const sunSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.364l-1.591 1.591M21 12h-2.25m-.364 6.364l-1.591-1.591M12 21v-2.25m-6.364-.364l1.591-1.591M3 12h2.25m.364-6.364l1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                         </svg>`;
+
         // Función para aplicar las traducciones
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
@@ -373,7 +383,7 @@
 
         // Lógica de cambio de tema
         const themeToggleButton = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
+        const themeIconContainer = document.getElementById('theme-icon-container');
         const logoImg = document.getElementById('logo-img');
         const headerEl = document.querySelector('header');
         const sections = document.querySelectorAll('main section');
@@ -394,9 +404,7 @@
                 button: ['bg-white', 'text-black', 'hover:bg-gray-200'],
                 formMessage: ['text-white'],
                 footerText: ['text-gray-400'],
-                buttonSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png',
                 buttonColors: ['bg-gray-800', 'text-white', 'hover:bg-gray-700'],
-                logoSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FDark%20Blue%20Quotes%20Instagram%20Post.png',
                 sectionBg: ['content-section-dark-theme'],
                 sectionText: ['text-white']
             },
@@ -415,9 +423,7 @@
                 button: ['bg-pink-600', 'text-white', 'hover:bg-pink-700'],
                 formMessage: ['text-green-600'],
                 footerText: ['text-gray-600'],
-                buttonSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/1.png',
                 buttonColors: ['bg-pink-100', 'text-pink-600', 'hover:bg-pink-200'],
-                logoSrc: 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/FWhite%20Blue%20Quotes%20Instagram%20Post.png',
                 sectionBg: ['content-section-light-theme'],
                 sectionText: ['text-black']
             }
@@ -461,12 +467,15 @@
             document.querySelectorAll('[data-theme-element="form-message"]').forEach(el => el.classList.add(...currentTheme.formMessage));
             document.querySelectorAll('[data-theme-element="footer-text"]').forEach(el => el.classList.add(...currentTheme.footerText));
             themeToggleButton.classList.add(...currentTheme.buttonColors);
-            themeIcon.src = currentTheme.buttonSrc;
-            if (logoImg) {
-                logoImg.src = currentTheme.logoSrc;
-            }
             sections.forEach(section => section.classList.add(...currentTheme.sectionBg));
             localStorage.setItem('theme', themeName);
+
+            if (logoImg) {
+                logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
+            }
+            if (themeIconContainer) {
+                themeIconContainer.innerHTML = themeName === 'dark' ? moonSvg : sunSvg;
+            }
         }
 
         // Lógica de Preloader
@@ -524,6 +533,7 @@
 
         closeMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
+            
         });
 
         document.querySelectorAll('#mobile-menu a').forEach(link => {
