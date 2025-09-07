@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurpunks Collaborative</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/faviconCopy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png">
+    <!-- Se ha actualizado el enlace del favicon para que apunte a la versión raw en GitHub,
+         asegurando que se cargue correctamente. -->
+    <link rel="icon" href="https://raw.githubusercontent.com/jviglab/futurpunks-website/refs/heads/main/faviconCopy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -176,8 +177,18 @@
                     Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.
                 </p>
             </div>
+            
+            <!-- New side menu on the right, inspired by Einride's website. -->
+            <div class="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 hidden md:block">
+                <nav class="flex flex-col space-y-4 text-left">
+                    <a href="#proyectos-update" class="text-sm font-medium hover:text-gray-400 transition-colors duration-300" data-translate="update-link" data-theme-element="right-nav-link">Spring Update</a>
+                    <a href="#proyectos-software" class="text-sm font-medium hover:text-gray-400 transition-colors duration-300" data-translate="software-link" data-theme-element="right-nav-link">Autonomous<br>Software & AI</a>
+                    <a href="#proyectos-charging" class="text-sm font-medium hover:text-gray-400 transition-colors duration-300" data-translate="charging-link" data-theme-element="right-nav-link">Charging</a>
+                    <a href="#proyectos-mobility" class="text-sm font-medium hover:text-gray-400 transition-colors duration-300" data-translate="mobility-link" data-theme-element="right-nav-link">Electric Mobility</a>
+                </nav>
+            </div>
         </div>
-        
+
         <!-- Nueva sección del Manifiesto -->
         <section id="manifiesto" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-left rounded-lg transition-colors duration-300 content-section-dark-theme">
             <p class="text-gray-300 text-base md:text-lg mb-4" data-translate="manifesto-intro" data-theme-element="manifesto-text">
@@ -223,6 +234,25 @@
                 </a>
             </div>
         </section>
+
+        <!-- New sections for the side menu links -->
+        <section id="proyectos-update" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-left rounded-lg transition-colors duration-300 content-section-dark-theme">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="proyectos-update-title">Spring Update</h3>
+            <p class="text-gray-300" data-translate="proyectos-update-desc">Detalles sobre las últimas actualizaciones de la red Futurpunks.</p>
+        </section>
+        <section id="proyectos-software" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-left rounded-lg transition-colors duration-300 content-section-dark-theme">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="proyectos-software-title">Autonomous Software & AI</h3>
+            <p class="text-gray-300" data-translate="proyectos-software-desc">Exploración de la IA y el software autónomo en nuestros proyectos futuros.</p>
+        </section>
+        <section id="proyectos-charging" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-left rounded-lg transition-colors duration-300 content-section-dark-theme">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="proyectos-charging-title">Charging</h3>
+            <p class="text-gray-300" data-translate="proyectos-charging-desc">Información sobre la eficiencia energética y la carga en un futuro sostenible.</p>
+        </section>
+        <section id="proyectos-mobility" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-left rounded-lg transition-colors duration-300 content-section-dark-theme">
+            <h3 class="text-2xl md:text-4xl font-bold mb-4" data-translate="proyectos-mobility-title">Electric Mobility</h3>
+            <p class="text-gray-300" data-translate="proyectos-mobility-desc">Discusión sobre el futuro de la movilidad eléctrica y su impacto en las ciudades.</p>
+        </section>
+
 
         <!-- Nueva sección para "El Mañana" (Formulario de Contacto) -->
         <section id="el-manana" class="mt-20 md:mt-40 p-6 max-w-4xl mx-auto w-full text-center rounded-lg transition-colors duration-300 content-section-dark-theme">
@@ -283,6 +313,18 @@
                 'input-email-placeholder': 'Tu correo electrónico',
                 'join-button': 'Únete Ahora',
                 'join-success': '¡Gracias por unirte! Nos pondremos en contacto contigo pronto.',
+                'update-link': 'Spring Update',
+                'software-link': 'Autonomous<br>Software & AI',
+                'charging-link': 'Charging',
+                'mobility-link': 'Electric Mobility',
+                'proyectos-update-title': 'Spring Update',
+                'proyectos-update-desc': 'Detalles sobre las últimas actualizaciones de la red Futurpunks.',
+                'proyectos-software-title': 'Autonomous Software & AI',
+                'proyectos-software-desc': 'Exploración de la IA y el software autónomo en nuestros proyectos futuros.',
+                'proyectos-charging-title': 'Charging',
+                'proyectos-charging-desc': 'Información sobre la eficiencia energética y la carga en un futuro sostenible.',
+                'proyectos-mobility-title': 'Electric Mobility',
+                'proyectos-mobility-desc': 'Discusión sobre el futuro de la movilidad eléctrica y su impacto en las ciudades.'
             },
             'en': {
                 'nav-manifesto': 'Manifesto',
@@ -313,6 +355,18 @@
                 'input-email-placeholder': 'Your email',
                 'join-button': 'Join Now',
                 'join-success': 'Thank you for joining! We will get in touch with you shortly.',
+                'update-link': 'Spring Update',
+                'software-link': 'Autonomous<br>Software & AI',
+                'charging-link': 'Charging',
+                'mobility-link': 'Electric Mobility',
+                'proyectos-update-title': 'Spring Update',
+                'proyectos-update-desc': 'Details on the latest updates from the Futurpunks network.',
+                'proyectos-software-title': 'Autonomous Software & AI',
+                'proyectos-software-desc': 'Exploration of AI and autonomous software in our future projects.',
+                'proyectos-charging-title': 'Charging',
+                'proyectos-charging-desc': 'Information about energy efficiency and charging in a sustainable future.',
+                'proyectos-mobility-title': 'Electric Mobility',
+                'proyectos-mobility-desc': 'Discussion about the future of electric mobility and its impact on cities.'
             },
             'fr': {
                 'nav-manifesto': 'Manifeste',
@@ -343,6 +397,18 @@
                 'input-email-placeholder': 'Votre e-mail',
                 'join-button': 'Rejoindre Maintenant',
                 'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
+                'update-link': 'Mise à jour de printemps',
+                'software-link': 'Logiciel autonome<br> & IA',
+                'charging-link': 'Charge',
+                'mobility-link': 'Mobilité électrique',
+                'proyectos-update-title': 'Mise à jour de printemps',
+                'proyectos-update-desc': 'Détails sur les dernières mises à jour du réseau Futurpunks.',
+                'proyectos-software-title': 'Logiciel autonome & IA',
+                'proyectos-software-desc': 'Exploration de l\'IA et du logiciel autonome dans nos futurs projets.',
+                'proyectos-charging-title': 'Charge',
+                'proyectos-charging-desc': 'Informations sur l\'efficacité énergétique et la charge dans un avenir durable.',
+                'proyectos-mobility-title': 'Mobilité électrique',
+                'proyectos-mobility-desc': 'Discussion sur l\'avenir de la mobilité électrique et son impact sur les villes.'
             }
         };
 
@@ -406,7 +472,8 @@
                 footerText: ['text-gray-400'],
                 buttonColors: ['bg-gray-800', 'text-white', 'hover:bg-gray-700'],
                 sectionBg: ['content-section-dark-theme'],
-                sectionText: ['text-white']
+                sectionText: ['text-white'],
+                rightNavLink: ['hover:text-gray-400']
             },
             light: {
                 body: ['bg-white', 'text-black'],
@@ -425,7 +492,8 @@
                 footerText: ['text-gray-600'],
                 buttonColors: ['bg-pink-100', 'text-pink-600', 'hover:bg-pink-200'],
                 sectionBg: ['content-section-light-theme'],
-                sectionText: ['text-black']
+                sectionText: ['text-black'],
+                rightNavLink: ['hover:text-gray-400']
             }
         };
 
@@ -450,6 +518,7 @@
                 document.querySelectorAll('[data-theme-element="footer-text"]').forEach(el => el.classList.remove(...theme.footerText));
                 themeToggleButton.classList.remove(...theme.buttonColors);
                 sections.forEach(section => section.classList.remove(...theme.sectionBg));
+                document.querySelectorAll('[data-theme-element="right-nav-link"]').forEach(el => el.classList.remove(...theme.rightNavLink));
             });
 
             body.classList.add(...currentTheme.body);
@@ -468,8 +537,9 @@
             document.querySelectorAll('[data-theme-element="footer-text"]').forEach(el => el.classList.add(...currentTheme.footerText));
             themeToggleButton.classList.add(...currentTheme.buttonColors);
             sections.forEach(section => section.classList.add(...currentTheme.sectionBg));
-            localStorage.setItem('theme', themeName);
+            document.querySelectorAll('[data-theme-element="right-nav-link"]').forEach(el => el.classList.add(...currentTheme.rightNavLink));
 
+            localStorage.setItem('theme', themeName);
             if (logoImg) {
                 logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
             }
@@ -477,122 +547,66 @@
                 themeIconContainer.innerHTML = themeName === 'dark' ? moonSvg : sunSvg;
             }
         }
-
-        // Lógica de Preloader
-        function hidePreloader() {
+        
+        // --- Event Listeners and Initialization ---
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        }
+            setTimeout(() => { preloader.style.display = 'none'; }, 500);
 
-        // Event listener para el preloader
-        window.addEventListener('load', hidePreloader);
-        document.getElementById('video-bg').addEventListener('canplaythrough', hidePreloader);
-
-        // Manejar el cambio de tema
-        themeToggleButton.addEventListener('click', () => {
-            const currentTheme = localStorage.getItem('theme') || 'dark';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-
-        // Manejar la visibilidad del menú desplegable de idiomas
-        const languageMenuButton = document.getElementById('language-menu-button');
-        const languageMenuItems = document.getElementById('language-menu-items');
-        languageMenuButton.addEventListener('click', () => {
-            languageMenuItems.classList.toggle('hidden');
-        });
-
-        // Ocultar el menú si se hace clic fuera de él
-        window.addEventListener('click', function(event) {
-            const dropdown = document.getElementById('language-dropdown');
-            if (!dropdown.contains(event.target)) {
-                languageMenuItems.classList.add('hidden');
-            }
-        });
-        
-        // Manejar los clics en los enlaces de idioma
-        languageMenuItems.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                setLanguage(link.getAttribute('data-lang'));
-            });
-        });
-
-        // Lógica de menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-
-        closeMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
+            // Language Dropdown
+            const languageMenuButton = document.getElementById('language-menu-button');
+            const languageMenuItems = document.getElementById('language-menu-items');
             
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
+            languageMenuButton.addEventListener('click', () => {
+                languageMenuItems.classList.toggle('hidden');
             });
-        });
-
-        // Lógica para detectar el tema del sistema y aplicarlo inicialmente
-        function getSystemTheme() {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return 'dark';
-            }
-            return 'light';
-        }
-
-        // Cargar el idioma y el tema guardados, o por defecto
-        document.addEventListener('DOMContentLoaded', () => {
-            const storedLang = localStorage.getItem('lang') || 'es';
-            setLanguage(storedLang);
-
-            const storedTheme = localStorage.getItem('theme');
-            let initialTheme = storedTheme;
-
-            if (!storedTheme) {
-                initialTheme = getSystemTheme();
-            }
-            applyTheme(initialTheme);
-            
-            // Escuchar cambios en la preferencia de tema del sistema
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-                if (!localStorage.getItem('theme')) {
-                    const newTheme = e.matches ? 'dark' : 'light';
-                    applyTheme(newTheme);
+            document.addEventListener('click', (event) => {
+                if (!languageMenuButton.contains(event.target) && !languageMenuItems.contains(event.target)) {
+                    languageMenuItems.classList.add('hidden');
                 }
             });
-        });
-        
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Previene el envío del formulario
-            
-            const messageEl = document.getElementById('form-message');
-            const currentLang = localStorage.getItem('lang') || 'es';
-            
-            // Simulación de envío
-            console.log('Formulario enviado:', {
-                name: this.querySelector('input[name="name"]').value,
-                email: this.querySelector('input[name="email"]').value
+
+            document.querySelectorAll('[data-lang]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(e.target.getAttribute('data-lang'));
+                });
             });
 
-            // Muestra un mensaje de éxito al usuario y lo oculta después de 3 segundos
-            messageEl.textContent = translations[currentLang]['join-success'];
-            messageEl.classList.remove('hidden');
-            setTimeout(() => {
-                messageEl.classList.add('hidden');
-            }, 3000);
+            const savedLang = localStorage.getItem('lang') || 'es';
+            setLanguage(savedLang);
 
-            // Limpia los campos del formulario
-            this.reset();
+            // Theme Toggle
+            themeToggleButton.addEventListener('click', () => {
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            applyTheme(savedTheme);
+
+            // Mobile Menu
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
         });
     </script>
 </body>
