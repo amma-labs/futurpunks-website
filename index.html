@@ -101,20 +101,17 @@
     </div>
 
     <!-- Sección del Encabezado (Header) -->
-    <!-- Se cambia de sticky a absolute para que se superponga al video en la sección principal -->
+    <!-- Se mantiene el layout "justify-between" para separar los elementos -->
     <header class="w-full p-6 md:p-10 flex justify-between items-center z-20 absolute top-0 header-dark-theme" data-theme-element="header">
-        <!-- Logo en lugar del título de texto -->
+        
+        <!-- Logo en la izquierda -->
         <a href="#main-section">
             <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer">
         </a>
         
-        <!-- Contenedor del menú y el selector de idioma -->
+        <!-- Contenedor del menú y el selector de idioma (en la derecha) -->
         <div class="flex items-center space-x-6">
-            <!-- Menú de Navegación -->
-            <!-- Se elimina el menú de navegación, ya que se encuentra en el menú lateral -->
-            
             <!-- Selector de Idioma (Botón que alterna) -->
-            <!-- Se elimina el fondo y el borde para que sea transparente -->
             <button id="language-toggle-button" class="p-2 border-none rounded-md shadow-none px-4 py-2 text-sm font-medium text-white hover:text-gray-400 focus:outline-none focus:ring-none" data-theme-element="dropdown-button">
                 SPA
             </button>
@@ -129,6 +126,7 @@
     </header>
 
     <!-- Menú para dispositivos móviles -->
+    <!-- Se ha cambiado para que el menú se deslice desde la derecha -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 bg-gray-900 z-30 transition-transform duration-300 transform translate-x-full md:hidden">
         <div class="flex justify-end p-6">
             <button id="close-menu-button" class="text-white text-3xl focus:outline-none">
@@ -162,8 +160,8 @@
                 </p>
             </div>
             
-            <!-- New side menu on the right, inspired by Einride's website. -->
-            <div class="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 hidden md:block">
+            <!-- Menú lateral (ahora en la izquierda) -->
+            <div class="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 z-20 hidden md:block">
                 <nav class="flex flex-col space-y-4 text-left">
                     <!-- Se actualizan los enlaces y textos para reflejar los cambios -->
                     <a href="#manifiesto" class="text-sm font-medium hover:text-gray-400 transition-colors duration-300" data-translate="manifesto-link" data-theme-element="right-nav-link">Manifesto</a>
@@ -530,10 +528,12 @@
             const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
 
             mobileMenuButton.addEventListener('click', () => {
+                // El menú móvil se desliza desde la derecha
                 mobileMenu.classList.remove('translate-x-full');
             });
 
             closeMenuButton.addEventListener('click', () => {
+                // El menú móvil se desliza de vuelta a la derecha
                 mobileMenu.classList.add('translate-x-full');
             });
 
