@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurpunks Collaborative</title>
-    <!-- Favicon: Un simple emoji para una carga rápida y segura. -->
+    <!-- Favicon -->
     <link rel="icon" href="https://github.com/jviglab/futurpunks-website/blob/main/favicon.png?raw=true">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -108,18 +108,13 @@
         }
 
         /* Estilos para texto en secciones de contenido */
-        body[data-theme='dark'] .dynamic-text {
+        body[data-theme='dark'] .dynamic-text, body[data-theme='dark'] .dynamic-text-secondary {
             color: var(--color-primary-dark);
         }
-        body[data-theme='light'] .dynamic-text {
+        body[data-theme='light'] .dynamic-text, body[data-theme='light'] .dynamic-text-secondary {
             color: var(--color-primary-light);
         }
-        body[data-theme='dark'] .dynamic-text-secondary {
-            color: var(--color-accent-light);
-        }
-        body[data-theme='light'] .dynamic-text-secondary {
-            color: var(--color-accent-dark);
-        }
+        
         body[data-theme='dark'] .dynamic-input {
             background-color: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
@@ -146,6 +141,22 @@
 
         #mobile-menu a {
             font-family: 'Libre Baskerville', serif;
+        }
+        
+        body[data-theme="dark"] #mobile-menu {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        body[data-theme="light"] #mobile-menu {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        body[data-theme="dark"] #close-menu-button {
+            color: #FFFFFF;
+        }
+        body[data-theme="light"] #close-menu-button {
+            color: #000000;
         }
     </style>
 </head>
@@ -178,21 +189,21 @@
     </header>
 
     <!-- Menú desplegable universal (se despliega desde la derecha) -->
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 bg-white text-black z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col justify-between">
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 text-black z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col justify-between">
         <!-- Contenedor de cierre -->
         <div class="flex justify-end p-6">
-            <button id="close-menu-button" class="text-black text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
+            <button id="close-menu-button" class="text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
                 &times;
             </button>
         </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8">
-            <a href="#reports" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
-            <a href="#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
-            <a href="#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
+            <a href="reports-blog.html#reports" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
+            <a href="reports-blog.html#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
+            <a href="reports-blog.html#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
             <a href="#collab" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-collab">Collab</a>
-            <a href="#workshops" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
-            <a href="cursos.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
+            <a href="workshops-cursos.html#workshops" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
+            <a href="workshops-cursos.html#cursos" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
             <a href="#about" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
         </nav>
         <!-- Contenedor para los botones de idioma y tema al final del menú -->
@@ -209,7 +220,7 @@
     <!-- Sección Principal con el Título -->
     <main id="main-section" class="relative overflow-hidden">
         <!-- Contenedor del video de fondo -->
-        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center text-white z-10">
+        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
             <div id="video-bg-container">
                 <!-- URL del video actualizada -->
                 <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
@@ -217,68 +228,17 @@
                     Tu navegador no soporta el tag de video.
                 </video>
             </div>
-            <div class="max-w-4xl relative z-10 bg-black bg-opacity-50 p-6 rounded-2xl shadow-lg">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight" data-translate="main-title">
+            <div class="max-w-4xl relative z-10">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight text-white" data-translate="main-title">
                     LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
                 </h1>
-                <p class="text-gray-200 text-sm sm:text-base md:text-lg" data-translate="main-subtitle">
+                <p class="text-sm sm:text-base md:text-lg text-gray-200" data-translate="main-subtitle">
                     Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.
                 </p>
             </div>
         </div>
 
         <!-- Secciones de Contenido -->
-        <section id="reports" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="reports-title">Reports</h2>
-            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="reports-status">Estado: En preparación nuevo informe trimestral</p>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="reports-desc">
-                Los informes de Futurpunks ofrecen análisis profundos de tendencias sociales, tecnológicas y culturales que moldearán nuestro mundo en los próximos 3-5 años. Cada reporte se basa en investigación multidisciplinaria y entrevistas con expertos globales. Actualmente estamos preparando el próximo número, que estará disponible a finales de este trimestre.
-            </p>
-            <form id="reports-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4 max-w-xl mx-auto">
-                <p class="text-sm md:text-base dynamic-text-secondary" data-translate="reports-cta">Suscríbete para recibir una notificación cuando los Reports estén activos.</p>
-                <input type="email" name="reports-email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 dynamic-input" required>
-                <button type="submit" class="p-3 md:w-auto w-full font-bold rounded-lg hover:bg-cyan-600 transition-colors duration-300 dynamic-button" data-translate="join-button">
-                    Suscribirse
-                </button>
-            </form>
-            <p id="reports-form-message" class="mt-4 text-sm md:text-base transition-opacity duration-300 hidden dynamic-text"></p>
-        </section>
-
-        <section id="newsletter" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="newsletter-title">Newsletter – El Mañana</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="newsletter-desc">
-                “El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.
-            </p>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-each-title">Cada edición incluye:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="newsletter-li-1">Resumen de noticias globales relevantes para el futuro.</li>
-                <li data-translate="newsletter-li-2">Insights de nuestros colaboradores sobre innovación social y tecnológica.</li>
-                <li data-translate="newsletter-li-3">Curaduría de proyectos experimentales y laboratorios de ideas.</li>
-            </ul>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-last-title">Última edición destacada:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 dynamic-text-secondary">
-                <li data-translate="newsletter-li-4">“Ciudades resilientes y sostenibles: lecciones de Asia y Europa”</li>
-                <li data-translate="newsletter-li-5">“IA y política: gobernanza de algoritmos”</li>
-                <li data-translate="newsletter-li-6">“Economía colaborativa: nuevas narrativas post-capitalistas”</li>
-            </ul>
-        </section>
-
-        <section id="blog" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="blog-title">Blog / Ideas</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="blog-desc">
-                Nuestro blog reúne reflexiones, ensayos y estudios de caso sobre futuros posibles. Se actualiza semanalmente con contenido accesible y estimulante para profesionales, estudiantes y curiosos de la innovación.
-            </p>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="blog-examples-title">Ejemplos recientes:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="blog-li-1">Futuros urbanos: más allá del smart city</li>
-                <li data-translate="blog-li-2">Ética de la inteligencia artificial: quién decide</li>
-                <li data-translate="blog-li-3">Tendencias culturales que transforman el trabajo</li>
-            </ul>
-            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="blog-outro">
-                Cada artículo incluye referencias, gráficos y enlaces a debates abiertos en nuestra comunidad.
-            </p>
-        </section>
-
         <section id="collab" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="collab-title">Collab</h2>
             <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="collab-desc">
@@ -287,7 +247,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Perfil 1 -->
                 <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Sabrina" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
+                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Gemini_Generated_Image_alne80alne80alne.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
                     <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-1">Sabrina Langer</h4>
                     <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-1">Fundadora</p>
                     <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-1">Ubicación: París, Francia</p>
@@ -321,25 +281,6 @@
             <p class="text-base md:text-lg mt-8 dynamic-text-secondary" data-translate="collab-open-space">
                 Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.
             </p>
-        </section>
-
-        <section id="workshops" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="workshops-title">Workshops</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="workshops-desc">
-                Los workshops de Futurpunks son experiencias interactivas donde exploramos escenarios futuros y desarrollamos soluciones innovadoras. Dirigidos a empresas, ONGs y comunidades académicas.
-            </p>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="workshops-upcoming-title">Próximos talleres:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="workshops-li-1">Diseñando ciudades inclusivas – Octubre 2025, online + presencial (Madrid)</li>
-                <li data-translate="workshops-li-2">IA y decisiones éticas – Noviembre 2025, Zoom + taller práctico</li>
-                <li data-translate="workshops-li-3">Cultura y tecnología en el África del futuro – Diciembre 2025, Dakar</li>
-            </ul>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="workshops-format-title">Formato:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 dynamic-text-secondary">
-                <li data-translate="workshops-li-4">Presentaciones teóricas + dinámicas de co-creación</li>
-                <li data-translate="workshops-li-5">Laboratorios de ideas + prototipado rápido</li>
-                <li data-translate="workshops-li-6">Materiales y grabaciones disponibles para participantes</li>
-            </ul>
         </section>
 
         <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
@@ -385,27 +326,6 @@
                 'nav-about': 'About',
                 'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
                 'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
-                'reports-title': 'Reports',
-                'reports-status': 'Estado: En preparación nuevo informe trimestral',
-                'reports-desc': 'Los informes de Futurpunks ofrecen análisis profundos de tendencias sociales, tecnológicas y culturales que moldearán nuestro mundo en los próximos 3-5 años. Cada reporte se basa en investigación multidisciplinaria y entrevistas con expertos globales. Actualmente estamos preparando el próximo número, que estará disponible a finales de este trimestre.',
-                'reports-cta': 'Suscríbete para recibir una notificación cuando los Reports estén activos.',
-                'newsletter-title': 'Newsletter – El Mañana',
-                'newsletter-desc': '“El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.',
-                'newsletter-each-title': 'Cada edición incluye:',
-                'newsletter-li-1': 'Resumen de noticias globales relevantes para el futuro.',
-                'newsletter-li-2': 'Insights de nuestros colaboradores sobre innovación social y tecnológica.',
-                'newsletter-li-3': 'Curaduría de proyectos experimentales y laboratorios de ideas.',
-                'newsletter-last-title': 'Última edición destacada:',
-                'newsletter-li-4': '“Ciudades resilientes y sostenibles: lecciones de Asia y Europa”',
-                'newsletter-li-5': '“IA y política: gobernanza de algoritmos”',
-                'newsletter-li-6': '“Economía colaborativa: nuevas narrativas post-capitalistas”',
-                'blog-title': 'Blog / Ideas',
-                'blog-desc': 'Nuestro blog reúne reflexiones, ensayos y estudios de caso sobre futuros posibles. Se actualiza semanalmente con contenido accesible y estimulante para profesionales, estudiantes y curiosos de la innovación.',
-                'blog-examples-title': 'Ejemplos recientes:',
-                'blog-li-1': 'Futuros urbanos: más allá del smart city',
-                'blog-li-2': 'Ética de la inteligencia artificial: quién decide',
-                'blog-li-3': 'Tendencias culturales que transforman el trabajo',
-                'blog-outro': 'Cada artículo incluye referencias, gráficos y enlaces a debates abiertos en nuestra comunidad.',
                 'collab-title': 'Collab',
                 'collab-desc': 'Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:',
                 'collab-name-1': 'Sabrina Langer',
@@ -425,23 +345,6 @@
                 'collab-location-4': 'Ubicación: Dakar, Senegal',
                 'collab-bio-4': 'Antropólogo y analista de innovación social. Explora cómo la tecnología impacta la identidad cultural y la gobernanza comunitaria en África.',
                 'collab-open-space': 'Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.',
-                'workshops-title': 'Workshops',
-                'workshops-desc': 'Los workshops de Futurpunks son experiencias interactivas donde exploramos escenarios futuros y desarrollamos soluciones innovadoras. Dirigidos a empresas, ONGs y comunidades académicas.',
-                'workshops-upcoming-title': 'Próximos talleres: ',
-                'workshops-li-1': 'Diseñando ciudades inclusivas – Octubre 2025, online + presencial (Madrid)',
-                'workshops-li-2': 'IA y decisiones éticas – Noviembre 2025, Zoom + taller práctico',
-                'workshops-li-3': 'Cultura y tecnología en el África del futuro – Diciembre 2025, Dakar',
-                'workshops-format-title': 'Formato:',
-                'workshops-li-4': 'Presentaciones teóricas + dinámicas de co-creación',
-                'workshops-li-5': 'Laboratorios de ideas + prototipado rápido',
-                'workshops-li-6': 'Materiales y grabaciones disponibles para participantes',
-                'cursos-title': 'Cursos',
-                'cursos-desc': 'Microlearning y formación online sobre tendencias, foresight y cultura digital. Pensado para profesionales y curiosos que quieren anticiparse al cambio.',
-                'cursos-examples-title': 'Ejemplos de cursos:',
-                'cursos-li-1': 'Introducción al Foresight Estratégico – 4 módulos, con certificado digital',
-                'cursos-li-2': 'Diseño de políticas para ciudades resilientes – 6 módulos, casos de Latinoamérica y Europa',
-                'cursos-li-3': 'Visualización de futuros con arte digital – 3 módulos, ejercicios prácticos y colaboración grupal',
-                'cursos-access': 'Acceso: Online, auto-paced, con mentorías en grupo.',
                 'about-title': 'About / Nosotros',
                 'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
                 'about-mission-title': 'Nuestra misión es:',
@@ -469,27 +372,6 @@
                 'nav-about': 'About',
                 'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
                 'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
-                'reports-title': 'Reports',
-                'reports-status': 'Status: Preparing new quarterly report',
-                'reports-desc': 'Futurpunks reports offer deep analysis of social, technological, and cultural trends that will shape our world in the next 3-5 years. Each report is based on multidisciplinary research and interviews with global experts. We are currently preparing the next issue, which will be available at the end of this quarter.',
-                'reports-cta': 'Subscribe to be notified when the Reports are active.',
-                'newsletter-title': 'Newsletter – El Mañana',
-                'newsletter-desc': '“El Mañana” is our bi-weekly newsletter that summarizes emerging trends, disruptive innovations, and cultural debates. In just one week, over 60 futurists joined our subscriber community.',
-                'newsletter-each-title': 'Each edition includes:',
-                'newsletter-li-1': 'Summary of global news relevant to the future.',
-                'newsletter-li-2': 'Insights from our collaborators on social and technological innovation.',
-                'newsletter-li-3': 'Curated experimental projects and idea labs.',
-                'newsletter-last-title': 'Featured latest edition:',
-                'newsletter-li-4': '“Resilient and sustainable cities: lessons from Asia and Europe”',
-                'newsletter-li-5': '“AI and politics: governance of algorithms”',
-                'newsletter-li-6': '“Collaborative economy: new post-capitalist narratives”',
-                'blog-title': 'Blog / Ideas',
-                'blog-desc': 'Our blog gathers reflections, essays, and case studies on possible futures. It is updated weekly with accessible and stimulating content for professionals, students, and innovation enthusiasts.',
-                'blog-examples-title': 'Recent examples:',
-                'blog-li-1': 'Urban futures: beyond the smart city',
-                'blog-li-2': 'Ethics of artificial intelligence: who decides',
-                'blog-li-3': 'Cultural trends that transform work',
-                'blog-outro': 'Each article includes references, charts, and links to open debates in our community.',
                 'collab-title': 'Collab',
                 'collab-desc': 'Futurpunks is built on a network of multidisciplinary collaborators. Here we present featured profiles:',
                 'collab-name-1': 'Sabrina Langer',
@@ -553,27 +435,6 @@
                 'nav-about': 'À propos',
                 'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
                 'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
-                'reports-title': 'Rapports',
-                'reports-status': 'Statut: Préparation d\'un nouveau rapport trimestriel',
-                'reports-desc': 'Les rapports de Futurpunks offrent une analyse approfondie des tendances sociales, technologiques et culturelles qui façonneront notre monde au cours des 3 à 5 prochaines années. Chaque rapport est basé sur une recherche multidisciplinaire et des entretiens avec des experts mondiaux. Nous préparons actuellement le prochain numéro, qui sera disponible à la fin de ce trimestre.',
-                'reports-cta': 'Abonnez-vous pour être averti lorsque les Rapports seront actifs.',
-                'newsletter-title': 'Newsletter – El Mañana',
-                'newsletter-desc': '“El Mañana” est notre newsletter bimensuelle qui résume les tendances émergentes, les innovations de rupture et les débats culturels. En une seule semaine, plus de 60 futuristes ont rejoint notre communauté d\'abonnés.',
-                'newsletter-each-title': 'Chaque édition comprend :',
-                'newsletter-li-1': 'Résumé des nouvelles mondiales pertinentes pour l\'avenir.',
-                'newsletter-li-2': 'Des éclairages de nos collaborateurs sur l\'innovation sociale et technologique.',
-                'newsletter-li-3': 'Des projets expérimentaux et des laboratoires d\'idées sélectionnés.',
-                'newsletter-last-title': 'Dernière édition mise en avant :',
-                'newsletter-li-4': '« Villes résilientes et durables : leçons d\'Asie et d\'Europe »',
-                'newsletter-li-5': '« IA et politique : gouvernance des algorithmes »',
-                'newsletter-li-6': '« Économie collaborative : nouveaux récits post-capitalistes »',
-                'blog-title': 'Blog / Idées',
-                'blog-desc': 'Notre blog rassemble des réflexions, des essais et des études de cas sur les futurs possibles. Il est mis à jour chaque semaine avec un contenu accessible et stimulant pour les professionnels, les étudiants et les curieux de l\'innovation.',
-                'blog-examples-title': 'Exemples récents :',
-                'blog-li-1': 'Futuros urbanos : au-delà de la ville intelligente',
-                'blog-li-2': 'Éthique de l\'intelligence artificielle : qui décide',
-                'blog-li-3': 'Tendances culturelles qui transforment le travail',
-                'blog-outro': 'Chaque article comprend des références, des graphiques et des liens vers des débats ouverts dans notre communauté.',
                 'collab-title': 'Collab',
                 'collab-desc': 'Futurpunks repose sur un réseau de collaborateurs multidisciplinaires. Nous présentons ici des profils mis en avant :',
                 'collab-name-1': 'Sabrina Langer',
@@ -594,7 +455,7 @@
                 'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
                 'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
                 'workshops-title': 'Ateliers',
-                'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactivas où nous exploramos des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
+                'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactivas où nous exploramos des scénarios futurs et developons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
                 'workshops-upcoming-title': 'Prochains ateliers :',
                 'workshops-li-1': 'Concevoir des villes inclusives – Octubre 2025, en ligne + en présentiel (Madrid)',
                 'workshops-li-2': 'IA et décisions éthiques – Novembre 2025, Zoom + atelier pratique',
@@ -617,7 +478,7 @@
                 'about-li-2': 'Favoriser les dialogues entre experts multidisciplinaires.',
                 'about-li-3': 'Créer du contenu pratique pour anticiper les défis et les opportunités futurs.',
                 'about-values-title': 'Valeurs :',
-                'about-li-4': 'Inclusion',
+                'about-li-4': 'Inclusión',
                 'about-li-5': 'Durabilité',
                 'about-li-6': 'Collaboration',
                 'about-li-7': 'Innovation éthique',
@@ -746,29 +607,6 @@
                 const currentTheme = body.dataset.theme;
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 applyTheme(newTheme);
-            });
-
-            // Lógica del formulario de reports (sección 1)
-            const reportsForm = document.getElementById('reports-form');
-            const reportsFormMessage = document.getElementById('reports-form-message');
-
-            reportsForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const formData = new FormData(reportsForm);
-                const email = formData.get('reports-email');
-                
-                // Simulación de envío de datos
-                console.log(`Enviando suscripción para reports: Email: ${email}`);
-
-                reportsFormMessage.textContent = translations[body.dataset.theme]['join-success'];
-                reportsFormMessage.classList.remove('hidden');
-                reportsFormMessage.classList.add('opacity-100');
-                
-                reportsForm.reset();
-                
-                setTimeout(() => {
-                    reportsFormMessage.classList.add('hidden', 'opacity-0');
-                }, 3000);
             });
         });
     </script>
