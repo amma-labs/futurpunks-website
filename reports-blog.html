@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futurpunks Collaborative</title>
+    <title>Futurpunks Collaborative - Reports & Blog</title>
     <!-- Favicon -->
     <link rel="icon" href="https://github.com/jviglab/futurpunks-website/blob/main/favicon.png?raw=true">
     <!-- Tailwind CSS CDN -->
@@ -38,29 +38,6 @@
             font-family: 'Space Grotesk', sans-serif;
             scroll-behavior: smooth;
             transition: background-color 0.5s ease;
-        }
-
-        /* Contenedor del video de fondo */
-        #video-bg-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        #video-bg {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
         }
 
         /* Clases para el preloader */
@@ -198,9 +175,9 @@
         </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8">
-            <a href="reports-blog.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
-            <a href="reports-blog.html#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
-            <a href="reports-blog.html#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
+            <a href="#reports" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
+            <a href="#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
+            <a href="#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
             <a href="index.html#collab" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-collab">Collab</a>
             <a href="workshops-cursos.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
             <a href="workshops-cursos.html#cursos" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
@@ -217,93 +194,58 @@
         </div>
     </div>
 
-    <!-- Sección Principal con el Título -->
-    <main id="main-section" class="relative overflow-hidden">
-        <!-- Contenedor del video de fondo -->
-        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
-            <div id="video-bg-container">
-                <!-- URL del video actualizada -->
-                <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
-                    <source src="https://videos.pexels.com/video-files/33315007/14188166_640_360_30fps.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
-                </video>
-            </div>
-            <div class="max-w-4xl relative z-10">
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight text-white" data-translate="main-title">
-                    LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg text-white" data-translate="main-subtitle">
-                    Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.
-                </p>
-            </div>
-        </div>
+    <!-- Sección de contenido -->
+    <main class="min-h-screen flex flex-col justify-center items-center py-20 px-6">
+        <h1 class="text-4xl md:text-6xl font-black mb-10 dynamic-text">Reports & Newsletter</h1>
 
-        <!-- Secciones de Contenido -->
-        <section id="collab" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="collab-title">Collab</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="collab-desc">
-                Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:
+        <section id="reports" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="reports-title">Reports</h2>
+            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="reports-status">Estado: En preparación nuevo informe trimestral</p>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="reports-desc">
+                Los informes de Futurpunks ofrecen análisis profundos de tendencias sociales, tecnológicas y culturales que moldearán nuestro mundo en los próximos 3-5 años. Cada reporte se basa en investigación multidisciplinaria y entrevistas con expertos globales. Actualmente estamos preparando el próximo número, que estará disponible a finales de este trimestre.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Perfil 1 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Gemini_Generated_Image_alne80alne80alne.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-1">Sabrina Langer</h4>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-1">Fundadora</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-1">Ubicación: París, Francia</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-1">Socióloga, directora de Futurpunks Collab, experta en políticas sociales, IA y sostenibilidad. Lidera proyectos globales sobre futuros inclusivos y equitativos.</p>
-                </div>
-                <!-- Perfil 2 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Alex" alt="Alex Rivera" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-2">Alex Rivera</h4>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-2">Experto en foresight urbano</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-2">Ubicación: Ciudad de México, México</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-2">Arquitecto y urbanista, especializado en planificación de ciudades resilientes y sostenibles. Ha diseñado proyectos urbanos en Latinoamérica y Europa.</p>
-                </div>
-                <!-- Perfil 3 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Lina" alt="Lina Zhou" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-3">Lina Zhou</h4>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-3">Artista digital y futurista visual</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-3">Ubicación: Shanghái, China</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-3">Diseñadora de experiencias inmersivas y visualizaciones de futuros. Combina arte, tecnología y cultura para mapear escenarios posibles.</p>
-                </div>
-                <!-- Perfil 4 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Mamadou" alt="Mamadou Diop" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-4">Mamadou Diop</h4>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-4">Investigador en cultura y tecnología</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-4">Ubicación: Dakar, Senegal</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-4">Antropólogo y analista de innovación social. Explora cómo la tecnología impacta la identidad cultural y la gobernanza comunitaria en África.</p>
-                </div>
-            </div>
-            <p class="text-base md:text-lg mt-8 dynamic-text-secondary" data-translate="collab-open-space">
-                Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.
-            </p>
+            <form id="reports-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4 max-w-xl mx-auto">
+                <p class="text-sm md:text-base dynamic-text-secondary" data-translate="reports-cta">Suscríbete para recibir una notificación cuando los Reports estén activos.</p>
+                <input type="email" name="reports-email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 dynamic-input" required>
+                <button type="submit" class="p-3 md:w-auto w-full font-bold rounded-lg hover:bg-cyan-600 transition-colors duration-300 dynamic-button" data-translate="join-button">
+                    Suscribirse
+                </button>
+            </form>
+            <p id="reports-form-message" class="mt-4 text-sm md:text-base transition-opacity duration-300 hidden dynamic-text"></p>
         </section>
 
-        <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
-            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
-                Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.
+        <section id="newsletter" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="newsletter-title">Newsletter – El Mañana</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="newsletter-desc">
+                “El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.
             </p>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="about-mission-title">Nuestra misión es:</h3>
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-each-title">Cada edición incluye:</h3>
             <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="about-li-1">Mapear tendencias sociales, culturales y tecnológicas.</li>
-                <li data-translate="about-li-2">Fomentar diálogos entre expertos multidisciplinarios.</li>
-                <li data-translate="about-li-3">Crear contenido práctico para anticipar desafíos y oportunidades futuras.</li>
+                <li data-translate="newsletter-li-1">Resumen de noticias globales relevantes para el futuro.</li>
+                <li data-translate="newsletter-li-2">Insights de nuestros colaboradores sobre innovación social y tecnológica.</li>
+                <li data-translate="newsletter-li-3">Curaduría de proyectos experimentales y laboratorios de ideas.</li>
             </ul>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="about-values-title">Valores:</h3>
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-last-title">Última edición destacada:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 dynamic-text-secondary">
+                <li data-translate="newsletter-li-4">“Ciudades resilientes y sostenibles: lecciones de Asia y Europa”</li>
+                <li data-translate="newsletter-li-5">“IA y política: gobernanza de algoritmos”</li>
+                <li data-translate="newsletter-li-6">“Economía colaborativa: nuevas narrativas post-capitalistas”</li>
+            </ul>
+        </section>
+        
+        <section id="blog" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="blog-title">Blog / Ideas</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="blog-desc">
+                Nuestro blog reúne reflexiones, ensayos y estudios de caso sobre futuros posibles. Se actualiza semanalmente con contenido accesible y estimulante para profesionales, estudiantes y curiosos de la innovación.
+            </p>
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="blog-examples-title">Ejemplos recientes:</h3>
             <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="about-li-4">Inclusión</li>
-                <li data-translate="about-li-5">Sostenibilidad</li>
-                <li data-translate="about-li-6">Colaboración</li>
-                <li data-translate="about-li-7">Innovación ética</li>
+                <li data-translate="blog-li-1">Futuros urbanos: más allá del smart city</li>
+                <li data-translate="blog-li-2">Ética de la inteligencia artificial: quién decide</li>
+                <li data-translate="blog-li-3">Tendencias culturales que transforman el trabajo</li>
             </ul>
-            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-contact-title">Contacto:</p>
-            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="about-contact-details">
-                info@futurpunks.org | LinkedIn | Twitter
+            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="blog-outro">
+                Cada artículo incluye referencias, gráficos y enlaces a debates abiertos en nuestra comunidad.
             </p>
         </section>
     </main>
@@ -324,40 +266,27 @@
                 'nav-workshops': 'Workshops',
                 'nav-cursos': 'Cursos',
                 'nav-about': 'About',
-                'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
-                'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
-                'collab-title': 'Collab',
-                'collab-desc': 'Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:',
-                'collab-name-1': 'Sabrina Langer',
-                'collab-title-1': 'Fundadora',
-                'collab-location-1': 'Ubicación: París, Francia',
-                'collab-bio-1': 'Socióloga, directora de Futurpunks Collab, experta en políticas sociales, IA y sostenibilidad. Lidera proyectos globales sobre futuros inclusivos y equitativos.',
-                'collab-name-2': 'Alex Rivera',
-                'collab-title-2': 'Experto en foresight urbano',
-                'collab-location-2': 'Ubicación: Ciudad de México, México',
-                'collab-bio-2': 'Arquitecto y urbanista, especializado en planificación de ciudades resilientes y sostenibles. Ha diseñado proyectos urbanos en Latinoamérica y Europa.',
-                'collab-name-3': 'Lina Zhou',
-                'collab-title-3': 'Artista digital y futurista visual',
-                'collab-location-3': 'Ubicación: Shanghái, China',
-                'collab-bio-3': 'Diseñadora de experiencias inmersivas y visualizaciones de futuros. Combina arte, tecnología y cultura para mapear escenarios posibles.',
-                'collab-name-4': 'Mamadou Diop',
-                'collab-title-4': 'Investigador en cultura y tecnología',
-                'collab-location-4': 'Ubicación: Dakar, Senegal',
-                'collab-bio-4': 'Antropólogo y analista de innovación social. Explora cómo la tecnología impacta la identidad cultural y la gobernanza comunitaria en África.',
-                'collab-open-space': 'Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.',
-                'about-title': 'About / Nosotros',
-                'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
-                'about-mission-title': 'Nuestra misión es:',
-                'about-li-1': 'Mapear tendencias sociales, culturales y tecnológicas.',
-                'about-li-2': 'Fomentar diálogos entre expertos multidisciplinarios.',
-                'about-li-3': 'Crear contenido práctico para anticipar desafíos y oportunidades futuras.',
-                'about-values-title': 'Valores:',
-                'about-li-4': 'Inclusión',
-                'about-li-5': 'Sostenibilidad',
-                'about-li-6': 'Colaboración',
-                'about-li-7': 'Innovación ética',
-                'about-contact-title': 'Contacto:',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'reports-title': 'Reports',
+                'reports-status': 'Estado: En preparación nuevo informe trimestral',
+                'reports-desc': 'Los informes de Futurpunks ofrecen análisis profundos de tendencias sociales, tecnológicas y culturales que moldearán nuestro mundo en los próximos 3-5 años. Cada reporte se basa en investigación multidisciplinaria y entrevistas con expertos globales. Actualmente estamos preparando el próximo número, que estará disponible a finales de este trimestre.',
+                'reports-cta': 'Suscríbete para recibir una notificación cuando los Reports estén activos.',
+                'newsletter-title': 'Newsletter – El Mañana',
+                'newsletter-desc': '“El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.',
+                'newsletter-each-title': 'Cada edición incluye:',
+                'newsletter-li-1': 'Resumen de noticias globales relevantes para el futuro.',
+                'newsletter-li-2': 'Insights de nuestros colaboradores sobre innovación social y tecnológica.',
+                'newsletter-li-3': 'Curaduría de proyectos experimentales y laboratorios de ideas.',
+                'newsletter-last-title': 'Última edición destacada:',
+                'newsletter-li-4': '“Ciudades resilientes y sostenibles: lecciones de Asia y Europa”',
+                'newsletter-li-5': '“IA y política: gobernanza de algoritmos”',
+                'newsletter-li-6': '“Economía colaborativa: nuevas narrativas post-capitalistas”',
+                'blog-title': 'Blog / Ideas',
+                'blog-desc': 'Nuestro blog reúne reflexiones, ensayos y estudios de caso sobre futuros posibles. Se actualiza semanalmente con contenido accesible y estimulante para profesionales, estudiantes y curiosos de la innovación.',
+                'blog-examples-title': 'Ejemplos recientes:',
+                'blog-li-1': 'Futuros urbanos: más allá del smart city',
+                'blog-li-2': 'Ética de la inteligencia artificial: quién decide',
+                'blog-li-3': 'Tendencias culturales que transforman el trabajo',
+                'blog-outro': 'Cada artículo incluye referencias, gráficos y enlaces a debates abiertos en nuestra comunidad.',
                 'input-email-placeholder': 'Tu correo electrónico',
                 'join-button': 'Únete Ahora',
                 'join-success': '¡Gracias por unirte! Nos pondremos en contacto contigo pronto.',
@@ -370,40 +299,27 @@
                 'nav-workshops': 'Workshops',
                 'nav-cursos': 'Courses',
                 'nav-about': 'About',
-                'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
-                'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
-                'collab-title': 'Collab',
-                'collab-desc': 'Futurpunks is built on a network of multidisciplinary collaborators. Here we present featured profiles:',
-                'collab-name-1': 'Sabrina Langer',
-                'collab-title-1': 'Founder',
-                'collab-location-1': 'Location: Paris, France',
-                'collab-bio-1': 'Sociologist, director of Futurpunks Collab, expert in social policy, AI, and sustainability. Leads global projects on inclusive and equitable futures.',
-                'collab-name-2': 'Alex Rivera',
-                'collab-title-2': 'Urban foresight expert',
-                'collab-location-2': 'Location: Mexico City, Mexico',
-                'collab-bio-2': 'Architect and urban planner, specialized in resilient and sustainable city planning. Has designed urban projects in Latin America and Europe.',
-                'collab-name-3': 'Lina Zhou',
-                'collab-title-3': 'Digital artist and visual futurist',
-                'collab-location-3': 'Location: Shanghai, China',
-                'collab-bio-3': 'Designer of immersive experiences and future visualizations. Combines art, technology, and culture to map possible scenarios.',
-                'collab-name-4': 'Mamadou Diop',
-                'collab-title-4': 'Researcher in culture and technology',
-                'collab-location-4': 'Location: Dakar, Senegal',
-                'collab-bio-4': 'Antropólogo y analista de innovación social. Explores how technology impacts cultural identity and community governance in Africa.',
-                'collab-open-space': 'Open space: Yes, your profile can also be part of Futurpunks Collab.',
-                'about-title': 'About / Us',
-                'about-desc': 'Futurpunks was born in 2024 as a global space to explore inclusive, sustainable, and collaborative futures.',
-                'about-mission-title': 'Our mission is:',
-                'about-li-1': 'Map social, cultural, and technological trends.',
-                'about-li-2': 'Foster dialogues among multidisciplinary experts.',
-                'about-li-3': 'Create practical content to anticipate future challenges and opportunities.',
-                'about-values-title': 'Values:',
-                'about-li-4': 'Inclusion',
-                'about-li-5': 'Sostenibilidad',
-                'about-li-6': 'Collaboration',
-                'about-li-7': 'Ethical innovation',
-                'about-contact-title': 'Contact:',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'reports-title': 'Reports',
+                'reports-status': 'Status: Preparing new quarterly report',
+                'reports-desc': 'Futurpunks reports offer deep analysis of social, technological, and cultural trends that will shape our world in the next 3-5 years. Each report is based on multidisciplinary research and interviews with global experts. We are currently preparing the next issue, which will be available at the end of this quarter.',
+                'reports-cta': 'Subscribe to be notified when the Reports are active.',
+                'newsletter-title': 'Newsletter – El Mañana',
+                'newsletter-desc': '“El Mañana” is our bi-weekly newsletter that summarizes emerging trends, disruptive innovations, and cultural debates. In just one week, over 60 futurists joined our subscriber community.',
+                'newsletter-each-title': 'Each edition includes:',
+                'newsletter-li-1': 'Summary of global news relevant to the future.',
+                'newsletter-li-2': 'Insights from our collaborators on social and technological innovation.',
+                'newsletter-li-3': 'Curated experimental projects and idea labs.',
+                'newsletter-last-title': 'Featured latest edition:',
+                'newsletter-li-4': '“Resilient and sustainable cities: lessons from Asia and Europe”',
+                'newsletter-li-5': '“AI and politics: governance of algorithms”',
+                'newsletter-li-6': '“Collaborative economy: new post-capitalist narratives”',
+                'blog-title': 'Blog / Ideas',
+                'blog-desc': 'Our blog gathers reflections, essays, and case studies on possible futures. It is updated weekly with accessible and stimulating content for professionals, students, and innovation enthusiasts.',
+                'blog-examples-title': 'Recent examples:',
+                'blog-li-1': 'Urban futures: beyond the smart city',
+                'blog-li-2': 'Ethics of artificial intelligence: who decides',
+                'blog-li-3': 'Cultural trends that transform work',
+                'blog-outro': 'Each article includes references, charts, and links to open debates in our community.',
                 'input-email-placeholder': 'Your email address',
                 'join-button': 'Join Now',
                 'join-success': 'Thank you for joining! We will get in touch with you shortly.',
@@ -416,40 +332,27 @@
                 'nav-workshops': 'Ateliers',
                 'nav-cursos': 'Cours',
                 'nav-about': 'À propos',
-                'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
-                'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
-                'collab-title': 'Collab',
-                'collab-desc': 'Futurpunks repose sur un réseau de collaborateurs multidisciplinaires. Nous présentons ici des profils mis en avant :',
-                'collab-name-1': 'Sabrina Langer',
-                'collab-title-1': 'Fondatrice',
-                'collab-location-1': 'Emplacement : París, France',
-                'collab-bio-1': 'Sociologue, directrice de Futurpunks Collab, experte en politique sociale, IA et durabilité. Elle dirige des projets mondiaux sur des futurs inclusifs et équitables.',
-                'collab-name-2': 'Alex Rivera',
-                'collab-title-2': 'Expert en foresight urbain',
-                'collab-location-2': 'Emplacement : Mexico, Mexique',
-                'collab-bio-2': 'Architecte et urbaniste, spécialisé dans la planification de villes résilientes y durables. Il a conçu des projets urbains en Amérique Latine et en Europe.',
-                'collab-name-3': 'Lina Zhou',
-                'collab-title-3': 'Artiste numérique et futurista visual',
-                'collab-location-3': 'Emplacement : Shanghai, Chine',
-                'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
-                'collab-name-4': 'Mamadou Diop',
-                'collab-title-4': 'Chercheur en culture et technologie',
-                'collab-location-4': 'Emplacement : Dakar, Senegal',
-                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
-                'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
-                'about-title': 'À propos / Nous',
-                'about-desc': 'Futurpunks est né en 2024 como un espace mondial pour explorer des futurs inclusifs, durables et collaboratifs.',
-                'about-mission-title': 'Notre mission est de :',
-                'about-li-1': 'Cartographier les tendances sociales, culturelles et technologiques.',
-                'about-li-2': 'Favoriser les dialogues entre experts multidisciplinaires.',
-                'about-li-3': 'Créer du contenido práctico para anticiper les défis et les opportunités futurs.',
-                'about-values-title': 'Valeurs :',
-                'about-li-4': 'Inclusión',
-                'about-li-5': 'Durabilité',
-                'about-li-6': 'Collaboration',
-                'about-li-7': 'Innovation éthique',
-                'about-contact-title': 'Contact :',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'reports-title': 'Rapports',
+                'reports-status': 'Statut: Préparation d\'un nouveau rapport trimestriel',
+                'reports-desc': 'Les rapports de Futurpunks offrent une analyse approfondie des tendances sociales, technologiques et culturelles qui façonneront notre monde au cours des 3 à 5 prochaines années. Chaque rapport est basé sur une recherche multidisciplinaire et des entretiens avec des experts mondiaux. Nous préparons actuellement le prochain numéro, qui sera disponible à la fin de ce trimestre.',
+                'reports-cta': 'Abonnez-vous pour être averti lorsque les Rapports seront actifs.',
+                'newsletter-title': 'Newsletter – El Mañana',
+                'newsletter-desc': '“El Mañana” est notre newsletter bimensuelle qui résume les tendances émergentes, les innovations de rupture et les débats culturels. En une seule semaine, plus de 60 futuristas ont rejoint notre communauté d\'abonnés.',
+                'newsletter-each-title': 'Chaque édition comprend :',
+                'newsletter-li-1': 'Résumé des nouvelles mondiales pertinentes pour l\'avenir.',
+                'newsletter-li-2': 'Des éclairages de nos collaborateurs sur l\'innovation sociale et technologique.',
+                'newsletter-li-3': 'Des projets expérimentaux et des laboratoires d\'idées sélectionnés.',
+                'newsletter-last-title': 'Dernière édition mise en avant :',
+                'newsletter-li-4': '« Villes résilientes et durables : leçons d\'Asie et d\'Europe »',
+                'newsletter-li-5': '« IA et politique : gouvernance des algorithmes »',
+                'newsletter-li-6': '« Économie collaborative : nouveaux récits post-capitalistes »',
+                'blog-title': 'Blog / Idées',
+                'blog-desc': 'Notre blog rassemble des réflexions, des essais et des études de cas sur les futurs possibles. Il est mis à jour chaque semana con un contenido accesible et stimulant para los professionnels, les étudiants et les curieux de l\'innovation.',
+                'blog-examples-title': 'Exemples récents :',
+                'blog-li-1': 'Futuros urbanos : au-delà de la ville intelligente',
+                'blog-li-2': 'Éthique de l\'intelligence artificielle : qui décide',
+                'blog-li-3': 'Tendances culturelles qui transforment le travail',
+                'blog-outro': 'Chaque artículo incluye des références, des graphiques et des liens vers des débats ouverts dans notre communauté.',
                 'input-email-placeholder': 'Votre adresse e-mail',
                 'join-button': 'Rejoindre Maintenant',
                 'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
@@ -574,6 +477,30 @@
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 applyTheme(newTheme);
             });
+            
+            // Lógica del formulario de reports (sección 1)
+            const reportsForm = document.getElementById('reports-form');
+            if (reportsForm) {
+                const reportsFormMessage = document.getElementById('reports-form-message');
+                reportsForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(reportsForm);
+                    const email = formData.get('reports-email');
+                    
+                    // Simulación de envío de datos
+                    console.log(`Enviando suscripción para reports: Email: ${email}`);
+
+                    reportsFormMessage.textContent = translations[body.dataset.theme]['join-success'];
+                    reportsFormMessage.classList.remove('hidden');
+                    reportsFormMessage.classList.add('opacity-100');
+                    
+                    reportsForm.reset();
+                    
+                    setTimeout(() => {
+                        reportsFormMessage.classList.add('hidden', 'opacity-0');
+                    }, 3000);
+                });
+            }
         });
     </script>
 </body>
