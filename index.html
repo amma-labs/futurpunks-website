@@ -14,7 +14,7 @@
         :root {
             --color-primary-dark: #FFFFFF;
             --color-secondary-dark: #374151; /* gray-700 */
-            --color-accent-dark: #6B7280;   /* gray-500 */
+            --color-accent-dark: #6B7280;    /* gray-500 */
             --color-background-dark: #000000;
 
             --color-primary-light: #000000;
@@ -99,8 +99,8 @@
 
         /* Estilos específicos para el tema, controlados por JavaScript */
         [data-theme-element="header"] { transition: background-color 0.5s ease; }
-        [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0.05); }
-        [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0.05); }
+        [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0); }
+        [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0); }
         
         [data-theme-element="card"] { transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
         [data-theme="dark"] [data-theme-element="card"] { background-color: #1F2937; /* gray-800 */ }
@@ -114,14 +114,6 @@
             background-color: #E5E7EB;
             color: #374151; /* gray-700 */
         }
-
-        /* Estilos para los menús desplegables */
-        .dropdown-menu {
-            display: none;
-        }
-        .group:hover .dropdown-menu {
-            display: block;
-        }
     </style>
 </head>
 <body data-theme="dark" class="min-h-screen flex flex-col">
@@ -131,85 +123,41 @@
     </div>
 
     <!-- Sección del Encabezado (Header) -->
-    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-20 fixed top-0 backdrop-blur-sm">
+    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-20 fixed top-0">
         
-        <!-- Contenedor para el botón del menú móvil y el logo -->
-        <div class="flex items-center space-x-4 md:space-x-0">
-            <!-- Botón de menú para dispositivos móviles -->
-            <button id="mobile-menu-button" class="md:hidden text-lg focus:outline-none focus:ring-2 focus:ring-white rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
-            
+        <!-- Contenedor para el logo (siempre en la izquierda) -->
+        <div class="flex items-center">
             <!-- Logo en la izquierda -->
             <a href="#main-section">
                 <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
 
-        <!-- Contenedor del menú y el selector de idioma (en la derecha) -->
+        <!-- Contenedor del menú hamburguesa (en la derecha) -->
         <div class="flex items-center space-x-4 md:space-x-6">
-            <!-- Menú de escritorio -->
-            <nav class="hidden md:flex space-x-6">
-                <!-- Menú desplegable: Reports -->
-                <div class="relative group">
-                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Reports</a>
-                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
-                        <li><a href="#reports" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Reports (premium)</a></li>
-                        <li><a href="#reports" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Próximo lanzamiento</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Menú desplegable: Newsletter -->
-                <div class="relative group">
-                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Newsletter</a>
-                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
-                        <li><a href="#newsletter" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Newsletter “El Mañana”</a></li>
-                        <li><a href="#blog" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Blog / Ideas</a></li>
-                    </ul>
-                </div>
-
-                <!-- Menú desplegable: Collab -->
-                <div class="relative group">
-                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Collab</a>
-                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
-                        <li><a href="#collab" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Perfiles de colaboradores</a></li>
-                        <li><a href="#collab" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Súmate a nosotros</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Menú desplegable: Workshops -->
-                <div class="relative group">
-                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Workshops</a>
-                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
-                        <li><a href="#workshops" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Workshops</a></li>
-                        <li><a href="#cursos" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Cursos</a></li>
-                    </ul>
-                </div>
-
-                <!-- Menú desplegable: About -->
-                <div class="relative group">
-                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">About</a>
-                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
-                        <li><a href="#about" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">About</a></li>
-                        <li><a href="#about" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Súmate a Futurpunks</a></li>
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Selector de Idioma -->
-            <div class="relative inline-block text-left">
-                <button id="language-toggle-button" class="p-2 rounded-md shadow-sm px-4 py-2 text-sm font-medium transition-colors duration-300 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" data-theme-element="button-secondary">
-                    SPA
-                </button>
-            </div>
+            <!-- Botón de menú hamburguesa (visible en todos los tamaños) -->
+            <button id="mobile-menu-button" class="text-lg focus:outline-none focus:ring-2 focus:ring-white rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- Menú para dispositivos móviles -->
-    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-2/3 bg-gray-900 z-30 transition-transform duration-300 transform -translate-x-full md:hidden rounded-r-xl shadow-lg">
-        <div class="flex justify-end p-6">
+    <!-- Menú desplegable universal (se despliega desde la derecha) -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 bg-gray-900 z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg">
+        <div class="flex justify-between items-center p-6">
+            <!-- Contenedor para los botones de idioma y tema dentro del menú -->
+            <div class="flex space-x-4">
+                <div class="relative inline-block text-left">
+                    <button id="language-toggle-button" class="p-2 rounded-md shadow-sm px-4 py-2 text-sm font-medium transition-colors duration-300 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" data-theme-element="button-secondary">
+                        SPA
+                    </button>
+                </div>
+                <button id="theme-toggle" class="p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-800 text-white hover:bg-gray-700">
+                    <div id="theme-icon-container" class="w-6 h-6"></div>
+                </button>
+            </div>
             <button id="close-menu-button" class="text-white text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
                 &times;
             </button>
@@ -406,11 +354,6 @@
     <footer class="text-center p-6 md:p-10 text-gray-400 text-sm mt-auto" data-theme-element="footer-text">
         <p>Copyright © 2024 Futurpunks Collaborative.</p>
     </footer>
-
-    <!-- Botón de cambio de tema -->
-    <button id="theme-toggle" class="fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-800 text-white hover:bg-gray-700">
-        <div id="theme-icon-container" class="w-6 h-6"></div>
-    </button>
 
     <script>
         // Objeto de traducción
@@ -623,15 +566,15 @@
                 'collab-name-2': 'Alex Rivera',
                 'collab-title-2': 'Expert en foresight urbain',
                 'collab-location-2': 'Emplacement : Mexico, Mexique',
-                'collab-bio-2': 'Architecte et urbaniste, spécialisé dans la planification de villes résilientes et durables. Il a conçu des projets urbains en Amérique Latine et en Europe.',
+                'collab-bio-2': 'Architecte et urbaniste, spécialisé dans la planification de villes résilientes y durables. Il a conçu des projets urbains en Amérique Latine et en Europe.',
                 'collab-name-3': 'Lina Zhou',
                 'collab-title-3': 'Artiste numérique et futuriste visuel',
                 'collab-location-3': 'Emplacement : Shanghai, Chine',
-                'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la technologie et la culture pour cartographier des scénarios possibles.',
+                'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la technologie et la culture para cartographier des scénarios possibles.',
                 'collab-name-4': 'Mamadou Diop',
                 'collab-title-4': 'Chercheur en culture et technologie',
                 'collab-location-4': 'Emplacement : Dakar, Senegal',
-                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
+                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la technologie sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
                 'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
                 'workshops-title': 'Ateliers',
                 'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactives où nous explorons des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
@@ -745,15 +688,15 @@
             const mobileMenu = document.getElementById('mobile-menu');
 
             mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.remove('translate-x-full');
             });
             closeMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.add('-translate-x-full');
+                mobileMenu.classList.add('translate-x-full');
             });
             // Cerrar menú al hacer clic en un enlace
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.add('-translate-x-full');
+                    mobileMenu.classList.add('translate-x-full');
                 });
             });
 
