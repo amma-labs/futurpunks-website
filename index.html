@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurpunks Collaborative</title>
     <!-- Favicon: Un simple emoji para una carga rápida y segura. -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="icon" href="https://github.com/jviglab/futurpunks-website/blob/main/favicon.png?raw=true">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -157,7 +157,7 @@
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
             <a href="#main-section">
-                <img id="logo-img" src="https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer transition-transform duration-300 hover:scale-110">
+                <img id="logo-img" src="https://github.com/jviglab/futurpunks-website/blob/main/logo%20dark.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-10 md:h-12 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
 
@@ -173,32 +173,32 @@
     </header>
 
     <!-- Menú desplegable universal (se despliega desde la derecha) -->
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 bg-gray-900 z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg">
-        <div class="flex justify-between items-center p-6">
-            <!-- Contenedor para los botones de idioma y tema dentro del menú -->
-            <div class="flex space-x-4">
-                <div class="relative inline-block text-left">
-                    <button id="language-toggle-button" class="p-2 rounded-md shadow-sm px-4 py-2 text-sm font-medium transition-colors duration-300 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" data-theme-element="button-secondary">
-                        SPA
-                    </button>
-                </div>
-                <button id="theme-toggle" class="p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-800 text-white hover:bg-gray-700">
-                    <div id="theme-icon-container" class="w-6 h-6"></div>
-                </button>
-            </div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 bg-gray-900 z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col justify-between">
+        <!-- Contenedor de cierre -->
+        <div class="flex justify-end p-6">
             <button id="close-menu-button" class="text-white text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
                 &times;
             </button>
         </div>
-        <nav class="flex flex-col items-center space-y-8 text-xl p-8">
-            <a href="#reports" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
-            <a href="#newsletter" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
-            <a href="#blog" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
-            <a href="#collab" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-collab">Collab</a>
-            <a href="#workshops" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
-            <a href="#cursos" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
-            <a href="#about" class="text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
+        <!-- Contenedor de navegación y enlaces -->
+        <nav class="flex flex-col items-start space-y-8 text-2xl p-8">
+            <a href="#reports" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
+            <a href="#newsletter" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
+            <a href="#blog" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
+            <a href="#collab" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-collab">Collab</a>
+            <a href="#workshops" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
+            <a href="cursos.html" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
+            <a href="#about" class="w-full px-4 py-2 text-white hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
         </nav>
+        <!-- Contenedor para los botones de idioma y tema al final del menú -->
+        <div class="flex flex-col md:flex-row md:items-center justify-center p-6 space-y-4 md:space-x-4 md:space-y-0">
+            <button id="language-toggle-button" class="w-full p-2 rounded-md shadow-sm text-sm font-medium transition-colors duration-300 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" data-theme-element="button-secondary">
+                SPA
+            </button>
+            <button id="theme-toggle" class="w-full p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-800 text-white hover:bg-gray-700">
+                <div id="theme-icon-container" class="w-6 h-6"></div>
+            </button>
+        </div>
     </div>
 
     <!-- Sección Principal con el Título -->
@@ -337,22 +337,6 @@
             </ul>
         </section>
 
-        <section id="cursos" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="cursos-title">Cursos</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="cursos-desc">
-                Microlearning y formación online sobre tendencias, foresight y cultura digital. Pensado para profesionales y curiosos que quieren anticiparse al cambio.
-            </p>
-            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="cursos-examples-title">Ejemplos de cursos:</h3>
-            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
-                <li data-translate="cursos-li-1">Introducción al Foresight Estratégico – 4 módulos, con certificado digital</li>
-                <li data-translate="cursos-li-2">Diseño de políticas para ciudades resilientes – 6 módulos, casos de Latinoamérica y Europa</li>
-                <li data-translate="cursos-li-3">Visualización de futuros con arte digital – 3 módulos, ejercicios prácticos y colaboración grupal</li>
-            </ul>
-            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="cursos-access">
-                Acceso: Online, auto-paced, con mentorías en grupo.
-            </p>
-        </section>
-
         <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
             <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
@@ -379,7 +363,7 @@
     </main>
 
     <!-- Pie de página (Footer) -->
-    <footer class="text-center p-6 md:p-10 text-gray-400 text-sm mt-auto" data-theme-element="footer-text">
+    <footer class="text-center p-6 md:p-10 text-gray-400 text-sm mt-auto bg-black" data-theme-element="footer-text">
         <p>Copyright © 2024 Futurpunks Collaborative.</p>
     </footer>
 
@@ -581,7 +565,7 @@
                 'blog-title': 'Blog / Idées',
                 'blog-desc': 'Notre blog rassemble des réflexions, des essais et des études de cas sur les futurs possibles. Il est mis à jour chaque semaine avec un contenu accessible et stimulant pour les professionnels, les étudiants et les curieux de l\'innovation.',
                 'blog-examples-title': 'Exemples récents :',
-                'blog-li-1': 'Futurs urbanos : au-delà de la ville intelligente',
+                'blog-li-1': 'Futuros urbanos : au-delà de la ville intelligente',
                 'blog-li-2': 'Éthique de l\'intelligence artificielle : qui décide',
                 'blog-li-3': 'Tendances culturelles qui transforment le travail',
                 'blog-outro': 'Chaque article comprend des références, des graphiques et des liens vers des débats ouverts dans notre communauté.',
@@ -596,7 +580,7 @@
                 'collab-location-2': 'Emplacement : Mexico, Mexique',
                 'collab-bio-2': 'Architecte et urbaniste, spécialisé dans la planification de villes résilientes y durables. Il a conçu des projets urbains en Amérique Latine et en Europe.',
                 'collab-name-3': 'Lina Zhou',
-                'collab-title-3': 'Artiste numérique et futuriste visuel',
+                'collab-title-3': 'Artiste numérique et futurista visual',
                 'collab-location-3': 'Emplacement : Shanghai, Chine',
                 'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'collab-name-4': 'Mamadou Diop',
@@ -605,7 +589,7 @@
                 'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
                 'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
                 'workshops-title': 'Ateliers',
-                'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactives où nous explorons des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
+                'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactivas où nous exploramos des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
                 'workshops-upcoming-title': 'Prochains ateliers :',
                 'workshops-li-1': 'Concevoir des villes inclusives – Octubre 2025, en ligne + en présentiel (Madrid)',
                 'workshops-li-2': 'IA et décisions éthiques – Novembre 2025, Zoom + atelier pratique',
@@ -640,8 +624,8 @@
             }
         };
 
-        const darkLogoUrl = 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/2.png';
-        const lightLogoUrl = 'https://raw.githubusercontent.com/jviglab/futurpunks-website/main/1.png';
+        const darkLogoUrl = 'https://github.com/jviglab/futurpunks-website/blob/main/logo%20dark.png?raw=true';
+        const lightLogoUrl = 'https://github.com/jviglab/futurpunks-website/blob/main/logo%20white.png?raw=true';
 
         const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
                             <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
