@@ -99,8 +99,8 @@
 
         /* Estilos específicos para el tema, controlados por JavaScript */
         [data-theme-element="header"] { transition: background-color 0.5s ease; }
-        [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0.5); }
-        [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0.5); }
+        [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0.05); }
+        [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0.05); }
         
         [data-theme-element="card"] { transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
         [data-theme="dark"] [data-theme-element="card"] { background-color: #1F2937; /* gray-800 */ }
@@ -115,6 +115,13 @@
             color: #374151; /* gray-700 */
         }
 
+        /* Estilos para los menús desplegables */
+        .dropdown-menu {
+            display: none;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body data-theme="dark" class="min-h-screen flex flex-col">
@@ -145,13 +152,50 @@
         <div class="flex items-center space-x-4 md:space-x-6">
             <!-- Menú de escritorio -->
             <nav class="hidden md:flex space-x-6">
-                <a href="#reports" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Reports</a>
-                <a href="#newsletter" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Newsletter</a>
-                <a href="#blog" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Blog</a>
-                <a href="#collab" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Collab</a>
-                <a href="#workshops" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Workshops</a>
-                <a href="#cursos" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Cursos</a>
-                <a href="#about" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">About</a>
+                <!-- Menú desplegable: Reports -->
+                <div class="relative group">
+                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Reports</a>
+                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
+                        <li><a href="#reports" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Reports (premium)</a></li>
+                        <li><a href="#reports" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Próximo lanzamiento</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menú desplegable: Newsletter -->
+                <div class="relative group">
+                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Newsletter</a>
+                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
+                        <li><a href="#newsletter" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Newsletter “El Mañana”</a></li>
+                        <li><a href="#blog" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Blog / Ideas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Menú desplegable: Collab -->
+                <div class="relative group">
+                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Collab</a>
+                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
+                        <li><a href="#collab" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Perfiles de colaboradores</a></li>
+                        <li><a href="#collab" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Súmate a nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Menú desplegable: Workshops -->
+                <div class="relative group">
+                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">Workshops</a>
+                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
+                        <li><a href="#workshops" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Workshops</a></li>
+                        <li><a href="#cursos" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Cursos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Menú desplegable: About -->
+                <div class="relative group">
+                    <a href="#" class="text-sm font-medium hover:text-cyan-400 transition-colors duration-300">About</a>
+                    <ul class="dropdown-menu absolute bg-gray-900 bg-opacity-70 text-sm mt-2 p-2 rounded-lg shadow-lg">
+                        <li><a href="#about" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">About</a></li>
+                        <li><a href="#about" class="block py-2 px-4 hover:bg-gray-700 rounded transition duration-300">Súmate a Futurpunks</a></li>
+                    </ul>
+                </div>
             </nav>
 
             <!-- Selector de Idioma -->
@@ -188,7 +232,7 @@
             <div id="video-bg-container">
                 <!-- URL del video actualizada -->
                 <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
-                    <source src="https://videos.pexels.com/video-files/28585754/12427368_2560_1440_24fps.mp4" type="video/mp4">
+                    <source src="https://videos.pexels.com/video-files/33315007/14188166_640_360_30fps.mp4" type="video/mp4">
                     Tu navegador no soporta el tag de video.
                 </video>
             </div>
@@ -221,7 +265,7 @@
 
         <section id="newsletter" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-black text-center">
             <h2 class="text-white text-2xl md:text-4xl font-bold mb-4" data-translate="newsletter-title">Newsletter – El Mañana</h2>
-            <p class="text-gray-200 text-base md:text-lg mb-4" data-translate="newsletter-desc">
+            <p class="text-gray-200 text-base md:text-lg mb-8" data-translate="newsletter-desc">
                 “El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.
             </p>
             <h3 class="text-gray-200 text-xl md:text-2xl font-bold mb-4" data-translate="newsletter-each-title">Cada edición incluye:</h3>
@@ -423,7 +467,7 @@
                 'collab-open-space': 'Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.',
                 'workshops-title': 'Workshops',
                 'workshops-desc': 'Los workshops de Futurpunks son experiencias interactivas donde exploramos escenarios futuros y desarrollamos soluciones innovadoras. Dirigidos a empresas, ONGs y comunidades académicas.',
-                'workshops-upcoming-title': 'Próximos talleres:',
+                'workshops-upcoming-title': 'Próximos talleres: ',
                 'workshops-li-1': 'Diseñando ciudades inclusivas – Octubre 2025, online + presencial (Madrid)',
                 'workshops-li-2': 'IA y decisiones éticas – Noviembre 2025, Zoom + taller práctico',
                 'workshops-li-3': 'Cultura y tecnología en el África del futuro – Diciembre 2025, Dakar',
@@ -503,7 +547,7 @@
                 'collab-name-4': 'Mamadou Diop',
                 'collab-title-4': 'Researcher in culture and technology',
                 'collab-location-4': 'Location: Dakar, Senegal',
-                'collab-bio-4': 'Anthropologist and social innovation analyst. Explores how technology impacts cultural identity and community governance in Africa.',
+                'collab-bio-4': 'Antropólogo y analista de innovación social. Explores how technology impacts cultural identity and community governance in Africa.',
                 'collab-open-space': 'Open space: Yes, your profile can also be part of Futurpunks Collab.',
                 'workshops-title': 'Workshops',
                 'workshops-desc': 'Futurpunks workshops are interactive experiences where we explore future scenarios and develop innovative solutions. Aimed at companies, NGOs, and academic communities.',
@@ -530,7 +574,7 @@
                 'about-li-3': 'Create practical content to anticipate future challenges and opportunities.',
                 'about-values-title': 'Values:',
                 'about-li-4': 'Inclusion',
-                'about-li-5': 'Sustainability',
+                'about-li-5': 'Sostenibilidad',
                 'about-li-6': 'Collaboration',
                 'about-li-7': 'Ethical innovation',
                 'about-contact-title': 'Contact:',
@@ -566,7 +610,7 @@
                 'blog-title': 'Blog / Idées',
                 'blog-desc': 'Notre blog rassemble des réflexions, des essais et des études de cas sur les futurs possibles. Il est mis à jour chaque semaine avec un contenu accessible et stimulant pour les professionnels, les étudiants et les curieux de l\'innovation.',
                 'blog-examples-title': 'Exemples récents :',
-                'blog-li-1': 'Futurs urbains : au-delà de la ville intelligente',
+                'blog-li-1': 'Futurs urbanos : au-delà de la ville intelligente',
                 'blog-li-2': 'Éthique de l\'intelligence artificielle : qui décide',
                 'blog-li-3': 'Tendances culturelles qui transforment le travail',
                 'blog-outro': 'Chaque article comprend des références, des graphiques et des liens vers des débats ouverts dans notre communauté.',
@@ -574,7 +618,7 @@
                 'collab-desc': 'Futurpunks repose sur un réseau de collaborateurs multidisciplinaires. Nous présentons ici des profils mis en avant :',
                 'collab-name-1': 'Sabrina Langer',
                 'collab-title-1': 'Fondatrice',
-                'collab-location-1': 'Emplacement : Paris, France',
+                'collab-location-1': 'Emplacement : París, France',
                 'collab-bio-1': 'Sociologue, directrice de Futurpunks Collab, experte en politique sociale, IA et durabilité. Elle dirige des projets mondiaux sur des futurs inclusifs et équitables.',
                 'collab-name-2': 'Alex Rivera',
                 'collab-title-2': 'Expert en foresight urbain',
@@ -586,23 +630,23 @@
                 'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la technologie et la culture pour cartographier des scénarios possibles.',
                 'collab-name-4': 'Mamadou Diop',
                 'collab-title-4': 'Chercheur en culture et technologie',
-                'collab-location-4': 'Emplacement : Dakar, Sénégal',
-                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la technologie sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
+                'collab-location-4': 'Emplacement : Dakar, Senegal',
+                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
                 'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
                 'workshops-title': 'Ateliers',
                 'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactives où nous explorons des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
                 'workshops-upcoming-title': 'Prochains ateliers :',
-                'workshops-li-1': 'Concevoir des villes inclusives – Octobre 2025, en ligne + en présentiel (Madrid)',
+                'workshops-li-1': 'Concevoir des villes inclusives – Octubre 2025, en ligne + en présentiel (Madrid)',
                 'workshops-li-2': 'IA et décisions éthiques – Novembre 2025, Zoom + atelier pratique',
                 'workshops-li-3': 'Culture et technologie dans le futur de l\'Afrique – Décembre 2025, Dakar',
-                'workshops-format-title': 'Format :',
-                'workshops-li-4': 'Présentations théoriques + dynamiques de co-création',
+                'workshops-format-title': 'Formato :',
+                'workshops-li-4': 'Presentations théoriques + dynamiques de co-création',
                 'workshops-li-5': 'Laboratoires d\'idées + prototypage rapide',
                 'workshops-li-6': 'Matériels et enregistrements disponibles pour les participants',
                 'cursos-title': 'Cours',
                 'cursos-desc': 'Micro-apprentissage et formation en ligne sur les tendances, le foresight et la culture numérique. Conçu pour les professionnels et les curieux qui souhaitent anticiper le changement.',
                 'cursos-examples-title': 'Exemples de cours :',
-                'cursos-li-1': 'Introduction au Foresight stratégique – 4 modules, avec un certificat numérique',
+                'cursos-li-1': 'Introduction au Foresight stratégique – 4 modules, con un certificat numérique',
                 'cursos-li-2': 'Conception de politiques pour les villes résilientes – 6 modules, cas d\'études d\'Amérique Latine et d\'Europe',
                 'cursos-li-3': 'Visualisation des futurs avec l\'art numérique – 3 modules, exercices pratiques et collaboration de groupe',
                 'cursos-access': 'Accès : En ligne, à votre rythme, avec des mentorats de groupe.',
