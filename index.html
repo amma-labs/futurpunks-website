@@ -247,7 +247,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Perfil 1 -->
                 <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Gemini_Generated_Image_alne80alne80alne.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
+                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Screenshot%202025-09-08.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
                     <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-1">Sabrina Langer</h4>
                     <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-1">Fundadora</p>
                     <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-1">Ubicación: París, Francia</p>
@@ -554,6 +554,17 @@
             closeMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
             });
+            
+            // Cerrar menú al hacer clic fuera de él
+            document.addEventListener('click', (e) => {
+                const isClickInsideMenu = mobileMenu.contains(e.target);
+                const isClickOnButton = mobileMenuButton.contains(e.target);
+                
+                if (!isClickInsideMenu && !isClickOnButton) {
+                    mobileMenu.classList.add('translate-x-full');
+                }
+            });
+
             // Cerrar menú al hacer clic en un enlace
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
