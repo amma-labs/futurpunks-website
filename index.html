@@ -88,23 +88,14 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
-        /* Estilos para las secciones de contenido */
-        .content-section-white {
-            background-color: #FFFFFF;
-        }
-        .content-section-black {
-            background-color: #000000;
-        }
-
+        
         /* Estilos específicos para el tema, controlados por JavaScript */
         [data-theme-element="header"] { transition: background-color 0.5s ease; }
         [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0); }
         [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0); }
         
-        [data-theme-element="card"] { transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
-        [data-theme="dark"] [data-theme-element="card"] { background-color: #1F2937; /* gray-800 */ }
-        [data-theme="light"] [data-theme-element="card"] { background-color: #E5E7EB; /* gray-200 */ }
+        [data-theme="dark"] [data-theme-element="card"] { background-color: transparent; }
+        [data-theme="light"] [data-theme-element="card"] { background-color: transparent; }
         
         [data-theme="dark"] [data-theme-element="button-secondary"] {
             background-color: #1F2937;
@@ -113,6 +104,43 @@
         [data-theme="light"] [data-theme-element="button-secondary"] {
             background-color: #E5E7EB;
             color: #374151; /* gray-700 */
+        }
+
+        /* Estilos para texto en secciones de contenido */
+        body[data-theme='dark'] .dynamic-text {
+            color: var(--color-primary-dark);
+        }
+        body[data-theme='light'] .dynamic-text {
+            color: var(--color-primary-light);
+        }
+        body[data-theme='dark'] .dynamic-text-secondary {
+            color: var(--color-accent-light);
+        }
+        body[data-theme='light'] .dynamic-text-secondary {
+            color: var(--color-accent-dark);
+        }
+        body[data-theme='dark'] .dynamic-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            border: 1px solid #6B7280;
+        }
+        body[data-theme='light'] .dynamic-input {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #000000;
+            border: 1px solid #9CA3AF;
+        }
+        body[data-theme='dark'] .dynamic-button {
+            background-color: #06B6D4; /* cyan-500 */
+            color: #000000;
+        }
+        body[data-theme='light'] .dynamic-button {
+            background-color: #06B6D4;
+            color: #000000;
+        }
+
+        .dynamic-input::placeholder {
+            color: inherit;
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -195,156 +223,156 @@
         </div>
 
         <!-- Secciones de Contenido -->
-        <section id="reports" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-white text-center">
-            <h2 class="text-gray-900 text-2xl md:text-4xl font-bold mb-4" data-translate="reports-title">Reports</h2>
-            <p class="text-gray-800 text-base md:text-lg mb-4" data-translate="reports-status">Estado: En preparación nuevo informe trimestral</p>
-            <p class="text-gray-800 text-base md:text-lg mb-8" data-translate="reports-desc">
+        <section id="reports" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="reports-title">Reports</h2>
+            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="reports-status">Estado: En preparación nuevo informe trimestral</p>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="reports-desc">
                 Los informes de Futurpunks ofrecen análisis profundos de tendencias sociales, tecnológicas y culturales que moldearán nuestro mundo en los próximos 3-5 años. Cada reporte se basa en investigación multidisciplinaria y entrevistas con expertos globales. Actualmente estamos preparando el próximo número, que estará disponible a finales de este trimestre.
             </p>
             <form id="reports-form" class="flex flex-col md:flex-row md:items-center justify-center gap-4 max-w-xl mx-auto">
-                <p class="text-gray-800 text-sm md:text-base" data-translate="reports-cta">Suscríbete para recibir una notificación cuando los Reports estén activos.</p>
-                <input type="email" name="reports-email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 bg-gray-200 text-gray-800 border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
-                <button type="submit" class="p-3 md:w-auto w-full bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-600 transition-colors duration-300" data-translate="join-button">
+                <p class="text-sm md:text-base dynamic-text-secondary" data-translate="reports-cta">Suscríbete para recibir una notificación cuando los Reports estén activos.</p>
+                <input type="email" name="reports-email" placeholder="Tu correo electrónico" data-translate-placeholder="input-email-placeholder" class="flex-grow p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 dynamic-input" required>
+                <button type="submit" class="p-3 md:w-auto w-full font-bold rounded-lg hover:bg-cyan-600 transition-colors duration-300 dynamic-button" data-translate="join-button">
                     Suscribirse
                 </button>
             </form>
-            <p id="reports-form-message" class="mt-4 text-gray-900 text-sm md:text-base transition-opacity duration-300 hidden"></p>
+            <p id="reports-form-message" class="mt-4 text-sm md:text-base transition-opacity duration-300 hidden dynamic-text"></p>
         </section>
 
-        <section id="newsletter" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-black text-center">
-            <h2 class="text-white text-2xl md:text-4xl font-bold mb-4" data-translate="newsletter-title">Newsletter – El Mañana</h2>
-            <p class="text-gray-200 text-base md:text-lg mb-8" data-translate="newsletter-desc">
+        <section id="newsletter" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="newsletter-title">Newsletter – El Mañana</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="newsletter-desc">
                 “El Mañana” es nuestro boletín quincenal que resume tendencias emergentes, innovaciones disruptivas y debates culturales. En solo una semana, más de 60 futuristas se unieron a nuestra comunidad de suscriptores.
             </p>
-            <h3 class="text-gray-200 text-xl md:text-2xl font-bold mb-4" data-translate="newsletter-each-title">Cada edición incluye:</h3>
-            <ul class="text-gray-200 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-each-title">Cada edición incluye:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="newsletter-li-1">Resumen de noticias globales relevantes para el futuro.</li>
                 <li data-translate="newsletter-li-2">Insights de nuestros colaboradores sobre innovación social y tecnológica.</li>
                 <li data-translate="newsletter-li-3">Curaduría de proyectos experimentales y laboratorios de ideas.</li>
             </ul>
-            <h3 class="text-gray-200 text-xl md:text-2xl font-bold mb-4" data-translate="newsletter-last-title">Última edición destacada:</h3>
-            <ul class="text-gray-200 text-base md:text-lg list-disc list-inside space-y-2">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="newsletter-last-title">Última edición destacada:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 dynamic-text-secondary">
                 <li data-translate="newsletter-li-4">“Ciudades resilientes y sostenibles: lecciones de Asia y Europa”</li>
                 <li data-translate="newsletter-li-5">“IA y política: gobernanza de algoritmos”</li>
                 <li data-translate="newsletter-li-6">“Economía colaborativa: nuevas narrativas post-capitalistas”</li>
             </ul>
         </section>
 
-        <section id="blog" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-white text-center">
-            <h2 class="text-gray-900 text-2xl md:text-4xl font-bold mb-4" data-translate="blog-title">Blog / Ideas</h2>
-            <p class="text-gray-800 text-base md:text-lg mb-8" data-translate="blog-desc">
+        <section id="blog" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="blog-title">Blog / Ideas</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="blog-desc">
                 Nuestro blog reúne reflexiones, ensayos y estudios de caso sobre futuros posibles. Se actualiza semanalmente con contenido accesible y estimulante para profesionales, estudiantes y curiosos de la innovación.
             </p>
-            <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4" data-translate="blog-examples-title">Ejemplos recientes:</h3>
-            <ul class="text-gray-800 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="blog-examples-title">Ejemplos recientes:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="blog-li-1">Futuros urbanos: más allá del smart city</li>
                 <li data-translate="blog-li-2">Ética de la inteligencia artificial: quién decide</li>
                 <li data-translate="blog-li-3">Tendencias culturales que transforman el trabajo</li>
             </ul>
-            <p class="text-gray-800 text-base md:text-lg" data-translate="blog-outro">
+            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="blog-outro">
                 Cada artículo incluye referencias, gráficos y enlaces a debates abiertos en nuestra comunidad.
             </p>
         </section>
 
-        <section id="collab" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-black text-center">
-            <h2 class="text-white text-2xl md:text-4xl font-bold mb-4" data-translate="collab-title">Collab</h2>
-            <p class="text-gray-200 text-base md:text-lg mb-8" data-translate="collab-desc">
+        <section id="collab" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="collab-title">Collab</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="collab-desc">
                 Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Perfil 1 -->
-                <div class="p-6 rounded-lg shadow-xl" data-theme-element="card">
+                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
                     <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Sabrina" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2" data-translate="collab-name-1">Sabrina Langer</h4>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-title-1">Fundadora</p>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-location-1">Ubicación: París, Francia</p>
-                    <p class="text-sm text-gray-400" data-translate="collab-bio-1">Socióloga, directora de Futurpunks Collab, experta en políticas sociales, IA y sostenibilidad. Lidera proyectos globales sobre futuros inclusivos y equitativos.</p>
+                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-1">Sabrina Langer</h4>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-1">Fundadora</p>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-1">Ubicación: París, Francia</p>
+                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-1">Socióloga, directora de Futurpunks Collab, experta en políticas sociales, IA y sostenibilidad. Lidera proyectos globales sobre futuros inclusivos y equitativos.</p>
                 </div>
                 <!-- Perfil 2 -->
-                <div class="p-6 rounded-lg shadow-xl" data-theme-element="card">
+                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
                     <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Alex" alt="Alex Rivera" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2" data-translate="collab-name-2">Alex Rivera</h4>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-title-2">Experto en foresight urbano</p>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-location-2">Ubicación: Ciudad de México, México</p>
-                    <p class="text-sm text-gray-400" data-translate="collab-bio-2">Arquitecto y urbanista, especializado en planificación de ciudades resilientes y sostenibles. Ha diseñado proyectos urbanos en Latinoamérica y Europa.</p>
+                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-2">Alex Rivera</h4>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-2">Experto en foresight urbano</p>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-2">Ubicación: Ciudad de México, México</p>
+                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-2">Arquitecto y urbanista, especializado en planificación de ciudades resilientes y sostenibles. Ha diseñado proyectos urbanos en Latinoamérica y Europa.</p>
                 </div>
                 <!-- Perfil 3 -->
-                <div class="p-6 rounded-lg shadow-xl" data-theme-element="card">
+                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
                     <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Lina" alt="Lina Zhou" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2" data-translate="collab-name-3">Lina Zhou</h4>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-title-3">Artista digital y futurista visual</p>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-location-3">Ubicación: Shanghái, China</p>
-                    <p class="text-sm text-gray-400" data-translate="collab-bio-3">Diseñadora de experiencias inmersivas y visualizaciones de futuros. Combina arte, tecnología y cultura para mapear escenarios posibles.</p>
+                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-3">Lina Zhou</h4>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-3">Artista digital y futurista visual</p>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-3">Ubicación: Shanghái, China</p>
+                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-3">Diseñadora de experiencias inmersivas y visualizaciones de futuros. Combina arte, tecnología y cultura para mapear escenarios posibles.</p>
                 </div>
                 <!-- Perfil 4 -->
-                <div class="p-6 rounded-lg shadow-xl" data-theme-element="card">
+                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
                     <img src="https://placehold.co/150x150/1F2937/FFFFFF?text=Mamadou" alt="Mamadou Diop" class="rounded-full mx-auto mb-4 w-24 h-24 object-cover">
-                    <h4 class="text-xl font-bold mb-2" data-translate="collab-name-4">Mamadou Diop</h4>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-title-4">Investigador en cultura y tecnología</p>
-                    <p class="text-sm text-gray-400 mb-2" data-translate="collab-location-4">Ubicación: Dakar, Senegal</p>
-                    <p class="text-sm text-gray-400" data-translate="collab-bio-4">Antropólogo y analista de innovación social. Explora cómo la tecnología impacta la identidad cultural y la gobernanza comunitaria en África.</p>
+                    <h4 class="text-xl font-bold mb-2 dynamic-text" data-translate="collab-name-4">Mamadou Diop</h4>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-title-4">Investigador en cultura y tecnología</p>
+                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="collab-location-4">Ubicación: Dakar, Senegal</p>
+                    <p class="text-sm dynamic-text-secondary" data-translate="collab-bio-4">Antropólogo y analista de innovación social. Explora cómo la tecnología impacta la identidad cultural y la gobernanza comunitaria en África.</p>
                 </div>
             </div>
-            <p class="text-gray-200 text-base md:text-lg mt-8" data-translate="collab-open-space">
+            <p class="text-base md:text-lg mt-8 dynamic-text-secondary" data-translate="collab-open-space">
                 Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks Collab.
             </p>
         </section>
 
-        <section id="workshops" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-white text-center">
-            <h2 class="text-gray-900 text-2xl md:text-4xl font-bold mb-4" data-translate="workshops-title">Workshops</h2>
-            <p class="text-gray-800 text-base md:text-lg mb-8" data-translate="workshops-desc">
+        <section id="workshops" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="workshops-title">Workshops</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="workshops-desc">
                 Los workshops de Futurpunks son experiencias interactivas donde exploramos escenarios futuros y desarrollamos soluciones innovadoras. Dirigidos a empresas, ONGs y comunidades académicas.
             </p>
-            <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4" data-translate="workshops-upcoming-title">Próximos talleres:</h3>
-            <ul class="text-gray-800 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="workshops-upcoming-title">Próximos talleres:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="workshops-li-1">Diseñando ciudades inclusivas – Octubre 2025, online + presencial (Madrid)</li>
                 <li data-translate="workshops-li-2">IA y decisiones éticas – Noviembre 2025, Zoom + taller práctico</li>
                 <li data-translate="workshops-li-3">Cultura y tecnología en el África del futuro – Diciembre 2025, Dakar</li>
             </ul>
-            <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4" data-translate="workshops-format-title">Formato:</h3>
-            <ul class="text-gray-800 text-base md:text-lg list-disc list-inside space-y-2">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="workshops-format-title">Formato:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 dynamic-text-secondary">
                 <li data-translate="workshops-li-4">Presentaciones teóricas + dinámicas de co-creación</li>
                 <li data-translate="workshops-li-5">Laboratorios de ideas + prototipado rápido</li>
                 <li data-translate="workshops-li-6">Materiales y grabaciones disponibles para participantes</li>
             </ul>
         </section>
 
-        <section id="cursos" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-black text-center">
-            <h2 class="text-white text-2xl md:text-4xl font-bold mb-4" data-translate="cursos-title">Cursos</h2>
-            <p class="text-gray-200 text-base md:text-lg mb-8" data-translate="cursos-desc">
+        <section id="cursos" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="cursos-title">Cursos</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="cursos-desc">
                 Microlearning y formación online sobre tendencias, foresight y cultura digital. Pensado para profesionales y curiosos que quieren anticiparse al cambio.
             </p>
-            <h3 class="text-gray-200 text-xl md:text-2xl font-bold mb-4" data-translate="cursos-examples-title">Ejemplos de cursos:</h3>
-            <ul class="text-gray-200 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="cursos-examples-title">Ejemplos de cursos:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="cursos-li-1">Introducción al Foresight Estratégico – 4 módulos, con certificado digital</li>
                 <li data-translate="cursos-li-2">Diseño de políticas para ciudades resilientes – 6 módulos, casos de Latinoamérica y Europa</li>
                 <li data-translate="cursos-li-3">Visualización de futuros con arte digital – 3 módulos, ejercicios prácticos y colaboración grupal</li>
             </ul>
-            <p class="text-gray-200 text-base md:text-lg" data-translate="cursos-access">
+            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="cursos-access">
                 Acceso: Online, auto-paced, con mentorías en grupo.
             </p>
         </section>
 
-        <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full rounded-xl shadow-2xl content-section-white text-center">
-            <h2 class="text-gray-900 text-2xl md:text-4xl font-bold mb-4" data-translate="about-title">About / Nosotros</h2>
-            <p class="text-gray-800 text-base md:text-lg mb-4" data-translate="about-desc">
+        <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
+            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
                 Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.
             </p>
-            <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4" data-translate="about-mission-title">Nuestra misión es:</h3>
-            <ul class="text-gray-800 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="about-mission-title">Nuestra misión es:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="about-li-1">Mapear tendencias sociales, culturales y tecnológicas.</li>
                 <li data-translate="about-li-2">Fomentar diálogos entre expertos multidisciplinarios.</li>
                 <li data-translate="about-li-3">Crear contenido práctico para anticipar desafíos y oportunidades futuras.</li>
             </ul>
-            <h3 class="text-gray-800 text-xl md:text-2xl font-bold mb-4" data-translate="about-values-title">Valores:</h3>
-            <ul class="text-gray-800 text-base md:text-lg list-disc list-inside space-y-2 mb-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="about-values-title">Valores:</h3>
+            <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
                 <li data-translate="about-li-4">Inclusión</li>
                 <li data-translate="about-li-5">Sostenibilidad</li>
                 <li data-translate="about-li-6">Colaboración</li>
                 <li data-translate="about-li-7">Innovación ética</li>
             </ul>
-            <p class="text-gray-800 text-base md:text-lg mb-4" data-translate="about-contact-title">Contacto:</p>
-            <p class="text-gray-800 text-base md:text-lg" data-translate="about-contact-details">
+            <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-contact-title">Contacto:</p>
+            <p class="text-base md:text-lg dynamic-text-secondary" data-translate="about-contact-details">
                 info@futurpunks.org | LinkedIn | Twitter
             </p>
         </section>
@@ -570,11 +598,11 @@
                 'collab-name-3': 'Lina Zhou',
                 'collab-title-3': 'Artiste numérique et futuriste visuel',
                 'collab-location-3': 'Emplacement : Shanghai, Chine',
-                'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la technologie et la culture para cartographier des scénarios possibles.',
+                'collab-bio-3': 'Créatrice d\'expériences immersives et de visualisations de futurs. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'collab-name-4': 'Mamadou Diop',
                 'collab-title-4': 'Chercheur en culture et technologie',
                 'collab-location-4': 'Emplacement : Dakar, Senegal',
-                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la technologie sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
+                'collab-bio-4': 'Antropólogo y analista de l\'innovation sociale. Il explore l\'impact de la tecnología sur l\'identité culturelle et la gouvernance communautaire en Afrique.',
                 'collab-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks Collab.',
                 'workshops-title': 'Ateliers',
                 'workshops-desc': 'Les ateliers de Futurpunks sont des expériences interactives où nous explorons des scénarios futurs et développons des solutions innovantes. Ils s\'adressent aux entreprises, aux ONG et aux communautés académiques.',
@@ -589,7 +617,7 @@
                 'cursos-title': 'Cours',
                 'cursos-desc': 'Micro-apprentissage et formation en ligne sur les tendances, le foresight et la culture numérique. Conçu pour les professionnels et les curieux qui souhaitent anticiper le changement.',
                 'cursos-examples-title': 'Exemples de cours :',
-                'cursos-li-1': 'Introduction au Foresight stratégique – 4 modules, con un certificat numérique',
+                'cursos-li-1': 'Introduction al Foresight stratégique – 4 modules, con un certificat numérique',
                 'cursos-li-2': 'Conception de politiques pour les villes résilientes – 6 modules, cas d\'études d\'Amérique Latine et d\'Europe',
                 'cursos-li-3': 'Visualisation des futurs avec l\'art numérique – 3 modules, exercices pratiques et collaboration de groupe',
                 'cursos-access': 'Accès : En ligne, à votre rythme, avec des mentorats de groupe.',
@@ -675,12 +703,29 @@
 
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
-            const storedLang = localStorage.getItem('lang') || 'es';
-            const storedTheme = localStorage.getItem('theme') || 'dark';
+            // Lógica para detectar el idioma del sistema
+            let systemLang = navigator.language.substring(0, 2);
+            let storedLang = localStorage.getItem('lang');
+            let initialLang = 'en'; // El idioma por defecto es el inglés
 
-            currentLangIndex = languageCodes.indexOf(storedLang);
-            setLanguage(storedLang);
-            applyTheme(storedTheme);
+            if (storedLang) {
+                initialLang = storedLang;
+            } else if (languageCodes.includes(systemLang)) {
+                initialLang = systemLang;
+            }
+            currentLangIndex = languageCodes.indexOf(initialLang);
+            setLanguage(initialLang);
+
+            // Lógica para detectar el tema del sistema
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            let storedTheme = localStorage.getItem('theme');
+            let initialTheme;
+            if (storedTheme) {
+                initialTheme = storedTheme;
+            } else {
+                initialTheme = prefersDark ? 'dark' : 'light';
+            }
+            applyTheme(initialTheme);
 
             // Lógica del menú móvil
             const mobileMenuButton = document.getElementById('mobile-menu-button');
