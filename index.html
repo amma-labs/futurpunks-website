@@ -315,9 +315,9 @@
                 <!-- Perfil 5 -->
                 <div class="flex flex-col items-center">
                     <div class="flex items-center w-full max-w-2xl justify-between">
-                        <img src="https://media.licdn.com/dms/image/D4E03AQGEa30T6yI63w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715886910603?e=1760572800&v=beta&t=2R17M1QG6D8v02Qv4uTf-eEw0C9gW9fG8EwM5q2S_fM" alt="Lina Zhou" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <img src="https://github.com/amma-labs/futurpunks-website/blob/main/1594781292377.jpg?raw=true" alt="Lina Zhou" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
                         <div class="flex flex-col items-start flex-grow">
-                            <a href="#" target="_blank">
+                            <a href="https://www.linkedin.com/in/linazhou/" target="_blank">
                                 <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-5">Lina Zhou</h4>
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-5">Estratega en innovación y experiencia de usuario</p>
@@ -490,18 +490,18 @@
                 'team-name-3': 'Lin Xinye',
                 'team-title-3': 'Artiste numérique et futuriste visuelle',
                 'team-location-3': 'Guizhou, Chine',
-                'team-bio-3': 'Créatrice d\'expériences inmersives et de visualisations du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
+                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'team-name-4': 'Mamadou Diop',
-                'team-title-4': 'Chercheur en technologie optique et solutions biomédicales',
+                'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
-                'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasivas appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualisations inmersives para explorer de nouvelles applications médicales.',
+                'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasives appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualisations inmersives para explorer de nouvelles applications médicales.',
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Stratège en innovation et expérience utilisateur',
                 'team-location-5': 'Chengdu, Chine',
                 'team-bio-5': 'Spécialiste en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
                 'team-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks.',
                 'about-title': 'À propos / Nous',
-                'about-desc': 'Futurpunks est né en 2024 como un espace mondial pour explorer des futurs inclusivos, sostenibles et collaboratifs.',
+                'about-desc': 'Futurpunks est né en 2024 como un espace mondial pour explorer des futurs inclusifs, sostenibles et collaboratifs.',
                 'about-mission-title': 'Notre mission est de :',
                 'about-li-1': 'Cartographier les tendencias sociales, culturales et technologiques.',
                 'about-li-2': 'Favoriser les dialogues entre expertos multidisciplinaires.',
@@ -611,7 +611,8 @@
             const closeMenuButton = document.getElementById('close-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
                 mobileMenu.classList.remove('translate-x-full');
             });
             closeMenuButton.addEventListener('click', () => {
