@@ -170,13 +170,13 @@
     </div>
 
     <!-- Sección del Encabezado (Header) -->
-    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-20 fixed top-0">
+    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50 top-0">
         
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
             <a href="index.html">
-                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/logo%20dark.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
+                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
 
@@ -192,7 +192,7 @@
     </header>
 
     <!-- Menú desplegable universal (se despliega desde la derecha) -->
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 text-black z-30 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col justify-between">
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 text-black z-40 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col">
         <!-- Contenedor de cierre -->
         <div class="flex justify-end p-6">
             <button id="close-menu-button" class="text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
@@ -200,7 +200,7 @@
             </button>
         </div>
         <!-- Contenedor de navegación y enlaces -->
-        <nav class="flex flex-col items-start space-y-4 text-5xl p-8">
+        <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
             <a href="reports-blog.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
             <a href="reports-blog.html#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
             <a href="reports-blog.html#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
@@ -210,13 +210,24 @@
             <a href="index.html#about" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
         </nav>
         <!-- Contenedor para los botones de idioma y tema al final del menú -->
-        <div class="flex flex-col md:flex-row md:items-center justify-center p-6 space-y-4 md:space-x-4 md:space-y-0">
-            <button id="language-toggle-button" class="w-full p-2 rounded-md shadow-sm text-sm font-medium transition-colors duration-300 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" data-theme-element="button-secondary">
-                SPA
-            </button>
-            <button id="theme-toggle" class="w-full p-3 rounded-full shadow-lg transition-colors duration-300 bg-gray-200 text-black hover:bg-gray-300">
-                <div id="theme-icon-container" class="w-6 h-6"></div>
-            </button>
+        <div class="flex flex-col items-center p-8 space-y-4 border-t border-gray-600 dynamic-text-secondary">
+            <!-- Selectores de idioma -->
+            <div id="language-selectors" class="flex flex-col space-y-2 w-full">
+                <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-languages">Languages</h4>
+                <div class="flex space-x-4">
+                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="es">SPA</button>
+                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="en">ENG</button>
+                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="fr">FRA</button>
+                </div>
+            </div>
+            <!-- Selectores de tema -->
+            <div id="theme-selectors" class="flex flex-col space-y-2 w-full mt-4">
+                <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-theme">Theme</h4>
+                <div class="flex space-x-4">
+                    <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark">DARK</button>
+                    <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="light">WHITE</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -241,7 +252,7 @@
             </div>
         </div>
 
-        <section id="projects" class="my-20 md:my-40 p-6 mx-auto w-full text-center">
+        <section id="projects" class="my-5 md:my-10 p-6 mx-auto w-full text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-8 dynamic-text">50+ Future-Oriented Projects</h2>
             <div class="flex justify-center">
                 <img src="https://github.com/amma-labs/futurpunks-website/blob/main/branding.png?raw=true" alt="Future-Oriented Projects Branding" class="w-full h-auto">
@@ -249,11 +260,8 @@
         </section>
 
         <!-- Secciones de Contenido -->
-        <section id="team" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="team-title">Equipo</h2>
-            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="team-desc">
-                Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:
-            </p>
+        <section id="team" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text">Futurpunks brings together a network of multidisciplinary collaborators.</h2>
             <div class="space-y-12">
                 <!-- Perfil 1 -->
                 <div class="flex flex-col items-center">
@@ -341,12 +349,9 @@
                     </div>
                 </div>
             </div>
-            <p class="text-base md:text-lg mt-8 dynamic-text-secondary" data-translate="team-open-space">
-                Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks.
-            </p>
         </section>
 
-        <section id="about" class="my-20 md:my-40 p-6 max-w-4xl mx-auto w-full text-center">
+        <section id="about" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
             <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-16 w-16 mb-4 mx-auto dynamic-text">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
             <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
@@ -364,7 +369,7 @@
             </ul>
             <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-contact-title">Contacto:</p>
             <p class="text-base md:text-lg dynamic-text-secondary" data-translate="about-contact-details">
-                info@futurpunks.org | LinkedIn | Twitter
+                info@futurpunks.com | LinkedIn | Twitter
             </p>
         </section>
     </main>
@@ -376,7 +381,19 @@
     </footer>
 
     <script>
-        // Objeto de traducción
+        const languageCodes = ['es', 'en', 'fr'];
+        const languageLabels = ['SPA', 'ENG', 'FRA'];
+        
+        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
+        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
+
+        const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
+                            <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
+                         </svg>`;
+        const sunSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.364l-1.591 1.591M21 12h-2.25m-.364 6.364l-1.591-1.591M12 21v-2.25m-6.364-.364l1.591-1.591M3 12h2.25m.364-6.364l1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                         </svg>`;
+        
         const translations = {
             'es': {
                 'nav-reports': 'Reports',
@@ -386,10 +403,10 @@
                 'nav-workshops': 'Workshops',
                 'nav-cursos': 'Cursos',
                 'nav-about': 'About',
+                'nav-languages': 'Idiomas',
+                'nav-theme': 'Tema',
                 'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
                 'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
-                'team-title': 'Equipo',
-                'team-desc': 'Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:',
                 'team-name-1': 'Sabrina Langer',
                 'team-title-1': 'Fundadora',
                 'team-location-1': 'París, Francia',
@@ -410,7 +427,6 @@
                 'team-title-5': 'Estratega en innovación y experiencia de usuario',
                 'team-location-5': 'Chengdu, China',
                 'team-bio-5': 'Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
-                'team-open-space': 'Espacio abierto: Sí, tu perfil también puede formar parte de Futurpunks.',
                 'about-title': 'About / Nosotros',
                 'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
                 'about-mission-title': 'Nuestra misión es:',
@@ -423,7 +439,7 @@
                 'about-li-6': 'Colaboración',
                 'about-li-7': 'Innovación ética',
                 'about-contact-title': 'Contacto:',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
                 'input-email-placeholder': 'Tu correo electrónico',
                 'join-button': 'Únete Ahora',
                 'join-success': '¡Gracias por unirte! Nos pondremos en contacto contigo pronto.',
@@ -436,10 +452,10 @@
                 'nav-workshops': 'Workshops',
                 'nav-cursos': 'Courses',
                 'nav-about': 'About',
+                'nav-languages': 'Languages',
+                'nav-theme': 'Theme',
                 'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
                 'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
-                'team-title': 'Team',
-                'team-desc': 'Futurpunks is built on a network of multidisciplinary collaborators. Here we present featured profiles:',
                 'team-name-1': 'Sabrina Langer',
                 'team-title-1': 'Founder',
                 'team-location-1': 'Paris, France',
@@ -460,7 +476,6 @@
                 'team-title-5': 'Innovation and user experience strategist',
                 'team-location-5': 'Chengdu, China',
                 'team-bio-5': 'Specialist in marketing and technological culture, with extensive experience in electric mobility, branding, and immersive experiences. She has led projects at NIO, Volvo, and Geely, integrating art, technology, and society to imagine futures of mobility and sustainability.',
-                'team-open-space': 'Open space: Yes, your profile can also be part of Futurpunks.',
                 'about-title': 'About / Us',
                 'about-desc': 'Futurpunks was born in 2024 as a global space to explore inclusive, sustainable, and collaborative futures.',
                 'about-mission-title': 'Our mission is:',
@@ -468,12 +483,12 @@
                 'about-li-2': 'Foster dialogues among multidisciplinary experts.',
                 'about-li-3': 'Create practical content to anticipate future challenges and opportunities.',
                 'about-values-title': 'Values:',
-                'about-li-4': 'Inclusion',
+                'about-li-4': 'Inclusión',
                 'about-li-5': 'Sostenibilidad',
                 'about-li-6': 'Collaboration',
                 'about-li-7': 'Ethical innovation',
                 'about-contact-title': 'Contact:',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
                 'input-email-placeholder': 'Your email address',
                 'join-button': 'Join Now',
                 'join-success': 'Thank you for joining! We will get in touch with you shortly.',
@@ -486,10 +501,10 @@
                 'nav-workshops': 'Ateliers',
                 'nav-cursos': 'Cours',
                 'nav-about': 'À propos',
+                'nav-languages': 'Langues',
+                'nav-theme': 'Thème',
                 'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
                 'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
-                'team-title': 'Équipe',
-                'team-desc': 'Futurpunks repose sur un réseau de collaborateurs multidisciplinaires. Nous présentons ici des profils mis en avant :',
                 'team-name-1': 'Sabrina Langer',
                 'team-title-1': 'Fondatrice',
                 'team-location-1': 'París, France',
@@ -505,14 +520,14 @@
                 'team-name-4': 'Mamadou Diop',
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
-                'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasivas appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualisations inmersives para explorer de nouvelles applications médicales.',
+                'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasivas appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualizaciones inmersives para explorer de nouvelles applications médicas.',
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Stratège en innovation et expérience utilisateur',
                 'team-location-5': 'Chengdu, Chine',
                 'team-bio-5': 'Spécialiste en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando l\'art, la tecnología y la sociedad para imaginar los futuros de la mobilité et de la durabilité.',
                 'team-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks.',
                 'about-title': 'À propos / Nous',
-                'about-desc': 'Futurpunks est né en 2024 como un espace mondial pour explorer des futurs inclusifs, sostenibles et collaboratifs.',
+                'about-desc': 'Futurpunks est né en 2024 como un espace mondial para explorer des futurs inclusifs, sostenibles et collaboratifs.',
                 'about-mission-title': 'Notre mission est de :',
                 'about-li-1': 'Cartographier les tendencias sociales, culturales et technologiques.',
                 'about-li-2': 'Favoriser les dialogues entre expertos multidisciplinaires.',
@@ -523,16 +538,16 @@
                 'about-li-6': 'Collaboration',
                 'about-li-7': 'Innovation éthique',
                 'about-contact-title': 'Contact :',
-                'about-contact-details': 'info@futurpunks.org | LinkedIn | Twitter',
+                'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
                 'input-email-placeholder': 'Votre adresse e-mail',
                 'join-button': 'Rejoindre Maintenant',
                 'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
             }
         };
 
-        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/logo%20dark.png?raw=true';
-        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/logo%20white.png?raw=true';
-
+        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
+        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
+        
         const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
                             <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
                          </svg>`;
@@ -540,17 +555,18 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.364l-1.591 1.591M21 12h-2.25m-.364 6.364l-1.591-1.591M12 21v-2.25m-6.364-.364l1.591-1.591M3 12h2.25m.364-6.364l1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                          </svg>`;
         
-        // Arreglo de idiomas para alternar
-        const languageCodes = ['es', 'en', 'fr'];
-        const languageLabels = ['SPA', 'EN', 'FR'];
-        let currentLangIndex = 0;
-
         // Función para aplicar las traducciones
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
             const inputPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
             
-            document.getElementById('language-toggle-button').textContent = languageLabels[languageCodes.indexOf(lang)];
+            document.querySelectorAll('.lang-button').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'font-bold');
+            });
+            const selectedButton = document.querySelector(`.lang-button[data-lang="${lang}"]`);
+            if (selectedButton) {
+                selectedButton.classList.add('text-cyan-400', 'font-bold');
+            }
 
             elements.forEach(element => {
                 const key = element.getAttribute('data-translate');
@@ -568,16 +584,21 @@
             
             localStorage.setItem('lang', lang);
         }
-
+        
         // Lógica de cambio de tema
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const themeIconContainer = document.getElementById('theme-icon-container');
         const logoImg = document.getElementById('logo-img');
         const body = document.body;
 
         function applyTheme(themeName) {
             body.dataset.theme = themeName;
-            themeIconContainer.innerHTML = themeName === 'dark' ? sunSvg : moonSvg;
+            document.querySelectorAll('.theme-button').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'font-bold');
+            });
+            const selectedButton = document.querySelector(`.theme-button[data-theme="${themeName}"]`);
+            if (selectedButton) {
+                selectedButton.classList.add('text-cyan-400', 'font-bold');
+            }
+
             logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
             localStorage.setItem('theme', themeName);
         }
@@ -593,6 +614,10 @@
 
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+
             // Lógica para detectar el idioma del sistema
             let systemLang = navigator.language.substring(0, 2);
             let storedLang = localStorage.getItem('lang');
@@ -603,7 +628,6 @@
             } else if (languageCodes.includes(systemLang)) {
                 initialLang = systemLang;
             }
-            currentLangIndex = languageCodes.indexOf(initialLang);
             setLanguage(initialLang);
 
             // Lógica para detectar el tema del sistema
@@ -616,12 +640,22 @@
                 initialTheme = prefersDark ? 'dark' : 'light';
             }
             applyTheme(initialTheme);
+            
+            // Lógica de los botones de idioma
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    setLanguage(button.dataset.lang);
+                });
+            });
+            
+            // Lógica de los botones de tema
+            document.querySelectorAll('.theme-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    applyTheme(button.dataset.theme);
+                });
+            });
 
             // Lógica del menú móvil
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const closeMenuButton = document.getElementById('close-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
             mobileMenuButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 mobileMenu.classList.remove('translate-x-full');
@@ -645,20 +679,6 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                 });
-            });
-
-            // Lógica del toggle de idioma
-            const languageToggle = document.getElementById('language-toggle-button');
-            languageToggle.addEventListener('click', () => {
-                currentLangIndex = (currentLangIndex + 1) % languageCodes.length;
-                setLanguage(languageCodes[currentLangIndex]);
-            });
-
-            // Lógica del toggle de tema
-            themeToggleButton.addEventListener('click', () => {
-                const currentTheme = body.dataset.theme;
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                applyTheme(newTheme);
             });
             
             // Lógica de los botones de biografía expandible
