@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurpunks</title>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACWklEQVR42tVXTWgTURD+ZtO0iA8gCgqK1vVqE4WIRWp9EESxQ8GHiuAXaBFaP4Io2Cgxgh4UaBEFwY+CKD6IFg9iK/g1hBBG8uAP4aO8/Zk3m5nZ3e21hT542HvmzbyZt/fNvPnz8WqWpXg/vT+c/H15+f9V1mF3j7/Pj/Kk6+tXU91T6t10V2/bF0R5WcE/0z/Xn/n/2070eXp2eXW3xR+q71v9T22f/b7b+1v+28H4gDq1s9X31N83n3H3n3H/t/p7L929z2W4m/V5+a+8vM2P37eZ8mJ/2k/fN/hO0b/W+T+tT2W/9T2w/9T2w6b+B/7j/0uS/jO17H8A/f01tT23f7vGf9nF/v/jGgB43n3P/s98233O/t2C/c2K/X+G/H/i+0G1/m4/x44oW+W7R/65f/X/m2+27v+z3d5L92+k2/N+1b9b+A9fO/5vP6d8P5gH+2rB/+fXzPj+eXzT7r+B/G2/g9d3/3P8Fj+W38P9V72tP+5t8/zP9H/v5n+/9Xy/12/3/m318/O/8P/f+JgD+eX7y1fN//N/t+18E/P//f9zPz//zP8//Nf8/v/lq+f/4F+3z3v/d/89h7Lw3/gP//67H+7/x44Q4WAAAgAAAAAElFTkSuQmCC">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACWklEQVR42tVXTWgTURD+ZtO0iA8gCgqK1vVqE4WIRWp9EESxQ8GHiuAXaBFaP4Io2Cgxgh4UaBEFwY+CKD6IFg9iK/g1hBBG8uAP4aO8/Zk3m5nZ3e21hT542HvmzbyZt/fNvPnz8WqWpXg/vT+c/H15+f9V1mF3j7/Pj/Kk6+tXU91T6t10V2/bF0R5WcE/0z/Xn/n/2070eXp2eXW3xR+q71v9T22f/b7b+1v+28H4gDq1s9X31N83n3H3n3H/t/p7L929z2W4m/V5+a+8vM2P37eZ8mJ/2k/fN/hO0b/W+T+tT2W/9T2w/9T2w6b+B/7j/0uS/jO17H8A/f01tT23f7vGf9nF/v/jGgB43n3P/s98233O/t2C/c2K/X+G/H/i+0G1/m4/x44oW+W7R/65f/X/m2+27v+z3d5L92+k2/N+1b9b+A9fO/5vP6d8P5gH+2rB/+fXzPj+eXzT7r+B/G2/g9d3/3P8Fj+W38P9V72tP+5t8/zP9H/v5n+/9Xy/12/3/m318/O/8P/f+JgD+eX7y1fN//N/t+18E/P//f9zPz//zP8//Nf8/v/lq+f/4F+3z3v/d/89h7Lw3/gP//67H+7/x44Q4WAAAgAAAAElFTkSuQmCC">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -16,13 +16,11 @@
             --color-secondary-dark: #374151; /* gray-700 */
             --color-accent-dark: #6B7280;    /* gray-500 */
             --color-background-dark: #000000;
-
             --color-primary-light: #000000;
             --color-secondary-light: #F3F4F6; /* gray-100 */
             --color-accent-light: #9CA3AF;    /* gray-400 */
             --color-background-light: #FFFFFF;
         }
-
         /* Estilos aplicados por data-theme */
         body[data-theme='dark'] {
             background-color: var(--color-background-dark);
@@ -32,13 +30,11 @@
             background-color: var(--color-background-light);
             color: var(--color-primary-light);
         }
-
         body {
             font-family: 'Space Grotesk', sans-serif;
             scroll-behavior: smooth;
             transition: background-color 0.5s ease;
         }
-
         /* Contenedor del video de fondo */
         #video-bg-container {
             position: absolute;
@@ -49,7 +45,6 @@
             overflow: hidden;
             z-index: -1;
         }
-        
         #video-bg {
             min-width: 100%;
             min-height: 100%;
@@ -61,7 +56,6 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
         }
-
         /* Clases para el preloader */
         #preloader {
             position: fixed;
@@ -88,15 +82,12 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
         /* Estilos específicos para el tema, controlados por JavaScript */
         [data-theme-element="header"] { transition: background-color 0.5s ease; }
-        [data-theme="dark"] [data-theme-element="header"] { background-color: rgba(0, 0, 0, 0); }
-        [data-theme="light"] [data-theme-element="header"] { background-color: rgba(255, 255, 255, 0); }
-        
+        [data-theme="dark"] [data-theme-element="header"] { background-color: transparent; }
+        [data-theme="light"] [data-theme-element="header"] { background-color: transparent; }
         [data-theme="dark"] [data-theme-element="card"] { background-color: transparent; }
         [data-theme="light"] [data-theme-element="card"] { background-color: transparent; }
-        
         [data-theme="dark"] [data-theme-element="button-secondary"] {
             background-color: #1F2937;
             color: #D1D5DB; /* gray-300 */
@@ -105,7 +96,6 @@
             background-color: #E5E7EB;
             color: #374151; /* gray-700 */
         }
-
         /* Estilos para texto en secciones de contenido */
         body[data-theme='dark'] .dynamic-text, body[data-theme='dark'] .dynamic-text-secondary {
             color: var(--color-primary-dark);
@@ -113,7 +103,6 @@
         body[data-theme='light'] .dynamic-text, body[data-theme='light'] .dynamic-text-secondary {
             color: var(--color-primary-light);
         }
-        
         body[data-theme='dark'] .dynamic-input {
             background-color: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
@@ -132,21 +121,17 @@
             background-color: #06B6D4;
             color: #000000;
         }
-
         .dynamic-input::placeholder {
             color: inherit;
             opacity: 0.7;
         }
-
         #mobile-menu a {
             font-family: 'Space Grotesk', sans-serif;
         }
-        
         body[data-theme="dark"] #mobile-menu {
             background-color: #000000;
             color: #FFFFFF;
         }
-
         body[data-theme="light"] #mobile-menu {
             background-color: #FFFFFF;
             color: #000000;
@@ -157,7 +142,6 @@
         body[data-theme="light"] #close-menu-button {
             color: #000000;
         }
-
         .toggle-bio-button.rotate-180 {
             transform: rotate(180deg);
         }
@@ -168,10 +152,8 @@
     <div id="preloader">
         <div class="spinner"></div>
     </div>
-
     <!-- Sección del Encabezado (Header) -->
-    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50 top-0">
-        
+    <header data-theme-element="header" class="w-full fixed top-0 p-4 md:p-8 flex justify-between items-center z-50">
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
@@ -179,7 +161,6 @@
                 <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
-
         <!-- Contenedor del menú hamburguesa (en la derecha) -->
         <div class="flex items-center space-x-4 md:space-x-6">
             <!-- Botón de menú hamburguesa (visible en todos los tamaños) -->
@@ -190,7 +171,6 @@
             </button>
         </div>
     </header>
-
     <!-- Menú desplegable universal (se despliega desde la derecha) -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 text-black z-40 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col">
         <!-- Contenedor de cierre -->
@@ -208,33 +188,32 @@
             <a href="workshops-cursos.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
             <a href="workshops-cursos.html#cursos" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
             <a href="index.html#about" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
+            <!-- Contenedor para los botones de idioma y tema al final del menú -->
+            <div class="flex flex-col items-center p-8 space-y-4 border-t border-gray-600 dynamic-text-secondary w-full">
+                <!-- Selectores de idioma -->
+                <div id="language-selectors" class="flex flex-col space-y-2 w-full">
+                    <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-languages">Languages</h4>
+                    <div class="flex space-x-4">
+                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="es">SPA</button>
+                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="en">ENG</button>
+                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="fr">FRA</button>
+                    </div>
+                </div>
+                <!-- Selectores de tema -->
+                <div id="theme-selectors" class="flex flex-col space-y-2 w-full mt-4">
+                    <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-theme">Theme</h4>
+                    <div class="flex space-x-4">
+                        <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark">DARK</button>
+                        <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="light">WHITE</button>
+                    </div>
+                </div>
+            </div>
         </nav>
-        <!-- Contenedor para los botones de idioma y tema al final del menú -->
-        <div class="flex flex-col items-center p-8 space-y-4 border-t border-gray-600 dynamic-text-secondary">
-            <!-- Selectores de idioma -->
-            <div id="language-selectors" class="flex flex-col space-y-2 w-full">
-                <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-languages">Languages</h4>
-                <div class="flex space-x-4">
-                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="es">SPA</button>
-                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="en">ENG</button>
-                    <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="fr">FRA</button>
-                </div>
-            </div>
-            <!-- Selectores de tema -->
-            <div id="theme-selectors" class="flex flex-col space-y-2 w-full mt-4">
-                <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-theme">Theme</h4>
-                <div class="flex space-x-4">
-                    <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark">DARK</button>
-                    <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="light">WHITE</button>
-                </div>
-            </div>
-        </div>
     </div>
-
     <!-- Sección Principal con el Título -->
     <main id="main-section" class="relative overflow-hidden">
         <!-- Contenedor del video de fondo -->
-        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
+        <div class="relative min-h-screen flex flex-col items-center justify-start p-6 text-center z-10 pt-24">
             <div id="video-bg-container">
                 <!-- URL del video actualizada -->
                 <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
@@ -251,14 +230,12 @@
                 </p>
             </div>
         </div>
-
         <section id="projects" class="my-5 md:my-10 p-6 mx-auto w-full text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-8 dynamic-text">50+ Future-Oriented Projects</h2>
             <div class="flex justify-center">
                 <img src="https://github.com/amma-labs/futurpunks-website/blob/main/branding.png?raw=true" alt="Future-Oriented Projects Branding" class="w-full h-auto">
             </div>
         </section>
-
         <!-- Secciones de Contenido -->
         <section id="team" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text">Futurpunks brings together a network of multidisciplinary collaborators.</h2>
@@ -350,7 +327,6 @@
                 </div>
             </div>
         </section>
-
         <section id="about" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
             <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-16 w-16 mb-4 mx-auto dynamic-text">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
@@ -373,27 +349,13 @@
             </p>
         </section>
     </main>
-
     <!-- Pie de página (Footer) -->
     <footer class="text-center p-6 md:p-10 text-gray-400 text-sm mt-auto bg-black flex flex-col items-center">
         <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-8 w-8 mb-2">
         <p>2025 Futurpunks Think Tank</p>
     </footer>
-
     <script>
         const languageCodes = ['es', 'en', 'fr'];
-        const languageLabels = ['SPA', 'ENG', 'FRA'];
-        
-        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
-        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
-
-        const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
-                            <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
-                         </svg>`;
-        const sunSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.364l-1.591 1.591M21 12h-2.25m-.364 6.364l-1.591-1.591M12 21v-2.25m-6.364-.364l1.591-1.591M3 12h2.25m.364-6.364l1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                         </svg>`;
-        
         const translations = {
             'es': {
                 'nav-reports': 'Reports',
@@ -433,7 +395,6 @@
                 'about-li-1': 'Mapear tendencias sociales, culturales y tecnológicas.',
                 'about-li-2': 'Fomentar diálogos entre expertos multidisciplinarios.',
                 'about-li-3': 'Crear contenido práctico para anticipar desafíos y oportunidades futuras.',
-                'about-values-title': 'Valores:',
                 'about-li-4': 'Inclusión',
                 'about-li-5': 'Sostenibilidad',
                 'about-li-6': 'Colaboración',
@@ -482,7 +443,6 @@
                 'about-li-1': 'Map social, cultural, and technological trends.',
                 'about-li-2': 'Foster dialogues among multidisciplinary experts.',
                 'about-li-3': 'Create practical content to anticipate future challenges and opportunities.',
-                'about-values-title': 'Values:',
                 'about-li-4': 'Inclusión',
                 'about-li-5': 'Sostenibilidad',
                 'about-li-6': 'Collaboration',
@@ -521,10 +481,6 @@
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
                 'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasivas appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualizaciones inmersives para explorer de nouvelles applications médicas.',
-                'team-name-5': 'Lina Zhou',
-                'team-title-5': 'Stratège en innovation et expérience utilisateur',
-                'team-location-5': 'Chengdu, Chine',
-                'team-bio-5': 'Spécialiste en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando l\'art, la tecnología y la sociedad para imaginar los futuros de la mobilité et de la durabilité.',
                 'team-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks.',
                 'about-title': 'À propos / Nous',
                 'about-desc': 'Futurpunks est né en 2024 como un espace mondial para explorer des futurs inclusifs, sostenibles et collaboratifs.',
@@ -532,7 +488,6 @@
                 'about-li-1': 'Cartographier les tendencias sociales, culturales et technologiques.',
                 'about-li-2': 'Favoriser les dialogues entre expertos multidisciplinaires.',
                 'about-li-3': 'Créer du contenido práctico para anticiper les défis et les opportunités futurs.',
-                'about-values-title': 'Valeurs :',
                 'about-li-4': 'Inclusión',
                 'about-li-5': 'Durabilité',
                 'about-li-6': 'Collaboration',
@@ -544,16 +499,8 @@
                 'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
             }
         };
-
         const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
         const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
-        
-        const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="none" class="w-6 h-6">
-                            <path d="M21.75 14.73a1.5 1.5 0 00-1.077 2.126 9.516 9.516 0 01-9.585-4.423 9.516 9.516 0 014.423-9.585 1.5 1.5 0 002.126-1.077 11.25 11.25 0 00-12.75 12.75A11.25 11.25 0 0021.75 14.73z" />
-                         </svg>`;
-        const sunSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.364l-1.591 1.591M21 12h-2.25m-.364 6.364l-1.591-1.591M12 21v-2.25m-6.364-.364l1.591-1.591M3 12h2.25m.364-6.364l1.591 1.591M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                         </svg>`;
         
         // Función para aplicar las traducciones
         function setLanguage(lang) {
@@ -567,28 +514,24 @@
             if (selectedButton) {
                 selectedButton.classList.add('text-cyan-400', 'font-bold');
             }
-
             elements.forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (translations[lang] && translations[lang][key]) {
                     element.innerHTML = translations[lang][key];
                 }
             });
-            
             inputPlaceholders.forEach(input => {
                 const key = input.getAttribute('data-translate-placeholder');
                 if (translations[lang] && translations[lang][key]) {
                     input.setAttribute('placeholder', translations[lang][key]);
                 }
             });
-            
             localStorage.setItem('lang', lang);
         }
         
         // Lógica de cambio de tema
         const logoImg = document.getElementById('logo-img');
         const body = document.body;
-
         function applyTheme(themeName) {
             body.dataset.theme = themeName;
             document.querySelectorAll('.theme-button').forEach(btn => {
@@ -598,38 +541,32 @@
             if (selectedButton) {
                 selectedButton.classList.add('text-cyan-400', 'font-bold');
             }
-
             logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
             localStorage.setItem('theme', themeName);
         }
-
         // Lógica de preloader
-        window.onload = function() {
+        window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             preloader.style.opacity = '0';
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 500);
-        };
-
+        });
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const closeMenuButton = document.getElementById('close-menu-button');
-
             // Lógica para detectar el idioma del sistema
             let systemLang = navigator.language.substring(0, 2);
             let storedLang = localStorage.getItem('lang');
-            let initialLang = 'en'; // El idioma por defecto es el inglés
-
+            let initialLang = 'es'; 
             if (storedLang) {
                 initialLang = storedLang;
             } else if (languageCodes.includes(systemLang)) {
                 initialLang = systemLang;
             }
             setLanguage(initialLang);
-
             // Lógica para detectar el tema del sistema
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             let storedTheme = localStorage.getItem('theme');
@@ -640,21 +577,18 @@
                 initialTheme = prefersDark ? 'dark' : 'light';
             }
             applyTheme(initialTheme);
-            
             // Lógica de los botones de idioma
             document.querySelectorAll('.lang-button').forEach(button => {
                 button.addEventListener('click', () => {
                     setLanguage(button.dataset.lang);
                 });
             });
-            
             // Lógica de los botones de tema
             document.querySelectorAll('.theme-button').forEach(button => {
                 button.addEventListener('click', () => {
                     applyTheme(button.dataset.theme);
                 });
             });
-
             // Lógica del menú móvil
             mobileMenuButton.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -663,30 +597,25 @@
             closeMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
             });
-            
             // Cerrar menú al hacer clic fuera de él
             document.addEventListener('click', (e) => {
                 const isClickInsideMenu = mobileMenu.contains(e.target);
                 const isClickOnButton = mobileMenuButton.contains(e.target);
-                
                 if (!isClickInsideMenu && !isClickOnButton) {
                     mobileMenu.classList.add('translate-x-full');
                 }
             });
-
             // Cerrar menú al hacer clic en un enlace
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                 });
             });
-            
             // Lógica de los botones de biografía expandible
             document.querySelectorAll('.toggle-bio-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const targetId = button.dataset.target;
                     const targetElement = document.getElementById(targetId);
-                    
                     if (targetElement.classList.contains('hidden')) {
                         // Despliega la bio
                         targetElement.classList.remove('hidden');
