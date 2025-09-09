@@ -11,7 +11,6 @@
     <style>
         /* Tipografía y colores base */
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap');
-        @import url('https://fonts.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
         :root {
             --color-primary-dark: #FFFFFF;
             --color-secondary-dark: #374151; /* gray-700 */
@@ -244,46 +243,74 @@
             <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="team-desc">
                 Futurpunks se sostiene sobre una red de colaboradores multidisciplinarios. Aquí presentamos perfiles destacados:
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="space-y-12">
                 <!-- Perfil 1 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Screenshot%202025-09-08.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mx-auto mb-4 w-48 h-48 object-cover">
-                    <a href="https://www.linkedin.com/in/sabrina-langer-16313531a/" target="_blank">
-                        <h4 class="text-4xl font-bold mb-2 dynamic-text" data-translate="team-name-1">Sabrina Langer</h4>
-                    </a>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-title-1">Fundadora</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-location-1">París, Francia</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="team-bio-1">Socióloga y fundadora de Futurpunks. Lidera proyectos internacionales que exploran futuros inclusivos y equitativos mediante investigación, análisis de políticas sociales y acción colaborativa.</p>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center w-full max-w-2xl justify-between">
+                        <img src="https://github.com/jviglab/futurpunks-website/blob/main/Screenshot%202025-09-08.jpg?raw=true" alt="Sabrina Langer" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <div class="flex flex-col items-start flex-grow">
+                            <a href="https://www.linkedin.com/in/sabrina-langer-16313531a/" target="_blank">
+                                <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-1">Sabrina Langer</h4>
+                            </a>
+                            <p class="text-lg dynamic-text-secondary" data-translate="team-title-1">Fundadora</p>
+                        </div>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-sabrina">+</button>
+                    </div>
+                    <div id="bio-sabrina" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
+                        <p class="text-base dynamic-text-secondary" data-translate="team-location-1">París, Francia</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-1">Socióloga y fundadora de Futurpunks. Lidera proyectos internacionales que exploran futuros inclusivos y equitativos mediante investigación, análisis de políticas sociales y acción colaborativa.</p>
+                    </div>
                 </div>
                 <!-- Perfil 2 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Screenshot%202025-09-08.png?raw=true" alt="Alex Rivera" class="rounded-full mx-auto mb-4 w-48 h-48 object-cover">
-                    <a href="https://www.linkedin.com/in/alex-rivera-81608341/" target="_blank">
-                        <h4 class="text-4xl font-bold mb-2 dynamic-text" data-translate="team-name-2">Alex Rivera</h4>
-                    </a>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-title-2">Experto en innovación digital y estrategia creativa</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-location-2">Ciudad de México, México</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="team-bio-2">Especialista en diseño de estrategias digitales y campañas creativas, combinando innovación, visualización de datos y responsabilidad social.</p>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center w-full max-w-2xl justify-between">
+                        <img src="https://github.com/jviglab/futurpunks-website/blob/main/Screenshot%202025-09-08.png?raw=true" alt="Alex Rivera" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <div class="flex flex-col items-start flex-grow">
+                            <a href="https://www.linkedin.com/in/alex-rivera-81608341/" target="_blank">
+                                <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-2">Alex Rivera</h4>
+                            </a>
+                            <p class="text-lg dynamic-text-secondary" data-translate="team-title-2">Experto en innovación digital y estrategia creativa</p>
+                        </div>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-alex">+</button>
+                    </div>
+                    <div id="bio-alex" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
+                        <p class="text-base dynamic-text-secondary" data-translate="team-location-2">Ciudad de México, México</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-2">Especialista en diseño de estrategias digitales y campañas creativas, combinando innovación, visualización de datos y responsabilidad social.</p>
+                    </div>
                 </div>
                 <!-- Perfil 3 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://static.wixstatic.com/media/04a8a4_bb2de8c297b44bb19ac8445debc1f74b~mv2.jpg/v1/fill/w_2500,h_3125,al_c/04a8a4_bb2de8c297b44bb19ac8445debc1f74b~mv2.jpg" alt="Lin Xinye" class="rounded-full mx-auto mb-4 w-48 h-48 object-cover">
-                    <a href="https://www.linxinye.com/home" target="_blank">
-                        <h4 class="text-4xl font-bold mb-2 dynamic-text" data-translate="team-name-3">Lin Xinye</h4>
-                    </a>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-title-3">Artista digital y futurista visual</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-location-3">Guizhou, China</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="team-bio-3">Diseñadora de experiencias inmersivas y visualizaciones del futuro. Combina arte, tecnología y cultura para mapear escenarios posibles.</p>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center w-full max-w-2xl justify-between">
+                        <img src="https://static.wixstatic.com/media/04a8a4_bb2de8c297b44bb19ac8445debc1f74b~mv2.jpg/v1/fill/w_2500,h_3125,al_c/04a8a4_bb2de8c297b44bb19ac8445debc1f74b~mv2.jpg" alt="Lin Xinye" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <div class="flex flex-col items-start flex-grow">
+                            <a href="https://www.linxinye.com/home" target="_blank">
+                                <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-3">Lin Xinye</h4>
+                            </a>
+                            <p class="text-lg dynamic-text-secondary" data-translate="team-title-3">Artista digital y futurista visual</p>
+                        </div>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-lin">+</button>
+                    </div>
+                    <div id="bio-lin" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
+                        <p class="text-base dynamic-text-secondary" data-translate="team-location-3">Guizhou, China</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-3">Diseñadora de experiencias inmersivas y visualizaciones del futuro. Combina arte, tecnología y cultura para mapear escenarios posibles.</p>
+                    </div>
                 </div>
                 <!-- Perfil 4 -->
-                <div class="p-6 transition-colors duration-300 hover:bg-gray-800 hover:bg-opacity-20">
-                    <img src="https://github.com/jviglab/futurpunks-website/blob/main/Mamadou%20Diop.png?raw=true" alt="Mamadou Diop" class="rounded-full mx-auto mb-4 w-48 h-48 object-cover">
-                    <a href="https://www.schulich.uwo.ca/biophysics/people/faculty/BIOS/mamadou_diop.html" target="_blank">
-                        <h4 class="text-4xl font-bold mb-2 dynamic-text" data-translate="team-name-4">Mamadou Diop</h4>
-                    </a>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-title-4">Investigador en cultura y tecnología</p>
-                    <p class="text-sm mb-2 dynamic-text-secondary" data-translate="team-location-4">Dakar, Senegal</p>
-                    <p class="text-sm dynamic-text-secondary" data-translate="team-bio-4">Investiga tecnologías ópticas no invasivas aplicadas a la salud. Se enfoca en soluciones biomédicas y el uso de visualizaciones inmersivas para explorar nuevas aplicaciones médicas.</p>
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center w-full max-w-2xl justify-between">
+                        <img src="https://github.com/jviglab/futurpunks-website/blob/main/Mamadou%20Diop.png?raw=true" alt="Mamadou Diop" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <div class="flex flex-col items-start flex-grow">
+                            <a href="https://www.schulich.uwo.ca/biophysics/people/faculty/BIOS/mamadou_diop.html" target="_blank">
+                                <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-4">Mamadou Diop</h4>
+                            </a>
+                            <p class="text-lg dynamic-text-secondary" data-translate="team-title-4">Investigador en cultura y tecnología</p>
+                        </div>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-mamadou">+</button>
+                    </div>
+                    <div id="bio-mamadou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
+                        <p class="text-base dynamic-text-secondary" data-translate="team-location-4">Dakar, Senegal</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-4">Investiga tecnologías ópticas no invasivas aplicadas a la salud. Se enfoca en soluciones biomédicas y el uso de visualizaciones inmersivas para explorar nuevas aplicaciones médicas.</p>
+                    </div>
                 </div>
             </div>
             <p class="text-base md:text-lg mt-8 dynamic-text-secondary" data-translate="team-open-space">
@@ -447,7 +474,7 @@
                 'about-title': 'À propos / Nous',
                 'about-desc': 'Futurpunks est né en 2024 como un espace mondial pour explorer des futurs inclusifs, sostenibles et collaboratifs.',
                 'about-mission-title': 'Notre mission est de :',
-                'about-li-1': 'Cartographier les tendances sociales, culturelles et technologiques.',
+                'about-li-1': 'Cartographier les tendencias sociales, culturales et technologiques.',
                 'about-li-2': 'Favoriser les dialogues entre expertos multidisciplinaires.',
                 'about-li-3': 'Créer du contenido práctico para anticiper les défis et les opportunités futurs.',
                 'about-values-title': 'Valeurs :',
@@ -591,6 +618,30 @@
                 const currentTheme = body.dataset.theme;
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 applyTheme(newTheme);
+            });
+            
+            // Lógica de los botones de biografía expandible
+            document.querySelectorAll('.toggle-bio-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement.classList.contains('hidden')) {
+                        // Despliega la bio
+                        targetElement.classList.remove('hidden');
+                        setTimeout(() => {
+                            targetElement.classList.remove('opacity-0');
+                        }, 10);
+                        button.textContent = '-';
+                    } else {
+                        // Contrae la bio
+                        targetElement.classList.add('opacity-0');
+                        setTimeout(() => {
+                            targetElement.classList.add('hidden');
+                        }, 500); // Coincide con la duración de la transición
+                        button.textContent = '+';
+                    }
+                });
             });
         });
     </script>
