@@ -157,6 +157,10 @@
         body[data-theme="light"] #close-menu-button {
             color: #000000;
         }
+
+        .toggle-bio-button.rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body data-theme="dark" class="min-h-screen flex flex-col">
@@ -254,7 +258,7 @@
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-1">Fundadora</p>
                         </div>
-                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-sabrina">+</button>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-sabrina">⌄</button>
                     </div>
                     <div id="bio-sabrina" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-1">París, Francia</p>
@@ -271,7 +275,7 @@
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-2">Experto en innovación digital y estrategia creativa</p>
                         </div>
-                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-alex">+</button>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-alex">⌄</button>
                     </div>
                     <div id="bio-alex" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-2">Ciudad de México, México</p>
@@ -288,7 +292,7 @@
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-3">Artista digital y futurista visual</p>
                         </div>
-                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-lin">+</button>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-lin">⌄</button>
                     </div>
                     <div id="bio-lin" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-3">Guizhou, China</p>
@@ -305,7 +309,7 @@
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-4">Investigador en tecnología óptica y soluciones biomédicas</p>
                         </div>
-                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-mamadou">+</button>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-mamadou">⌄</button>
                     </div>
                     <div id="bio-mamadou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-4">Dakar, Senegal</p>
@@ -322,7 +326,7 @@
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-5">Estratega en innovación y experiencia de usuario</p>
                         </div>
-                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-linazhou">+</button>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-linazhou">⌄</button>
                     </div>
                     <div id="bio-linazhou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-5">Chengdu, China</p>
@@ -662,14 +666,14 @@
                         setTimeout(() => {
                             targetElement.classList.remove('opacity-0');
                         }, 10);
-                        button.textContent = '-';
+                        button.classList.add('rotate-180');
                     } else {
                         // Contrae la bio
                         targetElement.classList.add('opacity-0');
                         setTimeout(() => {
                             targetElement.classList.add('hidden');
                         }, 500); // Coincide con la duración de la transición
-                        button.textContent = '+';
+                        button.classList.remove('rotate-180');
                     }
                 });
             });
