@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futurpunks</title>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACWklEQVR42tVXTWgTURD+ZtO0iA8gCgqK1vVqE4WIRWp9EESxQ8GHiuAXaBFaP4Io2Cgxgh4UaBEFwY+CKD6IFg9iK/g1hBBG8uAP4aO8/Zk3m5nZ3e21hT542HvmzbyZt/fNvPnz8WqWpXg/vT+c/H15+f9V1mF3j7/Pj/Kk6+tXU91T6t10V2/bF0R5WcE/0z/Xn/n/2070eXp2eXW3xR+q71v9T22f/b7b+1v+28H4gDq1s9X31N83n3H3n3H/t/p7L929z2W4m/V5+a+8vM2P37eZ8mJ/2k/fN/hO0b/W+T+tT2W/9T2w/9T2w6b+B/7j/0uS/jO17H8A/f01tT23f7vGf9nF/v/jGgB43n3P/s98233O/t2C/c2K/X+G/H/i+0G1/m4/x44oW+W7R/65f/X/m2+27v+z3d5L92+k2/N+1b9b+A9fO/5vP6d8P5gH+2rB/+fXzPj+eXzT7r+B/G2/g9d3/3P8Fj+W38P9V72tP+5t8/zP9H/v5n+/9Xy/12/3/m318/O/8P/f+JgD+eX7y1fN//N/t+18E/P//f9zPz//zP8//Nf8/v/lq+f/4F+3z3v/d/89h7Lw3/gP//67H+7/x44Q4WAAAgAAAAElFTkSuQmCC">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACWklEQVR42tVXTWgTURD+ZtO0iA8gCgqK1vVqE4WIRWp9EESxQ8GHiuAXaBFaP4Io2Cgxgh4UaBEFwY+CKD6IFg9iK/g1hBBG8uAP4aO8/Zk3m5mZ3e21hT542HvmzbyZt/fNvPnz8WqWpXg/vT+c/H15+f9V1mF3j7/Pj/Kk6+tXU91T6t10V2/bF0R5WcE/0z/Xn/n/2070eXp2eXW3xR+q71v9T22f/b7b+1v+28H4gDq1s9X31N83n3H3n3H/t/p7L929z2W4m/V5+a+8vM2P37eZ8mJ/2k/fN/hO0b/W+T+tT2W/9T2w/9T2w6b+B/7j/0uS/jO17H8A/f01tT23f7vGf9nF/v/jGgB43n3P/s98233O/t2C/c2K/X+G/H/i+0G1/m4/x44oW+W7R/65f/X/m2+27v+z3d5L92+k2/N+1b9b+A9fO/5vP6d8P5gH+2rB/+fXzPj+eXzT7r+B/G2/g9d3/3P8Fj+W38P9V72tP+5t8/zP9H/v5n+/9Xy/12/3/m318/O/8P/f+JgD+eX7y1fN//N/t+18E/P//f9zPz//zP8//Nf8/v/lq+f/4F+3z3v/d/89h7Lw3/gP//67H+7/x44Q4WAAAgAAAAElFTkSuQmCC">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -240,26 +240,24 @@
         </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
-            <a href="javascript:void(0);" onclick="navigateToSection('main-section');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-main-title">Inicio</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('projects');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-projects">Proyectos</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('reports');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('blog');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('workshops');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('cursos');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('team');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-team">Equipo</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
-            <!-- Selectores de idioma y tema integrados en una fila -->
-            <div class="flex items-center space-x-2">
-                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="en">ENG</button>
-                <span class="text-white text-lg font-bold">/</span>
-                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="es">SPA</button>
-                <span class="text-white text-lg font-bold">/</span>
-                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="fr">FRA</button>
+            <a href="reports-blog.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-premium-reports">Premium Reports</a>
+            <a href="reports-blog.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-blog-ideas">Blog / Ideas</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('team');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-inspiration">Those who inspire us</a>
+            <a href="workshops-cursos.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-workshops-courses">Workshops / Courses</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-about">About</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-join">Join</a>
+            <!-- Selectores de idioma y tema -->
+            <div class="mt-8 flex flex-row items-center space-x-2 w-full justify-start text-base">
+                <button class="lang-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="en">ENG</button>
+                <span class="text-gray-400 text-lg">/</span>
+                <button class="lang-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="es">SPA</button>
+                <span class="text-gray-400 text-lg">/</span>
+                <button class="lang-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="fr">FRA</button>
             </div>
-            <div class="flex items-center space-x-2">
-                <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-theme="dark">DARK</button>
-                <span class="text-white text-lg font-bold">/</span>
-                <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-theme="light">LIGHT</button>
+            <div class="flex flex-row items-center space-x-2 mt-4 w-full justify-start text-base">
+                <button class="theme-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark">DARK</button>
+                <span class="text-gray-400 text-lg">/</span>
+                <button class="theme-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="light">LIGHT</button>
             </div>
         </nav>
     </div>
@@ -283,7 +281,11 @@
         </section>
         <!-- Secciones de Contenido -->
         <section id="team" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
-            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text">Futurpunks brings together a network of multidisciplinary collaborators.</h2>
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text">
+                <span class="text-5xl md:text-6xl font-black">Global Voices:</span><br>
+                <span class="text-lg md:text-xl">Artists, Designers & Thinkers</span><br>
+                <span class="text-lg md:text-xl">Exploring futures across cultures, disciplines, and continents.</span>
+            </h2>
             <div class="space-y-12">
                 <!-- Perfil 1 -->
                 <div class="flex flex-col items-center">
@@ -368,6 +370,23 @@
                     <div id="bio-linazhou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-5">Chengdu, China</p>
                         <p class="text-base dynamic-text-secondary" data-translate="team-bio-5">Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilité.</p>
+                    </div>
+                </div>
+                <!-- Perfil 6 -->
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center w-full max-w-2xl justify-between">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFwRW_BLKntQw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691438129878?e=1760572800&v=beta&t=A5ZvlAaAFiW0JJja1SQ8UxOg4bm2caWpwezPC2jaRQE" alt="Zach Wall" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
+                        <div class="flex flex-col items-start flex-grow">
+                            <a href="https://www.linkedin.com/in/zachwall/" target="_blank">
+                                <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-6">Zach Wall</h4>
+                            </a>
+                            <p class="text-lg dynamic-text-secondary" data-translate="team-title-6">Smart Cities & Innovation</p>
+                        </div>
+                        <button class="toggle-bio-button text-4xl transform transition-transform duration-300 dynamic-text focus:outline-none" data-target="bio-zach">⌄</button>
+                    </div>
+                    <div id="bio-zach" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
+                        <p class="text-base dynamic-text-secondary" data-translate="team-location-6">Chicago, Estados Unidos</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-6">Consultant exploring how technology and data can shape the cities of the future. Focus areas: Smart cities, innovation, technology, urban planning.</p>
                     </div>
                 </div>
             </div>
@@ -482,7 +501,7 @@
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Estratega en innovación y experiencia de usuario',
                 'team-location-5': 'Chengdu, China',
-                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad pour imaginer les futurs de la mobilité et de la durabilité.',
+                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilidad.',
                 'about-title': 'About / Nosotros',
                 'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
                 'about-mission-title': 'Nuestra misión es:',
@@ -495,6 +514,18 @@
                 'about-li-7': 'Innovación ética',
                 'about-contact-title': 'Contacto:',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
+                'menu-premium-reports': 'Premium Reports',
+                'menu-blog-ideas': 'Blog / Ideas',
+                'menu-inspiration': 'Those who inspire us',
+                'menu-workshops-courses': 'Workshops / Courses',
+                'menu-about': 'About',
+                'menu-join': 'Join',
+                'nav-languages': 'Idiomas:',
+                'nav-theme': 'Tema:',
+                'team-name-6': 'Zach Wall',
+                'team-title-6': 'Consultor de Smart Cities e Innovación',
+                'team-location-6': 'Chicago, Estados Unidos',
+                'team-bio-6': 'Consultor que explora cómo la tecnología y los datos pueden dar forma a las ciudades del futuro. Áreas de enfoque: Smart cities, innovación, tecnología, planificación urbana.',
             },
             'en': {
                 'nav-main-title': 'Home',
@@ -544,6 +575,18 @@
                 'about-li-7': 'Ethical innovation',
                 'about-contact-title': 'Contact:',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
+                'menu-premium-reports': 'Premium Reports',
+                'menu-blog-ideas': 'Blog / Ideas',
+                'menu-inspiration': 'Those who inspire us',
+                'menu-workshops-courses': 'Workshops / Courses',
+                'menu-about': 'About',
+                'menu-join': 'Join',
+                'nav-languages': 'Languages:',
+                'nav-theme': 'Theme:',
+                'team-name-6': 'Zach Wall',
+                'team-title-6': 'Smart Cities & Innovation Consultant',
+                'team-location-6': 'Chicago, United States',
+                'team-bio-6': 'Consultant exploring how technology and data can shape the cities of the future. Focus areas: Smart cities, innovation, technology, urban planning.',
             },
             'fr': {
                 'nav-main-title': 'Accueil',
@@ -593,6 +636,18 @@
                 'about-li-7': 'Innovation éthique',
                 'about-contact-title': 'Contact :',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
+                'menu-premium-reports': 'Rapports Premium',
+                'menu-blog-ideas': 'Blog / Idées',
+                'menu-inspiration': 'Ceux qui nous inspirent',
+                'menu-workshops-courses': 'Ateliers / Cours',
+                'menu-about': 'À propos',
+                'menu-join': 'Rejoindre',
+                'nav-languages': 'Langues :',
+                'nav-theme': 'Thème :',
+                'team-name-6': 'Zach Wall',
+                'team-title-6': 'Consultant en Smart Cities et Innovation',
+                'team-location-6': 'Chicago, États-Unis',
+                'team-bio-6': 'Consultant qui explore comment la technologie et les données peuvent façonner les villes du futur. Domaines d\'intérêt : Villes intelligentes, innovation, technologie, urbanisme.',
             }
         };
         const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
