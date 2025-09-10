@@ -89,15 +89,15 @@
         [data-theme="light"] [data-theme-element="header"] {
             background-color: transparent;
         }
-
-        [data-theme="dark"] [data-theme-element="card"] {
-            background-color: transparent;
+        
+        /* Estilos para las secciones de contenido */
+        body[data-theme="dark"] .section-content {
+            background-color: var(--color-background-dark);
         }
-
-        [data-theme="light"] [data-theme-element="card"] {
-            background-color: transparent;
+        body[data-theme="light"] .section-content {
+            background-color: var(--color-background-light);
         }
-
+        
         [data-theme="dark"] [data-theme-element="button-secondary"] {
             background-color: #1F2937;
             color: #D1D5DB;
@@ -209,27 +209,16 @@
         [data-theme="dark"] .spinner-small {
             border-top-color: #fff;
         }
-
-        #video-bg-container {
-            position: fixed;
+        
+        /* Nuevo estilo para el video de fondo de la main-section */
+        .video-background {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        #video-bg {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
@@ -238,13 +227,7 @@
     <div id="preloader">
         <div class="spinner"></div>
     </div>
-    <!-- Contenedor del video de fondo -->
-    <div id="video-bg-container">
-        <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
-            <source src="https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4" type="video/mp4">
-            Tu navegador no soporta el tag de video.
-        </video>
-    </div>
+    
     <!-- Sección del Encabezado (Header) -->
     <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50">
         <!-- Contenedor para el logo (siempre en la izquierda) -->
@@ -296,7 +279,12 @@
     </div>
     <!-- Sección Principal con el Título -->
     <main id="main-section" class="relative overflow-hidden z-10">
+        <!-- Contenedor del video de fondo -->
         <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
+            <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks" class="video-background">
+                <source src="https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
             <div class="max-w-4xl relative z-10">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight text-white" data-translate="main-title">
                     LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
@@ -306,14 +294,14 @@
                 </p>
             </div>
         </div>
-        <section id="projects" class="my-5 md:my-10 p-6 mx-auto w-full text-center">
+        <section id="projects" class="my-5 md:my-10 p-6 mx-auto w-full text-center section-content">
             <h2 class="text-2xl md:text-4xl font-bold mb-8 dynamic-text" data-translate="projects-title">50+ Future-Oriented Projects</h2>
             <div class="flex justify-center">
                 <img src="https://github.com/amma-labs/futurpunks-website/blob/main/branding.png?raw=true" alt="Future-Oriented Projects Branding" class="w-full h-auto">
             </div>
         </section>
         <!-- Secciones de Contenido -->
-        <section id="team" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
+        <section id="team" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center section-content">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="team-section-title">
                 <span class="text-5xl md:text-6xl font-black">Global Voices:</span><br>
                 <span class="text-lg md:text-xl">Artists, Designers & Thinkers</span><br>
@@ -424,7 +412,7 @@
                 </div>
             </div>
         </section>
-        <section id="about" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center">
+        <section id="about" class="my-5 md:my-10 p-6 max-w-4xl mx-auto w-full text-center section-content">
             <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-16 w-16 mb-4 mx-auto dynamic-text">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
             <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
@@ -497,71 +485,8 @@
             console.error("Firebase config is missing. Firestore functionality will be disabled.");
         }
 
-        const languageCodes = ['es', 'en', 'fr'];
+        const languageCodes = ['en', 'fr'];
         const translations = {
-            'es': {
-                'nav-main-title': 'Inicio',
-                'nav-projects': 'Proyectos',
-                'nav-reports': 'Reports',
-                'nav-blog': 'Blog',
-                'nav-workshops': 'Workshops',
-                'nav-cursos': 'Cursos',
-                'nav-team': 'Equipo',
-                'nav-about': 'About',
-                'nav-languages-spanish': 'SPA',
-                'nav-languages-english': 'ENG',
-                'nav-languages-french': 'FRA',
-                'nav-theme-dark': 'DARK',
-                'nav-theme-white': 'WHITE',
-                'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
-                'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
-                'projects-title': '50+ Proyectos Orientados al Futuro',
-                'team-section-title': '<span class="text-5xl md:text-6xl font-black">Voces Globales:</span><br><span class="text-lg md:text-xl">Artistas, Diseñadores y Pensadores</span><br><span class="text-lg md:text-xl">Explorando futuros a través de culturas, disciplinas y continentes.</span>',
-                'team-name-1': 'Sabrina Langer',
-                'team-title-1': 'Fundadora',
-                'team-location-1': 'París, Francia',
-                'team-bio-1': 'Socióloga y fundadora de Futurpunks. Lidera proyectos internacionales que exploran futuros inclusivos y equitativos mediante investigación, análisis de políticas sociales y acción colaborativa.',
-                'team-name-2': 'Alex Rivera',
-                'team-title-2': 'Experto en innovación digital y estrategia creativa',
-                'team-location-2': 'Ciudad de México, México',
-                'team-bio-2': 'Especialista en diseño de estrategias digitales y campañas creativas, combinando innovación, visualización de datos y responsabilidad social.',
-                'team-name-3': 'Lin Xinye',
-                'team-title-3': 'Artista digital y futurista visual',
-                'team-location-3': 'Guizhou, China',
-                'team-bio-3': 'Diseñadora de experiencias inmersivas y visualizaciones del futuro. Combina arte, tecnología y cultura para mapear escenarios posibles.',
-                'team-name-4': 'Mamadou Diop',
-                'team-title-4': 'Investigador en tecnología óptica y soluciones biomédicas',
-                'team-location-4': 'Dakar, Senegal',
-                'team-bio-4': 'Investiga tecnologías ópticas no invasivas aplicadas a la salud. Se enfoca en soluciones biomédicas y el uso de visualizaciones inmersivas para explorar nuevas aplicaciones médicas.',
-                'team-name-5': 'Lina Zhou',
-                'team-title-5': 'Estratega en innovación y experiencia de usuario',
-                'team-location-5': 'Chengdu, China',
-                'team-bio-5': 'Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
-                'about-title': 'About / Nosotros',
-                'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
-                'about-mission-title': 'Nuestra misión es:',
-                'about-li-1': 'Mapear tendencias sociales, culturales y tecnológicas.',
-                'about-li-2': 'Fomentar diálogos entre expertos multidisciplinarios.',
-                'about-li-3': 'Crear contenido práctico para anticipar desafíos y oportunidades futuras.',
-                'about-li-4': 'Inclusión',
-                'about-li-5': 'Sostenibilidad',
-                'about-li-6': 'Colaboración',
-                'about-li-7': 'Innovación ética',
-                'about-contact-title': 'Contacto:',
-                'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
-                'menu-premium-reports': 'Reportes Premium',
-                'menu-blog-ideas': 'Blog / Ideas',
-                'menu-inspiration': 'Quienes nos inspiran',
-                'menu-workshops-courses': 'Workshops / Cursos',
-                'menu-about': 'Nosotros',
-                'menu-join': 'Súmate',
-                'nav-languages': 'Idiomas:',
-                'nav-theme': 'Tema:',
-                'team-name-6': 'Zach Wall',
-                'team-title-6': 'Consultor de Smart Cities e Innovación',
-                'team-location-6': 'Chicago, Estados Unidos',
-                'team-bio-6': 'Consultor que explora cómo la tecnología y los datos pueden dar forma a las ciudades del futuro. Áreas de enfoque: Smart cities, innovación, tecnología, planificación urbana.',
-            },
             'en': {
                 'nav-main-title': 'Home',
                 'nav-projects': 'Projects',
@@ -652,7 +577,7 @@
                 'team-location-2': 'Mexico, Mexique',
                 'team-bio-2': 'Spécialiste en conception de stratégies numériques et de campagnes créatives, combinant innovation, visualisation de données et responsabilité sociale.',
                 'team-name-3': 'Lin Xinye',
-                'team-title-3': 'Artiste digital et futurista visuel',
+                'team-title-3': 'Artiste digital y futurista visuel',
                 'team-location-3': 'Guizhou, Chine',
                 'team-bio-3': 'Créatrice d\'expériences immersives et de visualizaciones du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'team-name-4': 'Mamadou Diop',
@@ -686,7 +611,7 @@
                 'team-name-6': 'Zach Wall',
                 'team-title-6': 'Consultant en Smart Cities et Innovation',
                 'team-location-6': 'Chicago, États-Unis',
-                'team-bio-6': 'Consultant qui explore comment la technologie et les données peuvent façonner les villes du futur. Domaines d\'intérêt : Villes intelligentes, innovation, technologie, urbanisme.',
+                'team-bio-6': 'Consultant qui explore how la technologie et les données peuvent façonner les villes du futur. Domaines d\'intérêt : Villes intelligentes, innovation, technologie, urbanisme.',
             }
         };
         const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
@@ -694,7 +619,7 @@
 
         // Función para aplicar las traducciones
         function applyUserPreferences() {
-            const currentLang = localStorage.getItem('lang') || 'es';
+            const currentLang = localStorage.getItem('lang') || 'en';
             const currentTheme = localStorage.getItem('theme') || 'dark';
 
             // Aplica el idioma
@@ -757,7 +682,7 @@
             if (!localStorage.getItem('lang')) {
                 let systemLang = navigator.language.substring(0, 2);
                 if (!languageCodes.includes(systemLang)) {
-                    systemLang = 'es';
+                    systemLang = 'en';
                 }
                 localStorage.setItem('lang', systemLang);
             }
