@@ -162,13 +162,18 @@
             background-color: #FFFFFF;
             color: #000000;
         }
-
-        body[data-theme="dark"] #close-menu-button {
-            color: #FFFFFF;
+        
+        /* Estilos para el cambio de ícono del menú */
+        .close-icon {
+            display: none;
         }
-
-        body[data-theme="light"] #close-menu-button {
-            color: #000000;
+        
+        .menu-open .hamburger-icon {
+            display: none;
+        }
+        
+        .menu-open .close-icon {
+            display: block;
         }
 
         .toggle-bio-button.rotate-180 {
@@ -204,12 +209,41 @@
         [data-theme="dark"] .spinner-small {
             border-top-color: #fff;
         }
+
+        #video-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #video-bg {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
     </style>
 </head>
 <body data-theme="dark" class="min-h-screen flex flex-col">
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
+    </div>
+    <!-- Contenedor del video de fondo -->
+    <div id="video-bg-container">
+        <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
+            <source src="https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4" type="video/mp4">
+            Tu navegador no soporta el tag de video.
+        </video>
     </div>
     <!-- Sección del Encabezado (Header) -->
     <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50">
@@ -224,20 +258,19 @@
         <div class="flex items-center space-x-4 md:space-x-6">
             <!-- Botón de menú hamburguesa (visible en todos los tamaños) -->
             <button id="mobile-menu-button" class="text-3xl md:text-5xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 md:w-16 md:h-16">
+                <!-- Ícono de la hamburguesa -->
+                <svg id="hamburger-icon" class="hamburger-icon w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!-- Ícono de la X -->
+                <svg id="close-icon" class="close-icon w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
     </header>
     <!-- Menú desplegable universal (se despliega desde la derecha) -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 md:w-1/2 lg:w-1/3 text-black z-40 transition-transform duration-300 transform translate-x-full rounded-l-xl shadow-lg flex flex-col">
-        <!-- Contenedor de cierre -->
-        <div class="flex justify-end p-6">
-            <button id="close-menu-button" class="text-3xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
-                &times;
-            </button>
-        </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
             <a href="reports-blog.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-premium-reports">Premium Reports</a>
@@ -262,7 +295,7 @@
         </nav>
     </div>
     <!-- Sección Principal con el Título -->
-    <main id="main-section" class="relative overflow-hidden">
+    <main id="main-section" class="relative overflow-hidden z-10">
         <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
             <div class="max-w-4xl relative z-10">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight text-white" data-translate="main-title">
@@ -369,7 +402,7 @@
                     </div>
                     <div id="bio-linazhou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-5">Chengdu, China</p>
-                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-5">Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilité.</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-5">Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.</p>
                     </div>
                 </div>
                 <!-- Perfil 6 -->
@@ -503,7 +536,7 @@
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Estratega en innovación y experiencia de usuario',
                 'team-location-5': 'Chengdu, China',
-                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilité.',
+                'team-bio-5': 'Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
                 'about-title': 'About / Nosotros',
                 'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
                 'about-mission-title': 'Nuestra misión es:',
@@ -516,12 +549,12 @@
                 'about-li-7': 'Innovación ética',
                 'about-contact-title': 'Contacto:',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
-                'menu-premium-reports': 'Premium Reports',
+                'menu-premium-reports': 'Reportes Premium',
                 'menu-blog-ideas': 'Blog / Ideas',
-                'menu-inspiration': 'Those who inspire us',
-                'menu-workshops-courses': 'Workshops / Courses',
-                'menu-about': 'About',
-                'menu-join': 'Join',
+                'menu-inspiration': 'Quienes nos inspiran',
+                'menu-workshops-courses': 'Workshops / Cursos',
+                'menu-about': 'Nosotros',
+                'menu-join': 'Súmate',
                 'nav-languages': 'Idiomas:',
                 'nav-theme': 'Tema:',
                 'team-name-6': 'Zach Wall',
@@ -621,7 +654,7 @@
                 'team-name-3': 'Lin Xinye',
                 'team-title-3': 'Artiste digital et futurista visuel',
                 'team-location-3': 'Guizhou, Chine',
-                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
+                'team-bio-3': 'Créatrice d\'expériences immersives et de visualizaciones du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'team-name-4': 'Mamadou Diop',
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
@@ -660,47 +693,36 @@
         const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
 
         // Función para aplicar las traducciones
-        function setLanguage(lang) {
+        function applyUserPreferences() {
+            const currentLang = localStorage.getItem('lang') || 'es';
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+
+            // Aplica el idioma
             const elements = document.querySelectorAll('[data-translate]');
-            const inputPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
 
             document.querySelectorAll('.lang-button').forEach(btn => {
                 btn.classList.remove('text-cyan-400', 'font-bold');
-            });
-            const selectedButton = document.querySelector(`.lang-button[data-lang="${lang}"]`);
-            if (selectedButton) {
-                selectedButton.classList.add('text-cyan-400', 'font-bold');
-            }
-            elements.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
+                if (btn.dataset.lang === currentLang) {
+                    btn.classList.add('text-cyan-400', 'font-bold');
                 }
             });
-            inputPlaceholders.forEach(input => {
-                const key = input.getAttribute('data-translate-placeholder');
-                if (translations[lang] && translations[lang][key]) {
-                    input.setAttribute('placeholder', translations[lang][key]);
-                }
-            });
-            localStorage.setItem('lang', lang);
-        }
 
-        // Lógica de cambio de tema
-        const logoImg = document.getElementById('logo-img');
-        const body = document.body;
-
-        function applyTheme(themeName) {
-            body.dataset.theme = themeName;
+            // Aplica el tema
+            document.body.dataset.theme = currentTheme;
             document.querySelectorAll('.theme-button').forEach(btn => {
                 btn.classList.remove('text-cyan-400', 'font-bold');
+                if (btn.dataset.theme === currentTheme) {
+                    btn.classList.add('text-cyan-400', 'font-bold');
+                }
             });
-            const selectedButton = document.querySelector(`.theme-button[data-theme="${themeName}"]`);
-            if (selectedButton) {
-                selectedButton.classList.add('text-cyan-400', 'font-bold');
-            }
-            logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
-            localStorage.setItem('theme', themeName);
+            const logoImg = document.getElementById('logo-img');
+            logoImg.src = currentTheme === 'dark' ? darkLogoUrl : lightLogoUrl;
         }
 
         // Lógica de preloader
@@ -729,47 +751,42 @@
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const closeMenuButton = document.getElementById('close-menu-button');
 
-            // Lógica para detectar el idioma del sistema
-            let systemLang = navigator.language.substring(0, 2);
-            let storedLang = localStorage.getItem('lang');
-            let initialLang = 'es';
-            if (storedLang) {
-                initialLang = storedLang;
-            } else if (languageCodes.includes(systemLang)) {
-                initialLang = systemLang;
-            }
-            setLanguage(initialLang);
-            // Lógica para detectar el tema del sistema
+            // Set initial language and theme based on localStorage or system preferences
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            let storedTheme = localStorage.getItem('theme');
-            let initialTheme;
-            if (storedTheme) {
-                initialTheme = storedTheme;
-            } else {
-                initialTheme = prefersDark ? 'dark' : 'light';
+            if (!localStorage.getItem('lang')) {
+                let systemLang = navigator.language.substring(0, 2);
+                if (!languageCodes.includes(systemLang)) {
+                    systemLang = 'es';
+                }
+                localStorage.setItem('lang', systemLang);
             }
-            applyTheme(initialTheme);
+            if (!localStorage.getItem('theme')) {
+                localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+            }
+
+            applyUserPreferences();
+
             // Lógica de los botones de idioma
             document.querySelectorAll('.lang-button').forEach(button => {
                 button.addEventListener('click', () => {
-                    setLanguage(button.dataset.lang);
+                    localStorage.setItem('lang', button.dataset.lang);
+                    applyUserPreferences();
                 });
             });
             // Lógica de los botones de tema
             document.querySelectorAll('.theme-button').forEach(button => {
                 button.addEventListener('click', () => {
-                    applyTheme(button.dataset.theme);
+                    localStorage.setItem('theme', button.dataset.theme);
+                    applyUserPreferences();
                 });
             });
+
             // Lógica del menú móvil
             mobileMenuButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                mobileMenu.classList.remove('translate-x-full');
-            });
-            closeMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.toggle('translate-x-full');
+                mobileMenuButton.classList.toggle('menu-open');
             });
             // Cerrar menú al hacer clic fuera de él
             document.addEventListener('click', (e) => {
@@ -777,12 +794,14 @@
                 const isClickOnButton = mobileMenuButton.contains(e.target);
                 if (!isClickInsideMenu && !isClickOnButton) {
                     mobileMenu.classList.add('translate-x-full');
+                    mobileMenuButton.classList.remove('menu-open');
                 }
             });
             // Cerrar menú al hacer clic en un enlace
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
+                    mobileMenuButton.classList.remove('menu-open');
                 });
             });
             // Lógica de los botones de biografía expandible
