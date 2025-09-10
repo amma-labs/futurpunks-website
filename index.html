@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -229,12 +229,12 @@
     </div>
     
     <!-- Sección del Encabezado (Header) -->
-    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50">
+    <header data-theme-element="header" class="w-full p-2 md:p-4 flex justify-between items-center z-50">
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
             <a href="javascript:void(0);" onclick="navigateToSection('main-section');">
-                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
+                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-16 md:h-20 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
         <!-- Contenedor del menú hamburguesa (en la derecha) -->
@@ -242,11 +242,11 @@
             <!-- Botón de menú hamburguesa (visible en todos los tamaños) -->
             <button id="mobile-menu-button" class="text-3xl md:text-5xl focus:outline-none focus:ring-2 focus:ring-white rounded-md">
                 <!-- Ícono de la hamburguesa -->
-                <svg id="hamburger-icon" class="hamburger-icon w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <svg id="hamburger-icon" class="hamburger-icon w-10 h-10 md:w-14 md:h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
                 <!-- Ícono de la X -->
-                <svg id="close-icon" class="close-icon w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <svg id="close-icon" class="close-icon w-10 h-10 md:w-14 md:h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -416,7 +416,7 @@
             <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-16 w-16 mb-4 mx-auto dynamic-text">
             <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="about-title">About / Nosotros</h2>
             <p class="text-base md:text-lg mb-4 dynamic-text-secondary" data-translate="about-desc">
-                Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.
+                Futurpunks was born in 2024 as a global space to explore inclusive, sustainable, and collaborative futures.
             </p>
             <h3 class="text-xl md:text-2xl font-bold mb-4 dynamic-text-secondary" data-translate="about-mission-title">Nuestra misión es:</h3>
             <ul class="text-base md:text-lg list-disc list-inside space-y-2 mb-8 dynamic-text-secondary">
@@ -485,7 +485,7 @@
             console.error("Firebase config is missing. Firestore functionality will be disabled.");
         }
 
-        const languageCodes = ['en', 'fr'];
+        const languageCodes = ['en', 'es', 'fr'];
         const translations = {
             'en': {
                 'nav-main-title': 'Home',
@@ -549,6 +549,69 @@
                 'team-title-6': 'Smart Cities & Innovation Consultant',
                 'team-location-6': 'Chicago, United States',
                 'team-bio-6': 'Consultant exploring how technology and data can shape the cities of the future. Focus areas: Smart cities, innovation, technology, urban planning.',
+            },
+            'es': {
+                'nav-main-title': 'Inicio',
+                'nav-projects': 'Proyectos',
+                'nav-reports': 'Reports',
+                'nav-blog': 'Blog',
+                'nav-workshops': 'Workshops',
+                'nav-cursos': 'Cursos',
+                'nav-team': 'Equipo',
+                'nav-about': 'About',
+                'nav-languages-spanish': 'SPA',
+                'nav-languages-english': 'ENG',
+                'nav-languages-french': 'FRA',
+                'nav-theme-dark': 'DARK',
+                'nav-theme-white': 'WHITE',
+                'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
+                'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
+                'projects-title': '50+ Proyectos Orientados al Futuro',
+                'team-section-title': '<span class="text-5xl md:text-6xl font-black">Voces Globales:</span><br><span class="text-lg md:text-xl">Artistas, Diseñadores y Pensadores</span><br><span class="text-lg md:text-xl">Explorando futuros a través de culturas, disciplinas y continentes.</span>',
+                'team-name-1': 'Sabrina Langer',
+                'team-title-1': 'Fundadora',
+                'team-location-1': 'París, Francia',
+                'team-bio-1': 'Socióloga y fundadora de Futurpunks. Lidera proyectos internacionales que exploran futuros inclusivos y equitativos mediante investigación, análisis de políticas sociales y acción colaborativa.',
+                'team-name-2': 'Alex Rivera',
+                'team-title-2': 'Experto en innovación digital y estrategia creativa',
+                'team-location-2': 'Ciudad de México, México',
+                'team-bio-2': 'Especialista en diseño de estrategias digitales y campañas creativas, combinando innovación, visualización de datos y responsabilidad social.',
+                'team-name-3': 'Lin Xinye',
+                'team-title-3': 'Artista digital y futurista visual',
+                'team-location-3': 'Guizhou, China',
+                'team-bio-3': 'Diseñadora de experiencias inmersivas y visualizaciones del futuro. Combina arte, tecnología y cultura para mapear escenarios posibles.',
+                'team-name-4': 'Mamadou Diop',
+                'team-title-4': 'Investigador en tecnología óptica y soluciones biomédicas',
+                'team-location-4': 'Dakar, Senegal',
+                'team-bio-4': 'Investiga tecnologías ópticas no invasivas aplicadas a la salud. Se enfoca en soluciones biomédicas y el uso de visualizaciones inmersivas para explorar nuevas aplicaciones médicas.',
+                'team-name-5': 'Lina Zhou',
+                'team-title-5': 'Estratega en innovación y experiencia de usuario',
+                'team-location-5': 'Chengdu, China',
+                'team-bio-5': 'Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
+                'about-title': 'About / Nosotros',
+                'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
+                'about-mission-title': 'Nuestra misión es:',
+                'about-li-1': 'Mapear tendencias sociales, culturales y tecnológicas.',
+                'about-li-2': 'Fomentar diálogos entre expertos multidisciplinarios.',
+                'about-li-3': 'Crear contenido práctico para anticipar desafíos y oportunidades futuras.',
+                'about-li-4': 'Inclusión',
+                'about-li-5': 'Sostenibilidad',
+                'about-li-6': 'Colaboración',
+                'about-li-7': 'Innovación ética',
+                'about-contact-title': 'Contacto:',
+                'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
+                'menu-premium-reports': 'Reportes Premium',
+                'menu-blog-ideas': 'Blog / Ideas',
+                'menu-inspiration': 'Quienes nos inspiran',
+                'menu-workshops-courses': 'Workshops / Cursos',
+                'menu-about': 'Nosotros',
+                'menu-join': 'Súmate',
+                'nav-languages': 'Idiomas:',
+                'nav-theme': 'Tema:',
+                'team-name-6': 'Zach Wall',
+                'team-title-6': 'Consultor de Smart Cities e Innovación',
+                'team-location-6': 'Chicago, Estados Unidos',
+                'team-bio-6': 'Consultor que explora cómo la tecnología y los datos pueden dar forma a las ciudades del futuro. Áreas de enfoque: Smart cities, innovación, tecnología, planificación urbana.',
             },
             'fr': {
                 'nav-main-title': 'Accueil',
@@ -615,7 +678,7 @@
             }
         };
         const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
-        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
+        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/lightCopy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
 
         // Función para aplicar las traducciones
         function applyUserPreferences() {
