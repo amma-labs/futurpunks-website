@@ -13,28 +13,36 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700;900&display=swap');
         :root {
             --color-primary-dark: #FFFFFF;
-            --color-secondary-dark: #374151; /* gray-700 */
-            --color-accent-dark: #6B7280;    /* gray-500 */
+            --color-secondary-dark: #374151;
+            /* gray-700 */
+            --color-accent-dark: #6B7280;
+            /* gray-500 */
             --color-background-dark: #000000;
             --color-primary-light: #000000;
-            --color-secondary-light: #F3F4F6; /* gray-100 */
-            --color-accent-light: #9CA3AF;    /* gray-400 */
+            --color-secondary-light: #F3F4F6;
+            /* gray-100 */
+            --color-accent-light: #9CA3AF;
+            /* gray-400 */
             --color-background-light: #FFFFFF;
         }
+
         /* Estilos aplicados por data-theme */
         body[data-theme='dark'] {
             background-color: var(--color-background-dark);
             color: var(--color-primary-dark);
         }
+
         body[data-theme='light'] {
             background-color: var(--color-background-light);
             color: var(--color-primary-light);
         }
+
         body {
             font-family: 'Space Grotesk', sans-serif;
             scroll-behavior: smooth;
             transition: background-color 0.5s ease;
         }
+
         /* Contenedor del video de fondo */
         #video-bg-container {
             position: absolute;
@@ -45,6 +53,7 @@
             overflow: hidden;
             z-index: -1;
         }
+
         #video-bg {
             min-width: 100%;
             min-height: 100%;
@@ -56,6 +65,7 @@
             transform: translate(-50%, -50%);
             object-fit: cover;
         }
+
         /* Clases para el preloader */
         #preloader {
             position: fixed;
@@ -70,6 +80,7 @@
             z-index: 100;
             transition: opacity 0.5s ease-in-out;
         }
+
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-top: 4px solid #fff;
@@ -78,72 +89,143 @@
             height: 40px;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
+
         /* Estilos específicos para el tema, controlados por JavaScript */
-        [data-theme-element="header"] { transition: background-color 0.5s ease; }
-        [data-theme="dark"] [data-theme-element="header"] { background-color: transparent; }
-        [data-theme="light"] [data-theme-element="header"] { background-color: transparent; }
-        [data-theme="dark"] [data-theme-element="card"] { background-color: transparent; }
-        [data-theme="light"] [data-theme-element="card"] { background-color: transparent; }
+        [data-theme-element="header"] {
+            transition: background-color 0.5s ease;
+        }
+
+        [data-theme="dark"] [data-theme-element="header"] {
+            background-color: transparent;
+        }
+
+        [data-theme="light"] [data-theme-element="header"] {
+            background-color: transparent;
+        }
+
+        [data-theme="dark"] [data-theme-element="card"] {
+            background-color: transparent;
+        }
+
+        [data-theme="light"] [data-theme-element="card"] {
+            background-color: transparent;
+        }
+
         [data-theme="dark"] [data-theme-element="button-secondary"] {
             background-color: #1F2937;
-            color: #D1D5DB; /* gray-300 */
+            color: #D1D5DB;
+            /* gray-300 */
         }
+
         [data-theme="light"] [data-theme-element="button-secondary"] {
             background-color: #E5E7EB;
-            color: #374151; /* gray-700 */
+            color: #374151;
+            /* gray-700 */
         }
+
         /* Estilos para texto en secciones de contenido */
-        body[data-theme='dark'] .dynamic-text, body[data-theme='dark'] .dynamic-text-secondary {
+        body[data-theme='dark'] .dynamic-text,
+        body[data-theme='dark'] .dynamic-text-secondary {
             color: var(--color-primary-dark);
         }
-        body[data-theme='light'] .dynamic-text, body[data-theme='light'] .dynamic-text-secondary {
+
+        body[data-theme='light'] .dynamic-text,
+        body[data-theme='light'] .dynamic-text-secondary {
             color: var(--color-primary-light);
         }
+
         body[data-theme='dark'] .dynamic-input {
             background-color: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
             border: 1px solid #6B7280;
         }
+
         body[data-theme='light'] .dynamic-input {
             background-color: rgba(0, 0, 0, 0.1);
             color: #000000;
             border: 1px solid #9CA3AF;
         }
+
         body[data-theme='dark'] .dynamic-button {
-            background-color: #06B6D4; /* cyan-500 */
+            background-color: #06B6D4;
+            /* cyan-500 */
             color: #000000;
         }
+
         body[data-theme='light'] .dynamic-button {
             background-color: #06B6D4;
             color: #000000;
         }
+
         .dynamic-input::placeholder {
             color: inherit;
             opacity: 0.7;
         }
+
         #mobile-menu a {
             font-family: 'Space Grotesk', sans-serif;
         }
+
         body[data-theme="dark"] #mobile-menu {
             background-color: #000000;
             color: #FFFFFF;
         }
+
         body[data-theme="light"] #mobile-menu {
             background-color: #FFFFFF;
             color: #000000;
         }
+
         body[data-theme="dark"] #close-menu-button {
             color: #FFFFFF;
         }
+
         body[data-theme="light"] #close-menu-button {
             color: #000000;
         }
+
         .toggle-bio-button.rotate-180 {
             transform: rotate(180deg);
+        }
+
+        /* Estilos del mensaje de feedback */
+        #feedback-message {
+            display: none;
+            /* Oculto por defecto */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        .spinner-small {
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-top: 2px solid #000;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        [data-theme="dark"] .spinner-small {
+            border-top-color: #fff;
         }
     </style>
 </head>
@@ -157,8 +239,8 @@
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
-            <a href="index.html">
-                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
+            <a href="javascript:void(0);" onclick="navigateToSection('main-section');">
+                <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-20 md:h-24 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
         <!-- Contenedor del menú hamburguesa (en la derecha) -->
@@ -181,13 +263,8 @@
         </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
-            <a href="reports-blog.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
-            <a href="reports-blog.html#newsletter" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-newsletter">Newsletter</a>
-            <a href="reports-blog.html#blog" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
-            <a href="index.html#team" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-team">Equipo</a>
-            <a href="workshops-cursos.html" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
-            <a href="workshops-cursos.html#cursos" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
-            <a href="index.html#about" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('team');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-team">Equipo</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
             <!-- Contenedor para los botones de idioma y tema al final del menú -->
             <div class="flex flex-col items-center p-8 space-y-4 border-t border-gray-600 dynamic-text-secondary w-full">
                 <!-- Selectores de idioma -->
@@ -354,16 +431,56 @@
         <img src="https://github.com/amma-labs/futurpunks-website/blob/main/favicon.png?raw=true" alt="Futurpunks Favicon" class="h-8 w-8 mb-2">
         <p>2025 Futurpunks Think Tank</p>
     </footer>
-    <script>
+    <script type="module">
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import {
+            getAuth,
+            signInAnonymously,
+            signInWithCustomToken
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import {
+            getFirestore,
+            collection,
+            addDoc
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import {
+            getAnalytics
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
+
+        let app, db, auth, userId;
+
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        if (Object.keys(firebaseConfig).length > 0) {
+            app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
+            getAnalytics(app);
+
+            // Sign in the user
+            (async () => {
+                try {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                    userId = auth.currentUser?.uid;
+                } catch (error) {
+                    console.error("Firebase Auth Error:", error);
+                }
+            })();
+        } else {
+            console.error("Firebase config is missing. Firestore functionality will be disabled.");
+        }
+
         const languageCodes = ['es', 'en', 'fr'];
         const translations = {
             'es': {
-                'nav-reports': 'Reports',
-                'nav-newsletter': 'Newsletter',
-                'nav-blog': 'Blog',
                 'nav-team': 'Equipo',
-                'nav-workshops': 'Workshops',
-                'nav-cursos': 'Cursos',
                 'nav-about': 'About',
                 'nav-languages': 'Idiomas',
                 'nav-theme': 'Tema',
@@ -401,17 +518,9 @@
                 'about-li-7': 'Innovación ética',
                 'about-contact-title': 'Contacto:',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
-                'input-email-placeholder': 'Tu correo electrónico',
-                'join-button': 'Únete Ahora',
-                'join-success': '¡Gracias por unirte! Nos pondremos en contacto contigo pronto.',
             },
             'en': {
-                'nav-reports': 'Reports',
-                'nav-newsletter': 'Newsletter',
-                'nav-blog': 'Blog',
                 'nav-team': 'Team',
-                'nav-workshops': 'Workshops',
-                'nav-cursos': 'Courses',
                 'nav-about': 'About',
                 'nav-languages': 'Languages',
                 'nav-theme': 'Theme',
@@ -449,17 +558,9 @@
                 'about-li-7': 'Ethical innovation',
                 'about-contact-title': 'Contact:',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
-                'input-email-placeholder': 'Your email address',
-                'join-button': 'Join Now',
-                'join-success': 'Thank you for joining! We will get in touch with you shortly.',
             },
             'fr': {
-                'nav-reports': 'Rapports',
-                'nav-newsletter': 'Newsletter',
-                'nav-blog': 'Blog',
                 'nav-team': 'Équipe',
-                'nav-workshops': 'Ateliers',
-                'nav-cursos': 'Cours',
                 'nav-about': 'À propos',
                 'nav-languages': 'Langues',
                 'nav-theme': 'Thème',
@@ -476,12 +577,15 @@
                 'team-name-3': 'Lin Xinye',
                 'team-title-3': 'Artiste digital et futuriste visuel',
                 'team-location-3': 'Guizhou, Chine',
-                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
+                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la technologie et la culture pour cartographier des scénarios possibles.',
                 'team-name-4': 'Mamadou Diop',
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
                 'team-bio-4': 'Il effectue des recherches sur les tecnologías ópticas non invasivas appliquées à la salud. Il se concentre sur les solutions biomédicales et l\'utilisation de visualizaciones inmersives para explorer de nouvelles applications médicas.',
-                'team-open-space': 'Espace ouvert : Oui, votre profil peut aussi faire partie de Futurpunks.',
+                'team-name-5': 'Lina Zhou',
+                'team-title-5': 'Stratège en innovation et expérience utilisateur',
+                'team-location-5': 'Chengdu, Chine',
+                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité électrique, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo et Geely, intégrant l\'art, la technologie et la société pour imaginer les futurs de la mobilité et de la durabilité.',
                 'about-title': 'À propos / Nous',
                 'about-desc': 'Futurpunks est né en 2024 como un espace mondial para explorer des futurs inclusifs, sostenibles et collaboratifs.',
                 'about-mission-title': 'Notre mission est de :',
@@ -494,19 +598,16 @@
                 'about-li-7': 'Innovation éthique',
                 'about-contact-title': 'Contact :',
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
-                'input-email-placeholder': 'Votre adresse e-mail',
-                'join-button': 'Rejoindre Maintenant',
-                'join-success': 'Merci de vous être joint! Nous vous contacterons bientôt.',
             }
         };
-        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
-        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/Copy%20of%20Copy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
-        
+        const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
+        const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
+
         // Función para aplicar las traducciones
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-translate]');
             const inputPlaceholders = document.querySelectorAll('[data-translate-placeholder]');
-            
+
             document.querySelectorAll('.lang-button').forEach(btn => {
                 btn.classList.remove('text-cyan-400', 'font-bold');
             });
@@ -528,10 +629,11 @@
             });
             localStorage.setItem('lang', lang);
         }
-        
+
         // Lógica de cambio de tema
         const logoImg = document.getElementById('logo-img');
         const body = document.body;
+
         function applyTheme(themeName) {
             body.dataset.theme = themeName;
             document.querySelectorAll('.theme-button').forEach(btn => {
@@ -544,6 +646,7 @@
             logoImg.src = themeName === 'dark' ? darkLogoUrl : lightLogoUrl;
             localStorage.setItem('theme', themeName);
         }
+
         // Lógica de preloader
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
@@ -552,15 +655,30 @@
                 preloader.style.display = 'none';
             }, 500);
         });
+
+        // Lógica para la navegación en la página
+        function navigateToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            // Close the mobile menu after navigation
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.add('translate-x-full');
+        }
+
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const closeMenuButton = document.getElementById('close-menu-button');
+
             // Lógica para detectar el idioma del sistema
             let systemLang = navigator.language.substring(0, 2);
             let storedLang = localStorage.getItem('lang');
-            let initialLang = 'es'; 
+            let initialLang = 'es';
             if (storedLang) {
                 initialLang = storedLang;
             } else if (languageCodes.includes(systemLang)) {
