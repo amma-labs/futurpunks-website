@@ -43,32 +43,9 @@
             transition: background-color 0.5s ease;
         }
 
-        /* Contenedor del video de fondo */
-        #video-bg-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        #video-bg {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-
         /* Clases para el preloader */
         #preloader {
-            position: static;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -235,7 +212,7 @@
         <div class="spinner"></div>
     </div>
     <!-- Sección del Encabezado (Header) -->
-    <header data-theme-element="header" class="w-full fixed top-0 p-4 md:p-8 flex justify-between items-center z-50">
+    <header data-theme-element="header" class="w-full p-4 md:p-8 flex justify-between items-center z-50">
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
@@ -263,41 +240,32 @@
         </div>
         <!-- Contenedor de navegación y enlaces -->
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
+            <a href="javascript:void(0);" onclick="navigateToSection('main-section');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-main-title">Inicio</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('projects');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-projects">Proyectos</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('reports');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-reports">Reports</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('blog');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-blog">Blog</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('workshops');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-workshops">Workshops</a>
+            <a href="javascript:void(0);" onclick="navigateToSection('cursos');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-cursos">Cursos</a>
             <a href="javascript:void(0);" onclick="navigateToSection('team');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-team">Equipo</a>
             <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 hover:text-cyan-400 transition-colors duration-300" data-translate="nav-about">About</a>
-            <!-- Contenedor para los botones de idioma y tema al final del menú -->
-            <div class="flex flex-col items-center p-8 space-y-4 border-t border-gray-600 dynamic-text-secondary w-full">
-                <!-- Selectores de idioma -->
-                <div id="language-selectors" class="flex flex-col space-y-2 w-full">
-                    <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-languages">Languages</h4>
-                    <div class="flex space-x-4">
-                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="es">SPA</button>
-                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="en">ENG</button>
-                        <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-lang="fr">FRA</button>
-                    </div>
-                </div>
-                <!-- Selectores de tema -->
-                <div id="theme-selectors" class="flex flex-col space-y-2 w-full mt-4">
-                    <h4 class="text-2xl font-bold mb-2 dynamic-text-secondary" data-translate="nav-theme">Theme</h4>
-                    <div class="flex space-x-4">
-                        <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark">DARK</button>
-                        <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="light">WHITE</button>
-                    </div>
-                </div>
+            <!-- Selectores de idioma y tema integrados en una fila -->
+            <div class="flex items-center space-x-2">
+                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="en">ENG</button>
+                <span class="text-white text-lg font-bold">/</span>
+                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="es">SPA</button>
+                <span class="text-white text-lg font-bold">/</span>
+                <button class="lang-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-lang="fr">FRA</button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-theme="dark">DARK</button>
+                <span class="text-white text-lg font-bold">/</span>
+                <button class="theme-button text-lg font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary px-2 py-1" data-theme="light">LIGHT</button>
             </div>
         </nav>
     </div>
     <!-- Sección Principal con el Título -->
     <main id="main-section" class="relative overflow-hidden">
-        <!-- Contenedor del video de fondo -->
-        <div class="relative min-h-screen flex flex-col items-center justify-start p-6 text-center z-10 pt-24">
-            <div id="video-bg-container">
-                <!-- URL del video actualizada -->
-                <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks">
-                    <source src="https://videos.pexels.com/video-files/33315007/14188166_640_360_30fps.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
-                </video>
-            </div>
+        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
             <div class="max-w-4xl relative z-10">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-4 tracking-tight text-white" data-translate="main-title">
                     LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.
@@ -390,7 +358,7 @@
                     <div class="flex items-center w-full max-w-2xl justify-between">
                         <img src="https://github.com/amma-labs/futurpunks-website/blob/main/1594781292377.jpg?raw=true" alt="Lina Zhou" class="rounded-full mr-4 w-28 h-28 object-cover flex-shrink-0">
                         <div class="flex flex-col items-start flex-grow">
-                            <a href="https://www.linkedin.com/in/linazhou/" target="_blank">
+                            <a href="https://www.linkedin.com/in/lina-zhou-14b347128/" target="_blank">
                                 <h4 class="text-4xl font-bold dynamic-text" data-translate="team-name-5">Lina Zhou</h4>
                             </a>
                             <p class="text-lg dynamic-text-secondary" data-translate="team-title-5">Estratega en innovación y experiencia de usuario</p>
@@ -399,7 +367,7 @@
                     </div>
                     <div id="bio-linazhou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-5">Chengdu, China</p>
-                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-5">Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-5">Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilité.</p>
                     </div>
                 </div>
             </div>
@@ -480,10 +448,19 @@
         const languageCodes = ['es', 'en', 'fr'];
         const translations = {
             'es': {
+                'nav-main-title': 'Inicio',
+                'nav-projects': 'Proyectos',
+                'nav-reports': 'Reports',
+                'nav-blog': 'Blog',
+                'nav-workshops': 'Workshops',
+                'nav-cursos': 'Cursos',
                 'nav-team': 'Equipo',
                 'nav-about': 'About',
-                'nav-languages': 'Idiomas',
-                'nav-theme': 'Tema',
+                'nav-languages-spanish': 'SPA',
+                'nav-languages-english': 'ENG',
+                'nav-languages-french': 'FRA',
+                'nav-theme-dark': 'DARK',
+                'nav-theme-white': 'WHITE',
                 'main-title': 'LOS FUTUROS SON MUCHOS.<br class="hidden lg:block"> CONSTRUYÁMOSLOS JUNTOS.',
                 'main-subtitle': 'Los futuros se escriben ahora mismo en cada comunidad, en cada lengua, en cada territorio. Pocos tienen poder para definirlos. Es hora de cambiarlo.',
                 'team-name-1': 'Sabrina Langer',
@@ -505,7 +482,7 @@
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Estratega en innovación y experiencia de usuario',
                 'team-location-5': 'Chengdu, China',
-                'team-bio-5': 'Especialista en marketing y cultura tecnológica, con amplia trayectoria en movilidad eléctrica, branding y experiencias inmersivas. Ha liderado proyectos en NIO, Volvo y Geely, integrando arte, tecnología y sociedad para imaginar futuros de la movilidad y la sostenibilidad.',
+                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad pour imaginer les futurs de la mobilité et de la durabilité.',
                 'about-title': 'About / Nosotros',
                 'about-desc': 'Futurpunks nació en 2024 como un espacio global para explorar futuros inclusivos, sostenibles y colaborativos.',
                 'about-mission-title': 'Nuestra misión es:',
@@ -520,10 +497,19 @@
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
             },
             'en': {
+                'nav-main-title': 'Home',
+                'nav-projects': 'Projects',
+                'nav-reports': 'Reports',
+                'nav-blog': 'Blog',
+                'nav-workshops': 'Workshops',
+                'nav-cursos': 'Courses',
                 'nav-team': 'Team',
                 'nav-about': 'About',
-                'nav-languages': 'Languages',
-                'nav-theme': 'Theme',
+                'nav-languages-spanish': 'SPA',
+                'nav-languages-english': 'ENG',
+                'nav-languages-french': 'FRA',
+                'nav-theme-dark': 'DARK',
+                'nav-theme-white': 'WHITE',
                 'main-title': 'THERE ARE MANY FUTURES.<br class="hidden lg:block"> LET\'S BUILD THEM TOGETHER.',
                 'main-subtitle': 'Futures are being written right now in every community, in every language, in every territory. But few have power to define them. It\'s time to change that.',
                 'team-name-1': 'Sabrina Langer',
@@ -560,10 +546,19 @@
                 'about-contact-details': 'info@futurpunks.com | LinkedIn | Twitter',
             },
             'fr': {
+                'nav-main-title': 'Accueil',
+                'nav-projects': 'Projets',
+                'nav-reports': 'Rapports',
+                'nav-blog': 'Blog',
+                'nav-workshops': 'Ateliers',
+                'nav-cursos': 'Cours',
                 'nav-team': 'Équipe',
                 'nav-about': 'À propos',
-                'nav-languages': 'Langues',
-                'nav-theme': 'Thème',
+                'nav-languages-spanish': 'SPA',
+                'nav-languages-english': 'ENG',
+                'nav-languages-french': 'FRA',
+                'nav-theme-dark': 'DARK',
+                'nav-theme-white': 'WHITE',
                 'main-title': 'LES FUTURS SONT NOMBREUX.<br class="hidden lg:block"> CONSTRUISONS-LES ENSEMBLE.',
                 'main-subtitle': 'Les futurs s\'écrivent maintenant dans chaque communauté, dans chaque langue, dans chaque territoire. Mais peu ont le pouvoir de les définir. Il est temps de changer cela.',
                 'team-name-1': 'Sabrina Langer',
@@ -575,9 +570,9 @@
                 'team-location-2': 'Mexico, Mexique',
                 'team-bio-2': 'Spécialiste en conception de stratégies numériques et de campagnes créatives, combinant innovation, visualisation de données et responsabilité sociale.',
                 'team-name-3': 'Lin Xinye',
-                'team-title-3': 'Artiste digital et futuriste visuel',
+                'team-title-3': 'Artiste digital et futurista visuel',
                 'team-location-3': 'Guizhou, Chine',
-                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la technologie et la culture pour cartographier des scénarios possibles.',
+                'team-bio-3': 'Créatrice d\'expériences immersives et de visualisations du futur. Elle combine l\'art, la tecnología et la cultura para cartographier des scénarios possibles.',
                 'team-name-4': 'Mamadou Diop',
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
@@ -585,7 +580,7 @@
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Stratège en innovation et expérience utilisateur',
                 'team-location-5': 'Chengdu, Chine',
-                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité électrique, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo et Geely, intégrant l\'art, la technologie et la société pour imaginer les futurs de la mobilité et de la durabilité.',
+                'team-bio-5': 'Spécialiste du marketing et de la culture technologique, avec une vaste expérience dans la mobilité eléctrica, le branding et les expériences immersives. Elle a dirigé des projets chez NIO, Volvo y Geely, intégrant l\'art, la tecnología y la sociedad para imaginar les futurs de la mobilité et de la durabilité.',
                 'about-title': 'À propos / Nous',
                 'about-desc': 'Futurpunks est né en 2024 como un espace mondial para explorer des futurs inclusifs, sostenibles et collaboratifs.',
                 'about-mission-title': 'Notre mission est de :',
