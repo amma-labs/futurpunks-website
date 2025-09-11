@@ -233,7 +233,7 @@
         <!-- Contenedor para el logo (siempre en la izquierda) -->
         <div class="flex items-center">
             <!-- Logo en la izquierda -->
-            <a href="javascript:void(0);" onclick="navigateToSection('main-section');">
+            <a href="#main-section" id="logo-link">
                 <img id="logo-img" src="https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true" alt="Futurpunks Collaborative Logo" class="h-16 md:h-20 cursor-pointer transition-transform duration-300 hover:scale-110">
             </a>
         </div>
@@ -258,10 +258,10 @@
         <nav class="flex flex-col items-start space-y-4 text-5xl p-8 flex-grow overflow-y-auto">
             <a href="reports-blog.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-premium-reports">Rapports Premium</a>
             <a href="reports-blog.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-blog-ideas">Blog / Idées</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('team');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-inspiration">Ceux qui nous inspirent</a>
+            <a href="#team" class="scroll-link w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-inspiration">Ceux qui nous inspirent</a>
             <a href="workshops-cursos.html" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-workshops-courses">Ateliers / Cours</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-about">À propos</a>
-            <a href="javascript:void(0);" onclick="navigateToSection('about');" class="w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-join">Rejoindre</a>
+            <a href="#about" class="scroll-link w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-about">À propos</a>
+            <a href="#join-us" class="scroll-link w-full px-4 py-2 text-3xl font-bold hover:text-cyan-400 transition-colors duration-300" data-translate="menu-join">Rejoindre</a>
             <!-- Selectores de idioma y tema -->
             <div class="flex flex-row items-center space-x-2 mt-4 w-full justify-start text-base">
                 <button class="theme-button font-medium hover:text-cyan-400 focus:outline-none dynamic-text-secondary" data-theme="dark" data-translate="nav-theme-dark">SOMBRE</button>
@@ -273,7 +273,7 @@
     <!-- Sección Principal con el Título -->
     <main id="main-section" class="relative overflow-hidden z-10">
         <!-- Contenedor del video de fondo -->
-        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 text-center z-10">
+        <div class="relative min-h-screen flex flex-col items-center justify-start p-6 text-center z-10">
             <video id="video-bg" autoplay loop muted playsinline poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Futurpunks" class="video-background">
                 <source src="https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4" type="video/mp4">
                 Tu navegador no soporta el tag de video.
@@ -332,7 +332,7 @@
                     </div>
                     <div id="bio-alex" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-2">Mexico, Mexique</p>
-                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-2">Spécialiste en stratégies numériques, il conçoit des expériences et des campagnes créatives à fort impact, en se concentrant sur la visualisation de données et la responsabilité sociale.</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-2">Spécialiste en stratégies numériques, il conçoit des expériences et des campagnes créatives à fort impact, en se concentrant sur la visualisation de données et la responsabilidad social.</p>
                     </div>
                 </div>
                 <!-- Perfil 3 -->
@@ -349,7 +349,7 @@
                     </div>
                     <div id="bio-lin" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-3">Guizhou, Chine</p>
-                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-3">Artiste numérique et futuriste visuelle, elle crée des expériences immersives et des visualisations d'avenir. Son travail combine art, technologie et culture pour concevoir des scénarios possibles et éthiques.</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-3">Artiste numérique et futuriste visuelle, elle crée des expériences immersives et des visualisations d'avenir. Son travail combine art, tecnología y cultura para concevoir des scénarios possibles et éthiques.</p>
                     </div>
                 </div>
                 <!-- Perfil 4 -->
@@ -366,7 +366,7 @@
                     </div>
                     <div id="bio-mamadou" class="bio-content hidden opacity-0 transition-opacity duration-500 mt-4 text-left w-full max-w-2xl">
                         <p class="text-base dynamic-text-secondary" data-translate="team-location-4">Dakar, Senegal</p>
-                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-4">Chercheur en technologie optique, il se spécialise dans les solutions biomédicales. Il met son expertise au service de projets créatifs qui explorent l'application éthique des technologies pour la santé et le bien-être.</p>
+                        <p class="text-base dynamic-text-secondary" data-translate="team-bio-4">Chercheur en technologie optique, il se spécialise dans les solutions biomédicales. Il met son expertise au service de projets créatifs qui explorent l'application éthique des technologies para la santé y el bienestar.</p>
                     </div>
                 </div>
                 <!-- Perfil 5 -->
@@ -425,6 +425,32 @@
                 info@futurpunks.com | LinkedIn
             </p>
         </section>
+        <!-- Nueva Sección de Contacto con Formulario -->
+        <section id="join-us" class="my-5 md:my-10 p-6 max-w-xl mx-auto w-full text-center section-content">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 dynamic-text" data-translate="join-title">Rejoignez-nous!</h2>
+            <p class="text-base md:text-lg mb-8 dynamic-text-secondary" data-translate="join-description">
+                Partagez votre projet ou votre idée pour un futur meilleur. Nous aimerions savoir comment vous voulez nous rejoindre.
+            </p>
+            <form id="contact-form" class="space-y-4 text-left">
+                <div>
+                    <label for="name" class="block text-sm font-medium dynamic-text-secondary" data-translate="join-name-label">Nom complet</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md dynamic-input shadow-sm p-2" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium dynamic-text-secondary">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md dynamic-input shadow-sm p-2" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium dynamic-text-secondary" data-translate="join-message-label">Message</label>
+                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md dynamic-input shadow-sm p-2" required></textarea>
+                </div>
+                <button type="submit" id="submit-button" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium dynamic-button hover:opacity-80 transition-opacity duration-200">
+                    <span id="submit-text" data-translate="join-button-text">Envoyer</span>
+                    <div id="submit-spinner" class="spinner-small hidden mx-auto"></div>
+                </button>
+                <div id="feedback-message" class="mt-4 p-4 rounded-md text-center dynamic-text"></div>
+            </form>
+        </section>
     </main>
     <!-- Pie de página (Footer) -->
     <footer class="text-center p-6 md:p-10 text-gray-400 text-sm mt-auto bg-black flex flex-col items-center">
@@ -448,11 +474,17 @@
         import {
             getAnalytics
         } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-analytics.js";
-
+        
         let app, db, auth, userId;
-
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+
+        // Log to debug Firebase issues
+        import {
+            setLogLevel
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        setLogLevel('debug');
+
 
         if (Object.keys(firebaseConfig).length > 0) {
             app = initializeApp(firebaseConfig);
@@ -469,6 +501,7 @@
                         await signInAnonymously(auth);
                     }
                     userId = auth.currentUser?.uid;
+                    console.log("Authenticated user ID:", userId);
                 } catch (error) {
                     console.error("Firebase Auth Error:", error);
                 }
@@ -500,23 +533,27 @@
                 'team-name-1': 'Sabrina Langer',
                 'team-title-1': 'Fondatrice',
                 'team-location-1': 'París, France',
-                'team-bio-1': 'Sociologue et fondatrice de Futurpunks, elle applique la recherche et l'analyse de politiques sociales pour développer des projets et des solutions concrètes qui façonnent des futurs plus inclusifs et équitables.',
+                'team-bio-1': 'Sociologue et fondatrice de Futurpunks, elle applique la recherche et l\'analyse de politiques sociales pour développer des projets et des solutions concrètes qui façonnent des futurs plus inclusifs et équitables.',
                 'team-name-2': 'Alex Rivera',
                 'team-title-2': 'Expert en innovation numérique et stratégie créative',
                 'team-location-2': 'Mexico, Mexique',
-                'team-bio-2': 'Spécialiste en stratégies numériques, il conçoit des expériences et des campagnes créatives à fort impact, en se concentrant sur la visualisation de données et la responsabilité sociale.',
+                'team-bio-2': 'Spécialiste en stratégies numériques, il conçoit des expériences et des campagnes créatives à fort impact, en se concentrant sur la visualisation de données et la responsabilidad social.',
                 'team-name-3': 'Lin Xinye',
                 'team-title-3': 'Artiste digital y futurista visuel',
                 'team-location-3': 'Guizhou, Chine',
-                'team-bio-3': 'Artiste numérique et futuriste visuelle, elle crée des expériences immersives et des visualisations d'avenir. Son travail combine art, technologie et culture pour concevoir des scénarios possibles et éthiques.',
+                'team-bio-3': 'Artiste numérique et futuriste visuelle, elle crée des expériences immersives et des visualisations d\'avenir. Son travail combine art, technologie et culture para concevoir des scénarios possibles et éthiques.',
                 'team-name-4': 'Mamadou Diop',
                 'team-title-4': 'Chercheur en tecnología óptica et solutions biomédicales',
                 'team-location-4': 'Dakar, Senegal',
-                'team-bio-4': 'Chercheur en technologie optique, il se spécialise dans les solutions biomédicales. Il met son expertise au service de projets créatifs qui explorent l'application éthique des technologies pour la santé et le bien-être.',
+                'team-bio-4': 'Chercheur en technologie optique, il se spécialise dans les solutions biomédicales. Il met son expertise au service de projets créatifs qui explorent l\'application éthique des technologies para la santé y el bienestar.',
                 'team-name-5': 'Lina Zhou',
                 'team-title-5': 'Stratège en innovation et expérience utilisateur',
                 'team-location-5': 'Chengdu, Chine',
                 'team-bio-5': 'Stratège en innovation et UX, elle a dirigé des projets majeurs dans la mobilité durable. Elle utilise la tecnología y las données para imaginar des futurs de la mobilité plus éthiques, en intégrant des perspectives sociales et créatives.',
+                'team-name-6': 'Zach Wall',
+                'team-title-6': 'Consultant en Smart Cities et Innovation',
+                'team-location-6': 'Chicago, États-Unis',
+                'team-bio-6': 'Consultant spécialisé dans les villes intelligentes. Il utilise la tecnología y las données para crear des solutions d\'urbanisme qui favorisent le développement durable et l\'inclusion sociale.',
                 'about-title': 'À propos / Nous',
                 'about-desc': 'Futurpunks est né en 2024 comme une initiative créative et engagée, lancée en tant que filiale de Leap B, agence certifiée B Corp reconnue en Europe pour son approche durable et son design à impact.',
                 'about-mission-title': 'Notre mission est de :',
@@ -532,13 +569,14 @@
                 'menu-workshops-courses': 'Ateliers / Cours',
                 'menu-about': 'À propos',
                 'menu-join': 'Rejoindre',
-                'nav-languages': 'Langues :',
-                'nav-theme': 'Thème :',
-                'team-name-6': 'Zach Wall',
-                'team-title-6': 'Consultant en Smart Cities et Innovation',
-                'team-location-6': 'Chicago, États-Unis',
-                'team-bio-6': 'Consultant spécialisé dans les villes intelligentes. Il utilise la tecnología y las données para crear des solutions d'urbanisme qui favorisent le développement durable et l'inclusion sociale.',
-            },
+                'nav-theme-dark': 'SOMBRE',
+                'nav-theme-white': 'CLAIR',
+                'join-title': 'Rejoignez-nous!',
+                'join-description': 'Partagez votre projet ou votre idée pour un futur meilleur. Nous aimerions savoir comment vous voulez nous rejoindre.',
+                'join-name-label': 'Nom complet',
+                'join-message-label': 'Message',
+                'join-button-text': 'Envoyer'
+            }
         };
         const darkLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/futurpunks.png?raw=true';
         const lightLogoUrl = 'https://github.com/amma-labs/futurpunks-website/blob/main/lightCopy%20of%20Copy%20of%20Dark%20Blue%20Quotes%20Instagram%20Post.png?raw=true';
@@ -578,17 +616,12 @@
             }, 500);
         });
 
-        // Lógica para la navegación en la página
-        function navigateToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-            // Close the mobile menu after navigation
+        // Función para manejar la navegación y cerrar el menú
+        function handleNavigation() {
             const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
             mobileMenu.classList.add('translate-x-full');
+            mobileMenuButton.classList.remove('menu-open');
         }
 
         // Event Listeners
@@ -621,22 +654,38 @@
                 mobileMenu.classList.toggle('translate-x-full');
                 mobileMenuButton.classList.toggle('menu-open');
             });
+
             // Cerrar menú al hacer clic fuera de él
             document.addEventListener('click', (e) => {
                 const isClickInsideMenu = mobileMenu.contains(e.target);
                 const isClickOnButton = mobileMenuButton.contains(e.target);
                 if (!isClickInsideMenu && !isClickOnButton) {
-                    mobileMenu.classList.add('translate-x-full');
-                    mobileMenuButton.classList.remove('menu-open');
+                    handleNavigation();
                 }
             });
-            // Cerrar menú al hacer clic en un enlace
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('translate-x-full');
-                    mobileMenuButton.classList.remove('menu-open');
+
+            // Manejar clics en los enlaces de navegación con evento
+            document.querySelectorAll('.scroll-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        handleNavigation();
+                    }
                 });
             });
+            document.getElementById('logo-link').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('main-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+                handleNavigation();
+            });
+
             // Lógica de los botones de biografía expandible
             document.querySelectorAll('.toggle-bio-button').forEach(button => {
                 button.addEventListener('click', () => {
@@ -659,6 +708,64 @@
                     }
                 });
             });
+
+            // Lógica para enviar el formulario de contacto a Firestore
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const submitButton = document.getElementById('submit-button');
+                    const submitText = document.getElementById('submit-text');
+                    const submitSpinner = document.getElementById('submit-spinner');
+                    const feedbackMessage = document.getElementById('feedback-message');
+
+                    // Show loading state
+                    submitText.classList.add('hidden');
+                    submitSpinner.classList.remove('hidden');
+                    submitButton.disabled = true;
+
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+
+                    if (db) {
+                        try {
+                            const collectionPath = `/artifacts/${appId}/users/${userId}/contact-messages`;
+                            await addDoc(collection(db, collectionPath), {
+                                name: data.name,
+                                email: data.email,
+                                message: data.message,
+                                timestamp: new Date()
+                            });
+                            console.log("Message saved to Firestore.");
+                            feedbackMessage.textContent = "Merci pour votre message! Il a été envoyé avec succès.";
+                            feedbackMessage.style.backgroundColor = '#22C55E';
+                            contactForm.reset();
+                        } catch (error) {
+                            console.error("Error writing document: ", error);
+                            feedbackMessage.textContent = "Oups, il y a eu un problème. Veuillez réessayer.";
+                            feedbackMessage.style.backgroundColor = '#EF4444';
+                        } finally {
+                            // Hide loading state
+                            submitText.classList.remove('hidden');
+                            submitSpinner.classList.add('hidden');
+                            submitButton.disabled = false;
+                            feedbackMessage.style.display = 'block';
+                            setTimeout(() => {
+                                feedbackMessage.style.display = 'none';
+                            }, 5000); // Hide message after 5 seconds
+                        }
+                    } else {
+                        console.error("Firestore is not initialized.");
+                        feedbackMessage.textContent = "Firestore n'est pas disponible. Le message ne peut pas être envoyé.";
+                        feedbackMessage.style.backgroundColor = '#EF4444';
+                        feedbackMessage.style.display = 'block';
+                        submitText.classList.remove('hidden');
+                        submitSpinner.classList.add('hidden');
+                        submitButton.disabled = false;
+                    }
+                });
+            }
         });
     </script>
 </body>
